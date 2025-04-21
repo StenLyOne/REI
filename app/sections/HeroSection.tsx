@@ -10,7 +10,7 @@ export default function HeroSection() {
   const isLgUp = useIsLgUp()
   
   return (
-    <main className="pt-[160px] pb-[100px]">
+    <main className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 pt-[160px] pb-[100px]">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-[70px] items-center">
         {/* Text content */}
         <motion.div
@@ -32,21 +32,21 @@ export default function HeroSection() {
               <div className="flex items-center -space-x-3">
                 <Image
                   className="rounded-full border border-white border-[1px]"
-                  src="/avatar1.png"
+                  src="/img/avatar1.png"
                   alt="avatar1"
                   width={50}
                   height={50}
                 />
                 <Image
                   className="rounded-full border border-white border-[1px] -tranform-[-20%]"
-                  src="/avatar2.png"
+                  src="/img/avatar2.png"
                   alt="avatar2"
                   width={50}
                   height={50}
                 />
                 <Image
                   className="rounded-full border border-white border-[1px]"
-                  src="/avatar3.png"
+                  src="/img/avatar3.png"
                   alt="avatar3"
                   width={50}
                   height={50}
@@ -73,7 +73,7 @@ export default function HeroSection() {
         >
           <div className="rounded-xl bg-white dark:bg-[#1f2937] p-4 sm:p-6 shadow-classic">
             <Image
-              src="/images/hero-dashboard.png"
+              src="/img/hero-dashboard.png"
               alt="Dashboard preview"
               width={600}
               height={400}

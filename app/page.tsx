@@ -1,13 +1,25 @@
-import HeroSection from '@/sections/HeroSection'
-import Header from './sections/Header';
-import HowReiWorks from './sections/HowReiWorks';
+import HeroSection from "@/sections/HeroSection";
+import Header from "./sections/Header";
+import HowReiWorks from "./sections/HowReiWorks";
+import Benefits from "./sections/Benefits";
+import SuccessStories from "./sections/SuccessStories";
+import Testimonials from "./sections/Testimonials";
+import WhoSItFor from "./sections/WhoSItFor";
+import Ecosystem from "./sections/Ecosystem";
+import Founders from "./sections/Founders";
 
 export default function Home() {
   return (
-    <div className='max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12'>
-      <Header/>
+    <div className="overflow-hidden">
+      <Header />
       <HeroSection />
-      <HowReiWorks/>
+      <HowReiWorks />
+      <Benefits />
+      <SuccessStories />
+      <WhoSItFor />
+      <Testimonials />
+      <Ecosystem />
+      <Founders />
     </div>
   );
 }
