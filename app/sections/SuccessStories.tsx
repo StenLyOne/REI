@@ -65,11 +65,11 @@ export default function SuccessStories() {
   }, []);
 
   return (
-    <section className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 py-12">
+    <section className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[200px]">
       <div className="mx-auto text-center space-y-6">
-        <GlowIcon text="Success Stories" />
+        <GlowIcon text="Success Stories" img={false}/>
         <h2 className="text-[36px] font-semibold text-foreground">
-          REIS Certification <span className="text-primary">Success Stories</span>
+          REIS Certification<span className="gradient-text"> Success Stories</span>
         </h2>
 
         {/* Desktop */}

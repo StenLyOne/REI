@@ -22,33 +22,57 @@
   --color-foreground: var(--foreground);
   --color-secondary: var(--secondary);
   --color-grey: var(--grey);
+  --color-border: var(--border);
+  --color-border-two: var(--border);
   --color-primary-gradient: linear-gradient(to right, #6c54ec 0%, #b34ae4 100%);
+  --сolor-neutral-gray: var(--neutral-gray);
 }
 
 .light {
   --background: #f6f6f6;
-  --foreground: #333333;
   --secondary: #ffffff;
+  --foreground: #333333;
   --grey: #bdbdbd;
   --grey-second: #e5e5e5;
+  --border: #fff;
+  --border-two: #fff;
+  --neutral-gray: #8a8f9c;
   --shadow-classic: 0px 24px 24px -12px rgba(14, 63, 126, 0.04),
     0px 12px 12px -6px rgba(14, 63, 126, 0.04),
     0px 6px 3px rgba(42, 51, 70, 0.04),
     0px 3px 3px -1.5px rgba(42, 51, 70, 0.04),
     0px 1px 1px rgba(42, 51, 70, 0.04), 0px 0px 0px 1px rgba(14, 63, 126, 0.04);
+  --shadow-primaryy: 0px 2px 4px rgba(108, 84, 236, 0.15),
+    -2px 7px 7px rgba(108, 84, 236, 0.13),
+    -3px 15px 9px rgba(108, 84, 236, 0.08),
+    -6px 27px 11px rgba(108, 84, 236, 0.02),
+    -9px 43px 12px rgba(108, 84, 236, 0),
+    inset 0 0 6.8px rgba(255, 255, 255, 0.25);
+  --gradient: linear-gradient(to right, #6c54ec 0%, #b34ae4 100%);
 }
 
 .dark {
   --background: #0c0a20;
-  --secondary: linear-gradient(to right, rgba(69, 51, 182, 0) 0%, #4533b6 100%),
+  --secondary: linear-gradient(
+      to top right,
+      rgba(69, 51, 182, 0.2) 0%,
+      rgba(69, 51, 182, 0) 100%
+    ),
     #0b0a10;
+  --border: #717171;
+  --border-two: #e0e0e0;
   --foreground: #ffffff;
-  --shadow-classic: 0px 24px 24px -12px rgba(255, 255, 255, 0.08),
-    0px 12px 12px -6px rgba(255, 255, 255, 0.06),
-    0px 6px 3px rgba(255, 255, 255, 0.04),
-    0px 3px 3px -1.5px rgba(255, 255, 255, 0.03),
-    0px 1px 1px rgba(255, 255, 255, 0.02),
-    0px 0px 0px 1px rgba(255, 255, 255, 0.01);
+  --grey: #bdbdbd;
+  --color-gray-200: #717171;
+  --neutral-gray: #14131e;
+  --shadow-classic: 0px 24px 24px -12px rgba(255, 255, 255, 0);
+  --shadow-primaryy: 0px 2px 4px rgba(108, 84, 236, 0.15),
+    -2px 7px 7px rgba(108, 84, 236, 0.13),
+    -3px 15px 9px rgba(108, 84, 236, 0.08),
+    -6px 27px 11px rgba(108, 84, 236, 0.02),
+    -9px 43px 12px rgba(108, 84, 236, 0),
+    inset 0 0 6.8px rgba(255, 255, 255, 0.25);
+  --gradient: linear-gradient(to right, #6c54ec 0%, #b34ae4 100%);
 }
 
 body {
@@ -205,7 +229,6 @@ body {
   display: none;
 }
 
-
 @keyframes spin-slow {
   from {
     transform: rotate(0deg);
@@ -230,4 +253,19 @@ body {
 
 .spin-reverse-slow {
   animation: spin-reverse-slow 10s linear infinite;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #6c54ec, #b34ae4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes hero-gradient-anim {
+  0% {
+    top: -100px;
+  }
+  100% {
+    top: 100%;
+  }
 }

@@ -4,11 +4,15 @@ import GlowIcon from "@/components/GlowIcon";
 
 export default function Ecosystem() {
   return (
-    <section className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 py-12">
-      <GlowIcon text="Ecosystem" />
+    <section className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[200px]">
+      <GlowIcon text="Ecosystem" img={false} />
       <div className="space-y-[48px]">
         <div className="text-center">
-          <h2>The REI Way vs Traditional Real Estate </h2>
+          <h2>
+            The
+            <span className="gradient-text"> REI Way </span>vs Traditional Real
+            Estate
+          </h2>
           <p className="pt-[24px] pb-[36px] max-w-[500px] mx-auto">
             See how certified investor-focused agents build smarter businesses,
             create real wealth, and escape the commission grind.
@@ -18,7 +22,10 @@ export default function Ecosystem() {
           </div>
         </div>
         <div>
-          <div className="w-full p-[36px] bg-secondary rounded-[20px] flex shadow-classic">
+          <div
+            className="w-full px-[20px] py-[36px] sm:p-[36px] rounded-[20px] flex shadow-classic text-left border-1 border-border"
+            style={{ background: "var(--secondary)" }}
+          >
             <div className="w-full">
               <div className="w-full flex gap-[24px]">
                 <h4 className="md:w-[50%] pb-[24px] mb-[12px]">
@@ -153,7 +160,7 @@ export default function Ecosystem() {
               </div>
             </div>
           </div>
-          <div className="w-full p-[36px] mt-[32px] bg-secondary rounded-[20px] flex md:hidden shadow-classic">
+          <div className="w-full px-[20px] py-[36px] sm:p-[36px]  mt-[32px] bg-secondary rounded-[20px] flex md:hidden shadow-classic">
             <div className="w-full">
               <div className="w-full flex gap-[24px]">
                 <h4 className="pb-[24px] mb-[12px] font-normal">
@@ -184,7 +191,7 @@ export default function Ecosystem() {
                   />
                 </div>
               </div>
-              <div className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200">
+              <div className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-500">
                 <div className="w-full">
                   <EcosystemItem
                     rei={false}

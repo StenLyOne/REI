@@ -73,9 +73,9 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="w-full py-12 space-y-[48px]">
+    <section className="w-full py-12 space-y-[48px] mb-[100px] lg:mb-[200px]">
       <div className="px-4 sm:px-6 lg:px-12">
-        <GlowIcon text="Testimonials" />
+        <GlowIcon text="Testimonials" img={false}/>
         <h2 className="text-center">REIS Certification  Success Stories</h2>
       </div>
       <div className="no-scrollbar relative overflow-visible">

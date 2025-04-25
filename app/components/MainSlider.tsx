@@ -40,7 +40,7 @@ export default function StatsShowcase() {
 
   if (isLgUp) {
     return (
-      <div className="w-full flex justify-between items-center mt-[86px]">
+      <div className="w-full flex justify-between items-center mt-[86px] z-1 relative">
         {/* Левая часть: Аватары и инфо */}
         <div className="flex items-center gap-4">
           <div className="flex -space-x-3">
@@ -57,7 +57,8 @@ export default function StatsShowcase() {
         {/* Правая часть: карточки */}
         <div className="flex gap-4">
           {items.map((item, i) => (
-            <div key={i} className="flex items-center gap-3 py-[6px] px-4 bg-secondary text-foreground rounded-[20px] shadow-classic max-w-[300px]">
+            <div key={i} className="flex items-center gap-3 py-[6px] px-4 bg-secondary text-foreground rounded-[20px] shadow-classic max-w-[300px] text-left border-1 border-border"
+              style={{ background: "var(--secondary)" }}>
               <h4 className="text-[24px] text-primary">{item.value}</h4>
               <p className="whitespace-nowrap">{item.label}</p>
             </div>

@@ -4,12 +4,15 @@ import Image from "next/image";
 
 export default function WhoSItFor() {
   return (
-    <section className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 py-[100px]">
-      <GlowIcon text="Who’s it for" />
+    <section className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[200px]">
+      <GlowIcon text="Who’s it for" img={false} />
 
       <div className="space-y-[48px]">
         <div className="text-center max-w-[810px] mx-auto">
-          <h2>This Program Fits If You’re Ready to Grow</h2>
+          <h2>
+            This Program Fits If{" "}
+            <span className="gradient-text"> You’re Ready to Grow</span>
+          </h2>
           <p className="pb-[36px] pt-[24px]">
             If you want to earn through real estate but don’t know where to
             start or how to scale, this program gives you a clear system and
@@ -22,12 +25,18 @@ export default function WhoSItFor() {
         </div>
         <div className="grid md:grid-cols-3 gap-[24px]">
           {/* Card 1 */}
-          <div className="bg-secondary rounded-[20px] px-[24px] py-[36px] space-y-[24px] shadow-classic">
+          <div
+            className="rounded-[20px] px-[24px] py-[36px] space-y-[24px] shadow-classic text-left border-1 border-border"
+            style={{ background: "var(--secondary)" }}
+          >
             <div className="relative">
-              <div className="w-full h-[301px] flex ">
+              <div className="w-full h-[313px] flex ">
+                <div className="absolute insert-0 w-full h-full">
+                  <span></span>
+                </div>
                 <div className="w-full h-full border-l-1 border-r-1 border-gray-200 ">
                   <div className="w-full h-full overflow-hidden ">
-                    <span className="w-[120%] h-[1px] bg-primary block rotate-[-30deg] translate-y-[185px] translate-x-[-10px]"></span>
+                    <span className="w-[120%] h-[1px] bg-primary block rotate-[-30deg] translate-y-[195px] translate-x-[-10px]"></span>
                   </div>
                   <span
                     className="w-[15px] h-[15px] bg-white flex justify-center items-center rounded-full translate-x-[-7px] translate-y-[-90px]"
@@ -35,12 +44,58 @@ export default function WhoSItFor() {
                   >
                     <span className="w-[7px] h-[7px] bg-primary rounded-full"></span>
                   </span>
+                  <span
+                    className="absolute px-[12px] py-[6px] border-1 border-border rounded-[20px] translate-x-[-7px] translate-y-[-200px] shadow-classic"
+                    style={{ background: "var(--secondary)" }}
+                  >
+                    Step 1
+                  </span>
                 </div>
-                <div className="w-full h-full overflow-hidden">
-                  <span className="w-[120%] h-[1px] bg-primary block rotate-[8deg] translate-y-[160px] translate-x-[-10px]"></span>
+                <div className="w-full h-full">
+                  <div className="w-full h-full overflow-hidden ">
+                    <span className="w-[120%] h-[1px] bg-primary block rotate-[8deg] translate-y-[170px] translate-x-[-10px]"></span>
+                  </div>
+                  <span
+                    className="w-[15px] h-[15px] bg-white flex justify-center items-center rounded-full translate-x-[-7px] translate-y-[-157px]"
+                    style={{ boxShadow: "0px 2px 21px 0px rgba(0, 0, 0, 0.3)" }}
+                  >
+                    <span className="w-[7px] h-[7px] bg-primary rounded-full"></span>
+                  </span>
+                  <span
+                    className="absolute px-[12px] py-[6px] border-1 border-border rounded-[20px] translate-x-[-32px] translate-y-[-250px] shadow-classic"
+                    style={{ background: "var(--secondary)" }}
+                  >
+                    Step 2
+                  </span>
                 </div>
-                <div className="w-full h-full border-l-1 border-r-1 border-gray-200 overflow-hidden">
-                  <span className="w-[120%] h-[1px] bg-primary block rotate-[-25deg] translate-y-[139px] translate-x-[-10px]"></span>
+                <div className="w-full h-full border-l-1 border-r-1 border-gray-200">
+                  <div className="w-full h-full overflow-hidden ">
+                    <span className="w-[120%] h-[1px] bg-primary block rotate-[-25deg] translate-y-[149px] translate-x-[-10px]"></span>
+                  </div>
+                  <span
+                    className="w-[15px] h-[15px] bg-white flex justify-center items-center rounded-full translate-x-[-7px] translate-y-[-143px]"
+                    style={{ boxShadow: "0px 2px 21px 0px rgba(0, 0, 0, 0.3)" }}
+                  >
+                    <span className="w-[7px] h-[7px] bg-primary rounded-full"></span>
+                  </span>
+                  <span
+                    className="w-[15px] h-[15px] bg-white flex justify-center items-center rounded-full ml-auto translate-x-[7px] translate-y-[-212px]"
+                    style={{ boxShadow: "0px 2px 21px 0px rgba(0, 0, 0, 0.3)" }}
+                  >
+                    <span className="w-[7px] h-[7px] bg-primary rounded-full"></span>
+                  </span>
+                  <span
+                    className="absolute px-[12px] py-[6px] border-1 border-border rounded-[20px] translate-x-[-32px] translate-y-[-250px] shadow-classic"
+                    style={{ background: "var(--secondary)" }}
+                  >
+                    Step 3
+                  </span>
+                  <span
+                    className="absolute px-[12px] py-[6px] border-1 border-border rounded-[20px] translate-x-[60px] translate-y-[-310px] shadow-classic"
+                    style={{ background: "var(--secondary)" }}
+                  >
+                    Step 4
+                  </span>
                 </div>
               </div>
             </div>
@@ -54,9 +109,15 @@ export default function WhoSItFor() {
           </div>
 
           {/* Card 2 */}
-          <div className="bg-secondary rounded-[20px] px-[24px] py-[36px] space-y-[24px] shadow-classic">
-            <div className="space-y-[20px] rounded-[20px] h-[301px]">
-              <div className="w-full flex flex-col items-center p-[6px] rounded-[20px] space-y-[6px] bg-secondary shadow-classic">
+          <div
+            className="rounded-[20px] px-[24px] py-[36px] space-y-[24px] shadow-classic text-left border-1 border-border"
+            style={{ background: "var(--secondary)" }}
+          >
+            <div className=" rounded-[20px] h-[313px] flex flex-col justify-between">
+              <div
+                className="w-full flex flex-col items-center p-[12px] rounded-[20px] space-y-[6px] shadow-classic border-1 border-border-two"
+                style={{ background: "var(--secondary)" }}
+              >
                 <span className="text-[20px] font-bold flex gap-[10px]">
                   <Image
                     src="/icons/arrowGrow.svg"
@@ -68,7 +129,10 @@ export default function WhoSItFor() {
                 </span>
                 <p className="text-grey">Investor Deal</p>
               </div>
-              <div className="w-full flex flex-col items-center p-[6px] rounded-[20px] space-y-[6px] bg-secondary shadow-classic">
+              <div
+                className="w-full flex flex-col items-center p-[12px] rounded-[20px] space-y-[6px] bg-secondary shadow-classic border-1 border-border-two"
+                style={{ background: "var(--secondary)" }}
+              >
                 <span className="text-[20px] font-bold flex gap-[10px]">
                   <Image
                     src="/icons/arrowGrow.svg"
@@ -80,7 +144,10 @@ export default function WhoSItFor() {
                 </span>
                 <p className="text-grey">Investor Deal</p>
               </div>
-              <div className="w-full flex justify-center gap-[12px] rounded-[20px] bg-secondary shadow-classic py-[21px]">
+              <div
+                className="w-full flex justify-center gap-[12px] rounded-[20px] bg-secondary shadow-classic py-[22px] border-1 border-border-two"
+                style={{ background: "var(--secondary)" }}
+              >
                 <span className="text-[14px] text-primary font-bold border-1 border-primary py-[8px] px-[24px] rounded-[20px]">
                   Analize
                 </span>
@@ -99,8 +166,14 @@ export default function WhoSItFor() {
           </div>
 
           {/* Card 3 */}
-          <div className="bg-secondary rounded-[20px] px-[24px] py-[36px] space-y-[24px] shadow-classic">
-            <div className="rounded-[20px] shadow-classic">
+          <div
+            className="rounded-[20px] px-[24px] py-[36px] space-y-[24px] shadow-classic text-left border-1 border-border"
+            style={{ background: "var(--secondary)" }}
+          >
+            <div
+              className="rounded-[20px] shadow-classic text-left border-1 border-border"
+              style={{ background: "var(--secondary)" }}
+            >
               <div className="p-[10px] flex flex-start gap-[6px] border-b-1 border-gray-200">
                 <span className="w-[6px] h-[6px] bg-gray-200 rounded-full"></span>
                 <span className="w-[6px] h-[6px] bg-gray-200 rounded-full"></span>
@@ -108,7 +181,10 @@ export default function WhoSItFor() {
               </div>
               <div>
                 <div className="space-y-[12px] py-[12px] px-[26px]">
-                  <span className="flex items-center px-[12px] w-max py-[7px] rounded-[20px] shadow-classic">
+                  <span
+                    className="flex items-center px-[12px] w-max py-[7px] rounded-[20px] shadow-classic border-1 border-border-two"
+                    style={{ background: "var(--secondary)" }}
+                  >
                     <p className="text-[14px]! ">😕</p>
                     <p className="text-[14px]! px-[12px] font-semibold">
                       Scattered focus
@@ -117,7 +193,10 @@ export default function WhoSItFor() {
                       +5%
                     </p>
                   </span>
-                  <span className="flex items-center px-[12px] w-max py-[7px] rounded-[20px] shadow-classic">
+                  <span
+                    className="flex items-center px-[12px] w-max py-[7px] rounded-[20px] shadow-classic border-1 border-border-two"
+                    style={{ background: "var(--secondary)" }}
+                  >
                     <p className="text-[14px]! ">📉</p>
                     <p className="text-[14px]! px-[12px] font-semibold">
                       Scattered focus
@@ -132,7 +211,10 @@ export default function WhoSItFor() {
                   <div className="w-1/2 border-t-2 border-dashed border-green-500"></div>
                 </div>
                 <div className="space-y-[10px] py-[12px] px-[26px]">
-                  <span className="flex items-center px-[12px] w-max py-[7px] rounded-[20px] shadow-classic">
+                  <span
+                    className="flex items-center px-[12px] w-max py-[7px] rounded-[20px] shadow-classic border-1 border-border-two"
+                    style={{ background: "var(--secondary)" }}
+                  >
                     <p className="text-[14px]! ">📈</p>
                     <p className="text-[14px]! font-semibold pl-[8px] text-primary">
                       REI
@@ -144,7 +226,10 @@ export default function WhoSItFor() {
                       +55%
                     </p>
                   </span>
-                  <span className="flex items-center px-[12px] w-max py-[7px] rounded-[20px] shadow-classic">
+                  <span
+                    className="flex items-center px-[12px] w-max py-[7px] rounded-[20px] shadow-classic border-1 border-border-two"
+                    style={{ background: "var(--secondary)" }}
+                  >
                     <p className="text-[14px]! ">⚡</p>
                     <p className="text-[14px]! font-semibold pl-[8px] text-primary">
                       REI
@@ -156,7 +241,10 @@ export default function WhoSItFor() {
                       +90%
                     </p>
                   </span>
-                  <span className="flex items-center px-[12px] w-max py-[7px] rounded-[20px] shadow-classic">
+                  <span
+                    className="flex items-center px-[12px] w-max py-[7px] rounded-[20px] shadow-classic border-1 border-border-two"
+                    style={{ background: "var(--secondary)" }}
+                  >
                     <p className="text-[14px]! ">🚀</p>
                     <p className="text-[14px]! font-semibold pl-[8px] text-primary">
                       REI

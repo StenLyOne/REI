@@ -20,11 +20,11 @@ const data = [
 
 export default function Founders() {
   return (
-    <section className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 py-12">
-      <GlowIcon text="Founders" />
+    <section className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[200px]">
+      <GlowIcon text="Founders" img={false} />
       <div className="space-y-[48px]">
         <div className="text-center">
-          <h2>Meet The Founders of REI Institute</h2>
+          <h2>Meet The<span className="gradient-text"> Founders of REI</span> Institute</h2>
           <p className="pt-[24px] mx-auto">
             Over 50 Years of Combined Results, Experience and Investment Wisdom
           </p>
@@ -33,7 +33,8 @@ export default function Founders() {
           {data.map((item, i) => (
             <div
               key={i}
-              className="space-y-[24px] bg-secondary w-full sm:max-w-[400] rounded-[20px]"
+              className="space-y-[24px] bg-secondary w-full sm:max-w-[400] rounded-[20px] text-left border-1 border-border"
+              style={{ background: "var(--secondary)" }}
             >
               <Image
                 src={item.img}
@@ -42,7 +43,7 @@ export default function Founders() {
                 height={650}
                 className="rounded-[20px] w-full"
               />
-              <div className="space-y-[20px] pb-[36px] px-[24px]">
+              <div className="space-y-[20px] pb-[36px] px-[20px] md:px-[24px]">
                 <div className="space-y-[3px]">
                   <h4>{item.name}</h4>
                   <p>{item.job}</p>
