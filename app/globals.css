@@ -49,6 +49,21 @@
     -9px 43px 12px rgba(108, 84, 236, 0),
     inset 0 0 6.8px rgba(255, 255, 255, 0.25);
   --gradient: linear-gradient(to right, #6c54ec 0%, #b34ae4 100%);
+  --bg-gradient-soft-pink: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(250, 117, 248, 0.3) 0%,
+    rgba(250, 117, 248, 0) 100%
+  );
+  --bg-gradient-soft-purple: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(155, 137, 255, 0.3) 0%,
+    rgba(193, 182, 255, 0) 100%
+  );
+  --bg-gradient-main: linear-gradient(
+    to bottom,
+    rgba(246, 246, 246, 0) 0%,
+    rgba(246, 246, 246, 1) 100%
+  );
 }
 
 .dark {
@@ -73,6 +88,45 @@
     -9px 43px 12px rgba(108, 84, 236, 0),
     inset 0 0 6.8px rgba(255, 255, 255, 0.25);
   --gradient: linear-gradient(to right, #6c54ec 0%, #b34ae4 100%);
+  --bg-gradient-soft-pink: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(149, 0, 194, 0.6) 0%,
+    rgba(149, 0, 194, 0) 100%
+  );
+  --bg-gradient-soft-purple: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(63, 32, 233, 0.6) 0%,
+    rgba(63, 32, 233, 0) 100%
+  );
+  --bg-gradient-main: linear-gradient(
+    to bottom,
+    rgba(12, 10, 32, 0) 0%,
+    rgba(12, 10, 32, 1) 100%
+  );
+}
+
+.shadow-primaryy {
+  box-shadow: var(--shadow-primaryy);
+}
+
+.bg-gradient-soft-pink {
+  background: var(--bg-gradient-soft-pink);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.4;
+}
+
+.bg-gradient-soft-purple {
+  background: var(--bg-gradient-soft-purple);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.4;
+}
+
+.bg-gradient-main {
+  background: var(--bg-gradient-main);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 body {

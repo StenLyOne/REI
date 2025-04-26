@@ -1,31 +1,70 @@
+"use client";
+
 import Button from "@/components/Button";
 import GlowIcon from "@/components/GlowIcon";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function WhoSItFor() {
-  return (
-    <section className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[200px]">
-      <GlowIcon text="Who’s it for" img={false} />
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.22,
+        delayChildren: 0.3,
+      },
+    },
+  };
 
-      <div className="space-y-[48px]">
-        <div className="text-center max-w-[810px] mx-auto">
-          <h2>
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  return (
+    <section className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[200px]">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={containerVariants}
+      >
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={itemVariants}
+        >
+          <GlowIcon text="Who’s it for" img={false} />
+        </motion.div>
+
+        <div className="text-center max-w-[810px] mx-auto mb-[48px]">
+          <motion.h2 variants={itemVariants}>
             This Program Fits If{" "}
-            <span className="gradient-text"> You’re Ready to Grow</span>
-          </h2>
-          <p className="pb-[36px] pt-[24px]">
+            <span className="gradient-text">You’re Ready to Grow</span>
+          </motion.h2>
+
+          <motion.p className="pb-[36px] pt-[24px]" variants={itemVariants}>
             If you want to earn through real estate but don’t know where to
-            start or how to scale, this program gives you a clear system and
-            full support. It’s designed for both beginners and working
-            professionals.
-          </p>
-          <div className="w-max mx-auto">
+            start...
+          </motion.p>
+
+          <motion.div className="w-max mx-auto" variants={itemVariants}>
             <Button />
-          </div>
+          </motion.div>
         </div>
-        <div className="grid md:grid-cols-3 gap-[24px]">
+        <motion.div
+          className="grid md:grid-cols-3 gap-[24px]"
+          variants={containerVariants}
+        >
           {/* Card 1 */}
-          <div
+          <motion.div
+            variants={itemVariants}
             className="rounded-[20px] px-[24px] py-[36px] space-y-[24px] shadow-classic text-left border-1 border-border"
             style={{ background: "var(--secondary)" }}
           >
@@ -40,7 +79,9 @@ export default function WhoSItFor() {
                   </div>
                   <span
                     className="w-[15px] h-[15px] bg-white flex justify-center items-center rounded-full translate-x-[-7px] translate-y-[-90px]"
-                    style={{ boxShadow: "0px 2px 21px 0px rgba(0, 0, 0, 0.3)" }}
+                    style={{
+                      boxShadow: "0px 2px 21px 0px rgba(0, 0, 0, 0.3)",
+                    }}
                   >
                     <span className="w-[7px] h-[7px] bg-primary rounded-full"></span>
                   </span>
@@ -57,7 +98,9 @@ export default function WhoSItFor() {
                   </div>
                   <span
                     className="w-[15px] h-[15px] bg-white flex justify-center items-center rounded-full translate-x-[-7px] translate-y-[-157px]"
-                    style={{ boxShadow: "0px 2px 21px 0px rgba(0, 0, 0, 0.3)" }}
+                    style={{
+                      boxShadow: "0px 2px 21px 0px rgba(0, 0, 0, 0.3)",
+                    }}
                   >
                     <span className="w-[7px] h-[7px] bg-primary rounded-full"></span>
                   </span>
@@ -74,13 +117,17 @@ export default function WhoSItFor() {
                   </div>
                   <span
                     className="w-[15px] h-[15px] bg-white flex justify-center items-center rounded-full translate-x-[-7px] translate-y-[-143px]"
-                    style={{ boxShadow: "0px 2px 21px 0px rgba(0, 0, 0, 0.3)" }}
+                    style={{
+                      boxShadow: "0px 2px 21px 0px rgba(0, 0, 0, 0.3)",
+                    }}
                   >
                     <span className="w-[7px] h-[7px] bg-primary rounded-full"></span>
                   </span>
                   <span
                     className="w-[15px] h-[15px] bg-white flex justify-center items-center rounded-full ml-auto translate-x-[7px] translate-y-[-212px]"
-                    style={{ boxShadow: "0px 2px 21px 0px rgba(0, 0, 0, 0.3)" }}
+                    style={{
+                      boxShadow: "0px 2px 21px 0px rgba(0, 0, 0, 0.3)",
+                    }}
                   >
                     <span className="w-[7px] h-[7px] bg-primary rounded-full"></span>
                   </span>
@@ -106,10 +153,11 @@ export default function WhoSItFor() {
                 earn more from every connection.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Card 2 */}
-          <div
+          <motion.div
+            variants={itemVariants}
             className="rounded-[20px] px-[24px] py-[36px] space-y-[24px] shadow-classic text-left border-1 border-border"
             style={{ background: "var(--secondary)" }}
           >
@@ -163,10 +211,10 @@ export default function WhoSItFor() {
                 earn more from every connection.
               </p>
             </div>
-          </div>
-
+          </motion.div>
           {/* Card 3 */}
-          <div
+          <motion.div
+            variants={itemVariants}
             className="rounded-[20px] px-[24px] py-[36px] space-y-[24px] shadow-classic text-left border-1 border-border"
             style={{ background: "var(--secondary)" }}
           >
@@ -267,9 +315,38 @@ export default function WhoSItFor() {
                 earn more from every connection.
               </p>
             </div>
-          </div>
-        </div>
-      </div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+
+      <motion.div
+        className="absolute overflow-visible top-[-50%] right-[45%] w-[1500px] h-[1000px] z-[-1] bg-gradient-soft-purple pointer-events-none"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: { opacity: 0, scale: 0.5 },
+          visible: {
+            opacity: 0.4,
+            scale: 1,
+            transition: { duration: 2, ease: "easeOut", delay: 1 },
+          },
+        }}
+      ></motion.div>
+      <motion.div
+        className="absolute overflow-visible top-[50%] right-[-45%] w-[1500px] h-[1000px] z-[-1] bg-gradient-soft-purple pointer-events-none"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: { opacity: 0, scale: 0.5 },
+          visible: {
+            opacity: 0.4,
+            scale: 1,
+            transition: { duration: 2, ease: "easeOut", delay: 1.3 },
+          },
+        }}
+      ></motion.div>
     </section>
   );
 }

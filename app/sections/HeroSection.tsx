@@ -2,11 +2,11 @@
 
 import Button from "@/components/Button";
 import MainSlider from "@/components/MainSlider";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function HeroSection() {
-  const isLgUp = useIsLgUp();
   const [isLight, setLight] = useState<boolean | null>(null);
 
   useEffect(() => {
@@ -24,28 +24,57 @@ export default function HeroSection() {
     return () => observer.disconnect();
   }, []);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.22,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
   return (
-    <main className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 pt-[160px] mb-[100px] lg:mb-[200px]">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-[70px] items-center z-1 relative">
+    <main className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 pt-[160px] mb-[100px] lg:mb-[200px]">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+        className="grid grid-cols-1 lg:grid-cols-2 gap-[70px] items-center z-1 relative"
+      >
         {/* Text content */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center lg:text-left"
-        >
+        <div className="text-center lg:text-left">
           <div className="space-y-[32px] m-b-[163px]">
-            <h1 className="text-[40px] sm:text-[54px]  font-heading font-bold text-foreground leading-tight">
+            <motion.h1
+              variants={itemVariants}
+              className="text-[40px] sm:text-[54px] font-heading font-bold text-foreground leading-tight"
+            >
               Become a
               <span className="gradient-text"> certified investor </span>
               and start earning from real estate
-            </h1>
-            <p className="max-w-md mx-auto lg:mx-0">
+            </motion.h1>
+            <motion.p
+              variants={itemVariants}
+              className="max-w-md mx-auto lg:mx-0"
+            >
               A step-by-step REI Institute program that helps you close your
               first real estate deal within 90 days — with expert guidance,
               community support, and proven strategies.
-            </p>
-            <div className="flex justify-center lg:hidden">
+            </motion.p>
+            <motion.div
+              variants={itemVariants}
+              className="flex justify-center lg:hidden"
+            >
               <div className="flex">
                 <div className="flex items-center -space-x-3">
                   <Image
@@ -75,21 +104,22 @@ export default function HeroSection() {
                 <p className="text-[20px] font-bold text-foreground">16K +</p>
                 <p className="text-[16px] text-foreground">User Active</p>
               </div>
-            </div>
+            </motion.div>
           </div>
-          <div className="flex justify-center lg:justify-start gap-4 mt-[56px]">
+          <motion.div
+            variants={itemVariants}
+            className="flex justify-center lg:justify-start gap-4 mt-[56px]"
+          >
             <Button />
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
 
         {/* Visual preview */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative"
-        >
-          <div className="rounded-[20px] shadow-classic">
+        <div className="relative">
+          <motion.div
+            variants={itemVariants}
+            className="rounded-[20px] shadow-classic"
+          >
             {isLight !== null && (
               <Image
                 src={`/img/hero-dashboard-${isLight ? "light" : "dark"}.svg`}
@@ -99,25 +129,25 @@ export default function HeroSection() {
                 className="rounded-lg w-full h-auto"
               />
             )}
-          </div>
-        </motion.div>
-      </div>
+          </motion.div>
+        </div>
+      </motion.div>
       <MainSlider />
-      <div className="absolute inset-0 w-full h-[100vh] z-0 flex justify-between px-[5%]">
+      <div className="absolute inset-0 w-full h-full z-0 flex justify-between px-[5%]">
         {Array.from({ length: 10 }).map((_, index) => (
-          <div
-            key={index}
-            className="relative w-[2px] h-full overflow-hidden"
-          >
+          <div key={index} className="relative w-[2px] h-full overflow-hidden">
             <div
-              className="absolute w-[1px] h-[100px] bg-primary"
+              className="absolute w-[1px] h-[100px] "
               style={{
+                background:
+                  "linear-gradient(to bottom, rgba(108, 84, 236, 0) 0%, rgba(108, 84, 236, 1) 100%)",
                 animation: `hero-gradient-anim 5s linear ${
                   index * 0.6
                 }s infinite`,
               }}
             />
-            <div className="bg-neutral-gray"
+            <div
+              className="bg-neutral-gray"
               style={{
                 content: '""',
                 position: "absolute",
@@ -130,25 +160,7 @@ export default function HeroSection() {
           </div>
         ))}
       </div>
+      <div className="absolute bottom-0 left-0 w-[120%] h-[10%] bg-gradient-main"></div>
     </main>
   );
-}
-
-import { useEffect, useState } from "react";
-
-function useIsLgUp() {
-  const [isLgUp, setIsLgUp] = useState(false);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(min-width: 1024px)");
-
-    const handler = (e: MediaQueryListEvent) => setIsLgUp(e.matches);
-
-    setIsLgUp(mediaQuery.matches);
-    mediaQuery.addEventListener("change", handler);
-
-    return () => mediaQuery.removeEventListener("change", handler);
-  }, []);
-
-  return isLgUp;
 }

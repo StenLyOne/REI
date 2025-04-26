@@ -1,22 +1,35 @@
-'use client'
+"use client";
 
-import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
+import { img } from "framer-motion/client";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export default function ThemeToggle() {
-  const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => setMounted(true), [])
+  useEffect(() => setMounted(true), []);
 
-  if (!mounted) return null
+  if (!mounted) return null;
 
   return (
     <button
-      onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-      className="p-2 text-sm rounded border bg-white dark:bg-zinc-800 text-black dark:text-white"
+      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      className="text-lg text-[30px] cursor-pointer"
     >
-      Toggle {theme === 'light' ? '🌙' : '☀️'}
+      {theme === "light" ? (
+        <img
+          className="w-[32px] h-[32px]"
+          src="/icons/moon.svg"
+          alt="Moon Icon"
+        />
+      ) : (
+        <img
+          className="w-[32px] h-[32px]"
+          src="/icons/sun.svg"
+          alt="Sun Icon"
+        />
+      )}
     </button>
-  )
+  );
 }

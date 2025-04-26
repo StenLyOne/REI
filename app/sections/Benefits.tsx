@@ -1,5 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
 import GlowIcon from "@/components/GlowIcon";
-import Image from "next/image";
 
 export default function Benefits() {
   const data = [
@@ -41,41 +43,131 @@ export default function Benefits() {
     },
   ];
 
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, scale: 0.95, y: 20 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
+  const containerFadeUp = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemFadeUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
   return (
-    <section className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[200px]">
+    <section className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[200px]">
       <div className="flex flex-col items-center text-center space-y-[48px]">
-        <div>
-          <GlowIcon text="Benefits" img={false} />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={containerFadeUp}
+        >
+          <motion.div variants={itemFadeUp}>
+            <GlowIcon text="Benefits" img={false} />
+          </motion.div>
           <div className="max-w-[780px] text-center space-y-[24px]">
-            <h2>
-              Transform <span className="gradient-text"> Your Real Estate Career </span> with the REI Specialist
-              Certification
-            </h2>
-            <p className="max-w-[500px] mx-auto text-center">
+            <motion.h2 variants={itemFadeUp}>
+              Transform{" "}
+              <span className="gradient-text">Your Real Estate Career</span>{" "}
+              with the REI Specialist Certification
+            </motion.h2>
+
+            <motion.p
+              variants={itemFadeUp}
+              className="max-w-[500px] mx-auto text-center"
+            >
               Gain the skills, systems, and confidence to grow your real estate
               business, secure investor deals, and build long-term income.
-            </p>
+            </motion.p>
           </div>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[24px]">
-          {data.map((item, i) => (
-            <div
+        </motion.div>
+
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[24px]"
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          {data.map((benefit, i) => (
+            <motion.div
+              variants={item}
               key={i}
-              className="p-[20px] space-y-[24px] rounded-[20px] text-left border-1 border-border"
+              className="p-[20px] space-y-[24px] rounded-[20px] text-left border-1 border-border shadow-classic"
               style={{ background: "var(--secondary)" }}
-              
             >
               <div className="w-[78px] h-[78px]">
-                <GlowIcon text={item.gif} img={true} />
+                <GlowIcon text={benefit.gif} img={true} />
               </div>
               <div className="space-y-[12px]">
-                <h4>{item.title}</h4>
-                <p>{item.description}</p>
+                <h4>{benefit.title}</h4>
+                <p>{benefit.description}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
+
+      <motion.div
+        className="absolute overflow-visible top-[40%] right-[-20%] w-[1500px] h-[1000px] z-[-1] bg-gradient-soft-pink pointer-events-none"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: { opacity: 0, scale: 0.5 },
+          visible: {
+            opacity: 0.4,
+            scale: 1,
+            transition: { duration: 2, ease: "easeOut", delay: 1 },
+          },
+        }}
+      ></motion.div>
+
+      {/* <motion.div
+        className="absolute overflow-visible top-[10%] right-[0%] w-[1500px] h-[1000px] z-[-1] bg-gradient-soft-purple pointer-events-none"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: { opacity: 0, scale: 0.5 },
+          visible: {
+            opacity: 1,
+            scale: 1,
+            transition: { duration: 2, ease: "easeOut", delay: 0.3 }, 
+          },
+        }}
+      ></motion.div> */}
     </section>
   );
 }

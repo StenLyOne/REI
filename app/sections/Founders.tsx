@@ -1,5 +1,8 @@
+"use client";
+
 import GlowIcon from "@/components/GlowIcon";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const data = [
   {
@@ -19,21 +22,51 @@ const data = [
 ];
 
 export default function Founders() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
   return (
-    <section className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[200px]">
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      variants={containerVariants}
+      className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[200px]"
+    >
       <GlowIcon text="Founders" img={false} />
       <div className="space-y-[48px]">
         <div className="text-center">
-          <h2>Meet The<span className="gradient-text"> Founders of REI</span> Institute</h2>
-          <p className="pt-[24px] mx-auto">
+          <motion.h2 variants={itemVariants}>
+            Meet The<span className="gradient-text"> Founders of REI</span>{" "}
+            Institute
+          </motion.h2>
+          <motion.p className="pt-[24px] mx-auto" variants={itemVariants}>
             Over 50 Years of Combined Results, Experience and Investment Wisdom
-          </p>
+          </motion.p>
         </div>
         <div className="flex gap-[24px] flex-col sm:flex-row">
           {data.map((item, i) => (
-            <div
+            <motion.div
+              variants={itemVariants}
               key={i}
-              className="space-y-[24px] bg-secondary w-full sm:max-w-[400] rounded-[20px] text-left border-1 border-border"
+              className="space-y-[24px] bg-secondary w-full sm:max-w-[400] rounded-[20px] text-left border-1 border-border shadow-classic"
               style={{ background: "var(--secondary)" }}
             >
               <Image
@@ -50,11 +83,14 @@ export default function Founders() {
                 </div>
                 <p>{item.description}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-      <div className="absolute top-[0px] right-[-50%] z-[-1] hidden sm:block">
+      <motion.div
+        className="absolute top-[0px] right-[-50%] z-[-1] hidden sm:block"
+        variants={itemVariants}
+      >
         <Image
           className="w-[1004px] h-[1004px] spin-slow"
           src="/icons/Ellipse 1.svg"
@@ -76,7 +112,7 @@ export default function Founders() {
           width={500}
           height={500}
         />
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }

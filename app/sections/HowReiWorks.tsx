@@ -1,6 +1,9 @@
+"use client";
+
 import FeatureCard from "@/components/FeatureCard";
 import GlowIcon from "@/components/GlowIcon";
 import ReiLabel from "@/components/ReiLabel";
+import { motion } from "framer-motion";
 
 const data = [
   {
@@ -35,18 +38,66 @@ const data = [
   },
 ];
 export default function HowReiWorks() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.22,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
   return (
-    <section className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[0px]">
-      <GlowIcon text="How Rei Works" img={false} />
-      <div className="mx-auto space-y-[24px] text-center">
-        <h2>What is included in the program</h2>
-        <p>
-          In 12 weeks, you will be fully certified as a Real Estate Investment
-          Specialist.
-        </p>
-      </div>
-      <ReiLabel />
-      <div className="relative w-full h-full">
+    <section className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[0px]">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={containerVariants}
+      >
+        <motion.div variants={itemVariants}>
+          <GlowIcon text="How Rei Works" img={false} />
+        </motion.div>
+
+        <div className="mx-auto space-y-[24px] text-center">
+          <motion.h2 variants={itemVariants}>
+            What is included in the program
+          </motion.h2>
+
+          <motion.p variants={itemVariants}>
+            In 12 weeks, you will be fully certified as a Real Estate Investment
+            Specialist.
+          </motion.p>
+        </div>
+      </motion.div>
+
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={itemVariants}
+      >
+        <ReiLabel />
+      </motion.div>
+
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={itemVariants}
+        className="relative w-full h-full"
+      >
         <div className="absolute top-0 bottom-0 left-1/2 transform -translate-x-1/2 max-w-[400px] w-full h-[600px]">
           {/* Central line */}
           <div className="absolute left-1/2 -translate-x-1/2 top-[-35px] w-full max-w-[380px] h-[514px] max-[600px]:px-[60px] justify-between pointer-events-none z-0 hidden max-[1024px]:flex">
@@ -119,34 +170,95 @@ export default function HowReiWorks() {
             </svg>
           </div>
         </div>
-      </div>
-      <div className="grid grid-cols-2 gap-y-[70px] justify-between pt-[20px] w-full max-w-[700px] mx-auto lg:hidden">
+      </motion.div>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={containerVariants}
+        className="grid grid-cols-2 gap-y-[70px] justify-between pt-[20px] w-full max-w-[700px] mx-auto lg:hidden"
+      >
         {data.map((props, i) => (
-          <FeatureCard key={i} {...props} />
+          <motion.div key={i} variants={itemVariants}>
+            <FeatureCard {...props} />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       <div className="relative w-full max-w-[1200px] mx-auto min-h-[600px] hidden lg:flex">
         {/* Mid */}
-        <div className="absolute w-full left-1/2 top-1/2 -translate-x-[50%] -translate-y-1/2 flex justify-center gap-[106px]">
-          <FeatureCard {...data[2]} />
-
-          <FeatureCard {...data[3]} />
-        </div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={containerVariants}
+          className="absolute w-full left-1/2 top-1/2 -translate-x-[50%] -translate-y-1/2 flex justify-center gap-[106px]"
+        >
+          {[data[2], data[3]].map((props, i) => (
+            <motion.div key={i} variants={itemVariants}>
+              <FeatureCard {...props} />
+            </motion.div>
+          ))}
+        </motion.div>
 
         {/* Top */}
-        <div className="absolute w-full left-1/2 top-1/2 -translate-x-[50%] -translate-y-[130px] flex justify-center gap-[488px] ">
-          <FeatureCard {...data[1]} />
-
-          <FeatureCard {...data[4]} />
-        </div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={containerVariants}
+          className="absolute w-full left-1/2 top-1/2 -translate-x-[50%] -translate-y-[130px] flex justify-center gap-[488px]"
+        >
+          {[data[1], data[4]].map((props, i) => (
+            <motion.div key={i} variants={itemVariants}>
+              <FeatureCard {...props} />
+            </motion.div>
+          ))}
+        </motion.div>
 
         {/* Bot */}
-        <div className="absolute w-full left-1/2 top-1/2 -translate-x-[50%] -translate-y-[230px] flex justify-center gap-[867px]">
-          <FeatureCard {...data[0]} />
-          <FeatureCard {...data[5]} />
-        </div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={containerVariants}
+          className="absolute w-full left-1/2 top-1/2 -translate-x-[50%] -translate-y-[230px] flex justify-center gap-[867px]"
+        >
+          {[data[0], data[5]].map((props, i) => (
+            <motion.div key={i} variants={itemVariants}>
+              <FeatureCard {...props} />
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
+      <motion.div
+        className="absolute overflow-visible top-[0%] left-[-35%] w-[1500px] h-[1000px] z-[-1] bg-gradient-soft-pink pointer-events-none"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: { opacity: 0, scale: 0.5 },
+          visible: {
+            opacity: 0.4,
+            scale: 1,
+            transition: { duration: 2, ease: "easeOut", delay: 1 },
+          },
+        }}
+      ></motion.div>
+      <motion.div
+        className="absolute overflow-visible top-[0%] right-[-35%] w-[1500px] h-[1000px] z-[-1] bg-gradient-soft-purple pointer-events-none"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: { opacity: 0, scale: 0.5 },
+          visible: {
+            opacity: 0.4,
+            scale: 1,
+            transition: { duration: 2, ease: "easeOut", delay: 1.3 },
+          },
+        }}
+      ></motion.div>
     </section>
   );
 }
