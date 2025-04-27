@@ -12,8 +12,8 @@ import Founders from "./sections/Founders";
 import FAQ from "./sections/FAQ";
 import CTA from "./sections/CTA";
 import Footer from "./sections/Footer";
-import Section1 from "./sections/Section1";
-import Section2 from "./sections/Section2";
+import Section1 from "./sections/WhatYouLearn";
+import Section2 from "./sections/StartHere";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 

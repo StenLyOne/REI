@@ -44,6 +44,7 @@ export default function Founders() {
 
   return (
     <motion.section
+      id="Founders"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
@@ -57,8 +58,14 @@ export default function Founders() {
             Meet The<span className="gradient-text"> Founders of REI</span>{" "}
             Institute
           </motion.h2>
-          <motion.p className="pt-[24px] mx-auto" variants={itemVariants}>
-            Over 50 Years of Combined Results, Experience and Investment Wisdom
+          <motion.p
+            className="pt-[24px] max-w-[600px] mx-auto"
+            variants={itemVariants}
+          >
+            Our founders, seasoned real estate investors and educators, built
+            the REI Institute to empower the next generation of certified real
+            estate professionals. With decades of combined experience, they are
+            dedicated to your success.
           </motion.p>
         </div>
         <div className="flex gap-[24px] flex-col sm:flex-row">

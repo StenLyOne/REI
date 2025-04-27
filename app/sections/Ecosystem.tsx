@@ -28,6 +28,7 @@ export default function Ecosystem() {
 
   return (
     <motion.section
+      id="Ecosystem"
       className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[200px]"
       initial="hidden"
       whileInView="visible"
@@ -37,11 +38,12 @@ export default function Ecosystem() {
       <motion.div variants={itemVariants}>
         <GlowIcon text="Ecosystem" img={false} />
       </motion.div>
-      <motion.div className="space-y-[48px]" variants={containerVariants}>
+      <motion.div className="space-y-[48px]" variants={itemVariants}>
         <motion.div className="text-center" variants={itemVariants}>
-          <h2>
-            The <span className="gradient-text"> REI Way </span> vs Traditional
-            Real Estate
+          <h2 className="max-w-[800px] text-center mx-auto">
+            Why Choose the{" "}
+            <span className="gradient-text"> REI Institute </span> Over
+            Traditional Real Estate Paths?
           </h2>
           <p className="pt-[24px] pb-[36px] max-w-[500px] mx-auto">
             See how certified investor-focused agents build smarter businesses,
@@ -51,7 +53,7 @@ export default function Ecosystem() {
             <Button />
           </motion.div>
         </motion.div>
-        <motion.div variants={itemVariants}>
+        <div>
           <div
             className="w-full px-[20px] py-[36px] sm:p-[36px] rounded-[20px] flex shadow-classic text-left border-1 border-border"
             style={{ background: "var(--secondary)" }}
@@ -65,7 +67,10 @@ export default function Ecosystem() {
                   Traditional Realtors
                 </h4>
               </div>
-              <div className="w-full flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200">
+              <motion.div
+                className="w-full flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200"
+                variants={itemVariants}
+              >
                 <div className="w-full">
                   <EcosystemItem
                     rei={true}
@@ -78,8 +83,11 @@ export default function Ecosystem() {
                     text="Chase clients and commissions"
                   />
                 </div>
-              </div>
-              <div className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200">
+              </motion.div>
+              <motion.div
+                className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200"
+                variants={itemVariants}
+              >
                 <div className="w-full">
                   <EcosystemItem
                     rei={true}
@@ -92,8 +100,11 @@ export default function Ecosystem() {
                     text="Serve everyone with no focus"
                   />
                 </div>
-              </div>
-              <div className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200">
+              </motion.div>
+              <motion.div
+                className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200"
+                variants={itemVariants}
+              >
                 <div className="w-full">
                   <EcosystemItem
                     rei={true}
@@ -106,8 +117,11 @@ export default function Ecosystem() {
                     text="Constantly compare to top producers"
                   />
                 </div>
-              </div>
-              <div className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200">
+              </motion.div>
+              <motion.div
+                className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200"
+                variants={itemVariants}
+              >
                 <div className="w-full">
                   <EcosystemItem
                     rei={true}
@@ -120,8 +134,11 @@ export default function Ecosystem() {
                     text="Pretend to understand investments"
                   />
                 </div>
-              </div>
-              <div className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200">
+              </motion.div>
+              <motion.div
+                className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200"
+                variants={itemVariants}
+              >
                 <div className="w-full">
                   <EcosystemItem rei={true} text="Work less, travel more" />
                 </div>
@@ -131,8 +148,11 @@ export default function Ecosystem() {
                     text="Feast or famine income cycles"
                   />
                 </div>
-              </div>
-              <div className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200">
+              </motion.div>
+              <motion.div
+                className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200"
+                variants={itemVariants}
+              >
                 <div className="w-full">
                   <EcosystemItem
                     rei={true}
@@ -145,8 +165,11 @@ export default function Ecosystem() {
                     text="No personal investment portfolio"
                   />
                 </div>
-              </div>
-              <div className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200">
+              </motion.div>
+              <motion.div
+                className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200"
+                variants={itemVariants}
+              >
                 <div className="w-full">
                   <EcosystemItem
                     rei={true}
@@ -159,8 +182,11 @@ export default function Ecosystem() {
                     text="Income stops when deals stop"
                   />
                 </div>
-              </div>
-              <div className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200">
+              </motion.div>
+              <motion.div
+                className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200"
+                variants={itemVariants}
+              >
                 <div className="w-full">
                   <EcosystemItem
                     rei={true}
@@ -173,8 +199,11 @@ export default function Ecosystem() {
                     text="No vision beyond short-term gains"
                   />
                 </div>
-              </div>
-              <div className="flex items-center justify-between gap-[24px]">
+              </motion.div>
+              <motion.div
+                className="flex items-center justify-between gap-[24px]"
+                variants={itemVariants}
+              >
                 <div className="w-full">
                   <EcosystemItem
                     rei={true}
@@ -187,7 +216,7 @@ export default function Ecosystem() {
                     text="No retirement plan or exit strategy"
                   />
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
           <div
@@ -195,86 +224,116 @@ export default function Ecosystem() {
             style={{ background: "var(--secondary)" }}
           >
             <div className="w-full">
-              <div className="w-full flex gap-[24px]">
+              <motion.div
+                className="w-full flex gap-[24px]"
+                variants={itemVariants}
+              >
                 <h4 className="pb-[24px] mb-[12px] font-normal">
                   Traditional Realtors
                 </h4>
-              </div>
-              <div className="w-full flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200">
+              </motion.div>
+              <motion.div
+                className="w-full flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200"
+                variants={itemVariants}
+              >
                 <div className="w-full">
                   <EcosystemItem
                     rei={false}
                     text="Chase clients and commissions"
                   />
                 </div>
-              </div>
-              <div className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200">
+              </motion.div>
+              <motion.div
+                className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200"
+                variants={itemVariants}
+              >
                 <div className="w-full">
                   <EcosystemItem
                     rei={false}
                     text="Serve everyone with no focus"
                   />
                 </div>
-              </div>
-              <div className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200">
+              </motion.div>
+              <motion.div
+                className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200"
+                variants={itemVariants}
+              >
                 <div className="w-full">
                   <EcosystemItem
                     rei={false}
                     text="Constantly compare to top producers"
                   />
                 </div>
-              </div>
-              <div className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200">
+              </motion.div>
+              <motion.div
+                className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200"
+                variants={itemVariants}
+              >
                 <div className="w-full">
                   <EcosystemItem
                     rei={false}
                     text="Pretend to understand investments"
                   />
                 </div>
-              </div>
-              <div className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200">
+              </motion.div>
+              <motion.div
+                className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200"
+                variants={itemVariants}
+              >
                 <div className="w-full">
                   <EcosystemItem
                     rei={false}
                     text="Feast or famine income cycles"
                   />
                 </div>
-              </div>
-              <div className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200">
+              </motion.div>
+              <motion.div
+                className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200"
+                variants={itemVariants}
+              >
                 <div className="w-full">
                   <EcosystemItem
                     rei={false}
                     text="No personal investment portfolio"
                   />
                 </div>
-              </div>
-              <div className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200">
+              </motion.div>
+              <motion.div
+                className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200"
+                variants={itemVariants}
+              >
                 <div className="w-full">
                   <EcosystemItem
                     rei={false}
                     text="Income stops when deals stop"
                   />
                 </div>
-              </div>
-              <div className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200">
+              </motion.div>
+              <motion.div
+                className="flex items-center justify-between gap-[24px] mb-[16px] pb-[18px] border-b-1 border-gray-200"
+                variants={itemVariants}
+              >
                 <div className="w-full">
                   <EcosystemItem
                     rei={false}
                     text="No vision beyond short-term gains"
                   />
                 </div>
-              </div>
-              <div className="flex items-center justify-between gap-[24px]">
+              </motion.div>
+              <motion.div
+                className="flex items-center justify-between gap-[24px]"
+                variants={itemVariants}
+              >
                 <div className="w-full">
                   <EcosystemItem
                     rei={false}
                     text="No retirement plan or exit strategy"
                   />
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </motion.div>
       <motion.div
         className="absolute overflow-visible top-[-10%] right-[15%] w-[1500px] h-[1000px] z-[-1] bg-gradient-soft-purple pointer-events-none"

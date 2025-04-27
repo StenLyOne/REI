@@ -9,32 +9,40 @@ const data = [
   {
     icon: "/icons/calls.svg",
     images: ["/img/calls1.png", "/img/calls2.png", "/img/calls3.png"],
-    title: "Weekly training calls",
+    title: "Fundamentals of Real Estate Investment",
+  },
+  {
+    icon: "/icons/online.svg",
+    images: ["/img/online1.png", "/img/online2.png", "/img/online3.png"],
+    title: "Market Research & Analysis",
+  },
+  {
+    icon: "/icons/coaching.svg",
+    images: ["/img/coaching1.png", "/img/coaching2.png", "/img/coaching3.png"],
+    title: "Financing & Funding Options",
+  },
+  {
+    icon: "/icons/mastermind.svg",
+    images: [
+      "/img/mastermind1.png",
+      "/img/mastermind2.png",
+      "/img/mastermind3.png",
+    ],
+    title: "Property Acquisition Strategies",
   },
   {
     icon: "/icons/calls.svg",
     images: ["/img/calls1.png", "/img/calls2.png", "/img/calls3.png"],
-    title: "Weekly training calls",
+    title: "Managing Rental Properties",
   },
   {
-    icon: "/icons/calls.svg",
-    images: ["/img/calls1.png", "/img/calls2.png", "/img/calls3.png"],
-    title: "Weekly training calls",
-  },
-  {
-    icon: "/icons/calls.svg",
-    images: ["/img/calls1.png", "/img/calls2.png", "/img/calls3.png"],
-    title: "Weekly training calls",
-  },
-  {
-    icon: "/icons/calls.svg",
-    images: ["/img/calls1.png", "/img/calls2.png", "/img/calls3.png"],
-    title: "Weekly training calls",
-  },
-  {
-    icon: "/icons/calls.svg",
-    images: ["/img/calls1.png", "/img/calls2.png", "/img/calls3.png"],
-    title: "Weekly training calls",
+    icon: "/icons/investment.svg",
+    images: [
+      "/img/investment1.png",
+      "/img/investment2.png",
+      "/img/investment3.png",
+    ],
+    title: "Exit Strategies & Profit Maximization",
   },
 ];
 export default function HowReiWorks() {
@@ -59,7 +67,7 @@ export default function HowReiWorks() {
   };
 
   return (
-    <section className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[0px]">
+    <section id="HowReiWorks" className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[0px]">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -70,14 +78,17 @@ export default function HowReiWorks() {
           <GlowIcon text="How Rei Works" img={false} />
         </motion.div>
 
-        <div className="mx-auto space-y-[24px] text-center">
+        <div className="mx-auto space-y-[24px] text-center max-w-[820px]">
           <motion.h2 variants={itemVariants}>
-            What is included in the program
+            What’s Included in the REI Institute{" "}
+            <span className="gradient-text"> Certification Program</span>
           </motion.h2>
 
           <motion.p variants={itemVariants}>
-            In 12 weeks, you will be fully certified as a Real Estate Investment
-            Specialist.
+            Our comprehensive curriculum is designed to equip you with the full
+            range of skills needed to succeed in real estate investing. From
+            foundational concepts to advanced strategies, every module builds
+            towards your success.
           </motion.p>
         </div>
       </motion.div>
@@ -176,7 +187,7 @@ export default function HowReiWorks() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={containerVariants}
-        className="grid grid-cols-2 gap-y-[70px] justify-between pt-[20px] w-full max-w-[700px] mx-auto lg:hidden"
+        className="grid grid-cols-2 gap-y-[50px] justify-between pt-[30px] w-full max-w-[700px] mx-auto lg:hidden"
       >
         {data.map((props, i) => (
           <motion.div key={i} variants={itemVariants}>

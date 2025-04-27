@@ -27,7 +27,7 @@ export default function WhoSItFor() {
   };
 
   return (
-    <section className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[200px]">
+    <section id="WhoSItFor" className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[200px]">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -45,13 +45,14 @@ export default function WhoSItFor() {
 
         <div className="text-center max-w-[810px] mx-auto mb-[48px]">
           <motion.h2 variants={itemVariants}>
-            This Program Fits If{" "}
-            <span className="gradient-text">You’re Ready to Grow</span>
+            Is <span className="gradient-text">This Program Right</span> For
+            You?
           </motion.h2>
 
           <motion.p className="pb-[36px] pt-[24px]" variants={itemVariants}>
-            If you want to earn through real estate but don’t know where to
-            start...
+            If you're ready to build lasting wealth through real estate, our
+            program provides the roadmap, tools, and certification you need to
+            thrive in today's competitive market.
           </motion.p>
 
           <motion.div className="w-max mx-auto" variants={itemVariants}>
@@ -147,10 +148,10 @@ export default function WhoSItFor() {
               </div>
             </div>
             <div className="space-y-[12px]">
-              <h4 className="font-semibold">Agents and Realtors</h4>
+              <h4 className="font-semibold">New to Real Estate Investing</h4>
               <p className="">
-                Already in real estate? Learn to work with investor clients and
-                earn more from every connection.
+                Learn the step-by-step process to start strong and avoid costly
+                mistakes.
               </p>
             </div>
           </motion.div>
@@ -205,10 +206,9 @@ export default function WhoSItFor() {
               </div>
             </div>
             <div className="space-y-[12px]">
-              <h4 className="font-semibold">Agents and Realtors</h4>
+              <h4 className="font-semibold">Aspiring Full-Time Investors</h4>
               <p className="">
-                Already in real estate? Learn to work with investor clients and
-                earn more from every connection.
+                Transition from part-time to full-time real estate success.
               </p>
             </div>
           </motion.div>
@@ -309,10 +309,10 @@ export default function WhoSItFor() {
             </div>
 
             <div className="space-y-[12px]">
-              <h4 className="font-semibold">Agents and Realtors</h4>
+              <h4 className="font-semibold">Looking for Passive Income</h4>
               <p className="">
-                Already in real estate? Learn to work with investor clients and
-                earn more from every connection.
+                Build a steady cash flow with rental properties and smart
+                investments.
               </p>
             </div>
           </motion.div>

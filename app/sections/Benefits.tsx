@@ -85,7 +85,7 @@ export default function Benefits() {
   };
 
   return (
-    <section className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[200px]">
+    <section id="Benefits" className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[200px]">
       <div className="flex flex-col items-center text-center space-y-[48px]">
         <motion.div
           initial="hidden"
@@ -98,17 +98,19 @@ export default function Benefits() {
           </motion.div>
           <div className="max-w-[780px] text-center space-y-[24px]">
             <motion.h2 variants={itemFadeUp}>
-              Transform{" "}
-              <span className="gradient-text">Your Real Estate Career</span>{" "}
-              with the REI Specialist Certification
+              Transform
+              <span className="gradient-text"> Your Real Estate Career </span>
+              With REI Institute Certification
             </motion.h2>
 
             <motion.p
               variants={itemFadeUp}
-              className="max-w-[500px] mx-auto text-center"
+              className="max-w-[800px] mx-auto text-center"
             >
-              Gain the skills, systems, and confidence to grow your real estate
-              business, secure investor deals, and build long-term income.
+              Whether you are starting fresh or scaling your existing real
+              estate career, our program is your ultimate launchpad. Unlock new
+              opportunities, achieve financial independence, and gain a
+              competitive edge.
             </motion.p>
           </div>
         </motion.div>

@@ -1,6 +1,6 @@
 export default function Button() {
   return (
-    <button className="group bg-primary text-white py-[12px] pl-[20px] pr-[12px] rounded-full flex items-center gap-4 font-semibold glow">
+    <button className="group bg-primary text-white py-[12px] pl-[20px] pr-[12px] rounded-full flex items-center gap-4 font-semibold glow cursor-pointer">
       Become an REI Investor
       <span className="relative w-[36px] h-[36px] rounded-full bg-white overflow-hidden flex justify-center items-center shrink-0">
         <img

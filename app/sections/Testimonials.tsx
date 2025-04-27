@@ -91,6 +91,7 @@ export default function Testimonials() {
 
   return (
     <motion.section
+      id="Testimonials"
       className="relative w-full py-12 space-y-[48px] mb-[100px] lg:mb-[200px]"
       initial="hidden"
       whileInView="visible"
@@ -99,7 +100,12 @@ export default function Testimonials() {
     >
       <motion.div className="px-4 sm:px-6 lg:px-12" variants={itemVariants}>
         <GlowIcon text="Testimonials" img={false} />
-        <h2 className="text-center">REIS Certification Success Stories</h2>
+        <h2 className="text-center">What Our Students Say</h2>
+        <p className="mx-auto text-center max-w-[700px] mt-[24px]">
+          Thousands of students have transformed their financial futures through
+          the REI Institute Certification. Here’s what some of them have to say
+          about their journey and success.
+        </p>
       </motion.div>
 
       <motion.div

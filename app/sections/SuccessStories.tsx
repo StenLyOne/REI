@@ -73,7 +73,7 @@ export default function SuccessStories() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2, 
+        staggerChildren: 0.2,
         delayChildren: 0.2,
       },
     },
@@ -89,9 +89,12 @@ export default function SuccessStories() {
   };
 
   return (
-    <section className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[200px]">
+    <section
+      id="SuccessStories"
+      className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[200px]"
+    >
       <motion.div
-        className="mx-auto text-center space-y-6"
+        className="mx-auto text-center"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
@@ -105,13 +108,12 @@ export default function SuccessStories() {
           variants={itemVariants}
           className="text-[36px] font-semibold text-foreground"
         >
-          REIS Certification
-          <span className="gradient-text"> Success Stories</span>
+          REI Institute <span className="gradient-text">Success Stories</span>
         </motion.h2>
 
         {/* Desktop Videos */}
         <motion.div
-          className="hidden sm:grid grid-cols-2 lg:grid-cols-3 gap-6 mt-8"
+          className="hidden sm:grid grid-cols-2 lg:grid-cols-3 gap-6 mt-[48px]"
           variants={containerVariants} // контейнер для карточек
         >
           {videos.map((src, i) => (
@@ -141,7 +143,7 @@ export default function SuccessStories() {
         {/* Mobile Carousel Videos */}
         <motion.div
           ref={scrollRef}
-          className="sm:hidden overflow-x-auto no-scrollbar -mx-4 px-4"
+          className="sm:hidden overflow-x-auto no-scrollbar -mx-4 px-4 mt-[48px]"
           variants={containerVariants} // контейнер для карточек мобилки
         >
           <div className="flex gap-4">

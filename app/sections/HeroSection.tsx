@@ -45,7 +45,7 @@ export default function HeroSection() {
   };
 
   return (
-    <main className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 pt-[160px] mb-[100px] lg:mb-[200px]">
+    <main id="Home" className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 pt-[160px] mb-[100px] lg:mb-[200px]">
       <motion.div
         initial="hidden"
         animate="visible"
@@ -60,20 +60,24 @@ export default function HeroSection() {
               className="text-[40px] sm:text-[54px] font-heading font-bold text-foreground leading-tight"
             >
               Become a
-              <span className="gradient-text"> certified investor </span>
-              and start earning from real estate
+              <span className="gradient-text">
+                {" "}
+                Certified Real Estate Investor{" "}
+              </span>{" "}
+              and Start Earning From Properties
             </motion.h1>
             <motion.p
               variants={itemVariants}
-              className="max-w-md mx-auto lg:mx-0"
+              className="max-w-[600px] mx-auto lg:mx-0"
             >
-              A step-by-step REI Institute program that helps you close your
-              first real estate deal within 90 days — with expert guidance,
-              community support, and proven strategies.
+              Join the REI Institute Certification Program and learn how to
+              invest in real estate confidently. Gain the skills, strategies,
+              and certification you need to grow your wealth through property
+              investments.
             </motion.p>
             <motion.div
               variants={itemVariants}
-              className="flex justify-center lg:hidden"
+              className="flex justify-center lg:hidden gap-[16px]"
             >
               <div className="flex">
                 <div className="flex items-center -space-x-3">
@@ -100,7 +104,7 @@ export default function HeroSection() {
                   />
                 </div>
               </div>
-              <div>
+              <div className="text-left">
                 <p className="text-[20px] font-bold text-foreground">16K +</p>
                 <p className="text-[16px] text-foreground">User Active</p>
               </div>

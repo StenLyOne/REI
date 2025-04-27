@@ -41,28 +41,30 @@ export default function StatsShowcase() {
   };
 
   return (
-    <div z-1>
+    <div className="z-10 relative">
       <motion.div
         className="hidden w-full lg:flex justify-between items-center mt-[86px] z-1 relative"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "100px" }}
         variants={containerVariants}
       >
-        {/* Левая часть: Аватары и инфо */}
+        {/* Left avatars */}
         <motion.div className="flex items-center gap-4" variants={itemVariants}>
           <div className="flex -space-x-3">
-            {["/avatar1.png", "/avatar2.png", "/avatar3.png"].map((src, i) => (
-              <motion.div key={i} variants={itemVariants}>
-                <Image
-                  className="rounded-full border border-white"
-                  src={src}
-                  alt={`avatar-${i}`}
-                  width={50}
-                  height={50}
-                />
-              </motion.div>
-            ))}
+            {["/img/avatar1.png", "/img/avatar2.png", "/img/avatar3.png"].map(
+              (src, i) => (
+                <motion.div key={i} variants={itemVariants}>
+                  <Image
+                    className="rounded-full border border-white"
+                    src={src}
+                    alt={`avatar-${i}`}
+                    width={50}
+                    height={50}
+                  />
+                </motion.div>
+              )
+            )}
           </div>
           <motion.div variants={itemVariants}>
             <p className="text-[20px] font-bold text-foreground">16K+</p>
@@ -70,7 +72,7 @@ export default function StatsShowcase() {
           </motion.div>
         </motion.div>
 
-        {/* Правая часть: карточки */}
+        {/* Right cards */}
         <div className="flex gap-4">
           {items.map((item, i) => (
             <motion.div
@@ -92,7 +94,7 @@ export default function StatsShowcase() {
         viewport={{ once: true, margin: "-100px" }}
         variants={containerVariants}
       >
-        {/* Карусель: обычный div, без motion */}
+        {/* */}
         <div
           className="flex transition-transform duration-700 ease-in-out"
           style={{
@@ -106,7 +108,10 @@ export default function StatsShowcase() {
               className="w-full flex-shrink-0 flex justify-center items-center px-4"
               style={{ width: `${100 / items.length}%` }}
             >
-              <div className="flex items-center gap-3 py-[6px] px-4 bg-secondary text-foreground rounded-[20px] mx-auto max-w-[300px] shadow-classic">
+              <div
+                className="flex items-center gap-3 py-[6px] px-4 z-[10] text-foreground rounded-[20px] mx-auto max-w-[300px] shadow-classic border-1 border-border"
+                style={{ background: "var(--secondary)" }}
+              >
                 <h4 className="text-[24px] text-primary">{item.value}</h4>
                 <p className="whitespace-nowrap">{item.label}</p>
               </div>
@@ -114,7 +119,7 @@ export default function StatsShowcase() {
           ))}
         </div>
 
-        {/* Индикаторы: motion.div */}
+        {/* Indicators */}
         <motion.div
           variants={itemVariants}
           className="flex justify-center gap-2 mt-4"

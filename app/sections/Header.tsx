@@ -69,8 +69,8 @@ export default function Header() {
             { label: "Testimonials", href: "#Testimonials" },
             { label: "Ecosystem", href: "#Ecosystem" },
             { label: "Founders", href: "#Founders" },
-            { label: "Section 1", href: "#Section1" },
-            { label: "Section 2", href: "#Section2" },
+            { label: "What you learn", href: "#WhatYouLearn" },
+            { label: "Start here", href: "#StartHere" },
             { label: "FAQ", href: "#FAQ" },
           ].map((link, index) => (
             <a
