@@ -2,27 +2,15 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import {
+  containerVariants,
+  itemVariants,
+} from "@/components/variantsAnimation";
+import Link from "next/link";
 
 export default function Footer() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: 0.3 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
   return (
-    <footer className="mx-auto max-w-[1380px] px-4 sm:px-6 lg:px-12 ">
+    <footer className="mx-auto max-w-[1380px] px-4 sm:px-6 lg:px-12">
       <motion.div
         className="rounded-t-[20px] px-[20px] py-[48px] sm:p-[48px] text-left shadow-classic border-1 border-border"
         style={{ background: "var(--secondary)" }}
@@ -31,49 +19,96 @@ export default function Footer() {
         viewport={{ once: true, margin: "-100px" }}
         variants={containerVariants}
       >
-        <div className="w-full flex justify-between min-[800px]:flex-row flex-col gap-[48px]">
-          <motion.div className="space-y-[24px]" variants={itemVariants}>
-            <Image src="/logo.png" alt="logo" width={214} height={23} />
-            <div className="flex gap-[24px]">
-              <span className="w-[48px] h-[48px] bg-primary rounded-full"></span>
-              <span className="w-[48px] h-[48px] bg-primary rounded-full"></span>
+        <div className="flex flex-col min-[800px]:flex-row justify-between gap-[48px]">
+          {/* Logo + Social */}
+          <motion.div variants={itemVariants}>
+            <Link href="/" aria-label="Home">
+              <Image
+                src="/logo.png"
+                alt="REI Institute Logo"
+                width={214}
+                height={23}
+              />
+            </Link>
+            <div className="flex gap-[24px] mt-[24px]">
+              {/* Здесь лучше поставить реальные ссылки на соцсети */}
+              <a
+                href="#"
+                aria-label="Social Link 1"
+                className="w-[48px] h-[48px] bg-primary rounded-full"
+              />
+              <a
+                href="#"
+                aria-label="Social Link 2"
+                className="w-[48px] h-[48px] bg-primary rounded-full"
+              />
             </div>
           </motion.div>
-          <motion.div
-            className="flex flex-col space-y-[12px] text-[16px] font-semibold"
-            variants={itemVariants}
-          >
-            <a href="">Home</a>
-            <a href="">How REI Works</a>
-            <a href="">Benefits</a>
-          </motion.div>
-          <motion.div
-            className="flex flex-col space-y-[12px] text-[16px] font-semibold"
-            variants={itemVariants}
-          >
-            <a href="">Success Stories</a>
-            <a href="">Testimonials</a>
-            <a href="">Who’s it for</a>
-          </motion.div>
-          <motion.div
-            className="flex flex-col space-y-[12px] text-[16px] font-semibold"
-            variants={itemVariants}
-          >
-            <a href="">Ecosystem</a>
-            <a href="">Founders</a>
-            <a href="">FAQ</a>
-          </motion.div>
+
+          {/* Navigation Columns */}
+          <nav className="flex gap-[48px] flex-col md:flex-row">
+            <motion.ul
+              className="flex flex-col space-y-[12px] text-[16px] font-semibold"
+              variants={itemVariants}
+            >
+              <li>
+                <a href="#Home">Home</a>
+              </li>
+              <li>
+                <a href="#HowReiWorks">How REI Works</a>
+              </li>
+              <li>
+                <a href="#Benefits">Benefits</a>
+              </li>
+            </motion.ul>
+
+            <motion.ul
+              className="flex flex-col space-y-[12px] text-[16px] font-semibold"
+              variants={itemVariants}
+            >
+              <li>
+                <a href="#SuccessStories">Success Stories</a>
+              </li>
+              <li>
+                <a href="#Testimonials">Testimonials</a>
+              </li>
+              <li>
+                <a href="#WhoSItFor">Who’s it for</a>
+              </li>
+            </motion.ul>
+
+            <motion.ul
+              className="flex flex-col space-y-[12px] text-[16px] font-semibold"
+              variants={itemVariants}
+            >
+              <li>
+                <a href="#Ecosystem">Ecosystem</a>
+              </li>
+              <li>
+                <a href="#Founders">Founders</a>
+              </li>
+              <li>
+                <a href="#FAQ">FAQ</a>
+              </li>
+            </motion.ul>
+          </nav>
         </div>
+
+        {/* Divider */}
         <motion.div
           className="w-full h-[1px] bg-grey my-[30px]"
           variants={itemVariants}
         />
+
+        {/* Bottom text */}
         <motion.div
-          className="sm:flex justify-between space-y-[24px] sm:space-y-[0px]"
+          className="flex flex-col sm:flex-row justify-between text-sm space-y-[24px] sm:space-y-0 text-muted-foreground"
           variants={itemVariants}
         >
-          <p>Copyright © 2025 by Real Estate Investment Institute</p>
-          <p>Privacy Policy</p>
+          <p>© 2025 Real Estate Investment Institute. All rights reserved.</p>
+          <a href="/privacy-policy" className="hover:underline">
+            Privacy Policy
+          </a>
         </motion.div>
       </motion.div>
     </footer>

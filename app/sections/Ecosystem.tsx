@@ -4,55 +4,46 @@ import Button from "@/components/Button";
 import EcosystemItem from "@/components/EcosystemItem";
 import GlowIcon from "@/components/GlowIcon";
 import { motion } from "framer-motion";
+import {
+  containerVariants,
+  itemVariants,
+} from "@/components/variantsAnimation";
 
 export default function Ecosystem() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
   return (
     <motion.section
       id="Ecosystem"
-      className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[200px]"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
       variants={containerVariants}
+      aria-label="Ecosystem comparison between REI Certified and Traditional Realtors"
+      className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[200px]"
     >
       <motion.div variants={itemVariants}>
         <GlowIcon text="Ecosystem" img={false} />
       </motion.div>
       <motion.div className="space-y-[48px]" variants={itemVariants}>
-        <motion.div className="text-center" variants={itemVariants}>
-          <h2 className="max-w-[800px] text-center mx-auto">
-            Why Choose the{" "}
-            <span className="gradient-text"> REI Institute </span> Over
-            Traditional Real Estate Paths?
-          </h2>
-          <p className="pt-[24px] pb-[36px] max-w-[500px] mx-auto">
+        <div className="text-center">
+          <motion.h2
+            className="max-w-[800px] text-center mx-auto"
+            variants={itemVariants}
+          >
+            Why REI Institute Certified Realtors
+            <span className="gradient-text"> Build Wealth Faster </span> Than
+            Traditional Agents
+          </motion.h2>
+          <motion.p
+            className="pt-[24px] pb-[36px] max-w-[500px] mx-auto"
+            variants={itemVariants}
+          >
             See how certified investor-focused agents build smarter businesses,
             create real wealth, and escape the commission grind.
-          </p>
+          </motion.p>
           <motion.div className="mx-auto w-max" variants={itemVariants}>
             <Button />
           </motion.div>
-        </motion.div>
+        </div>
         <div>
           <div
             className="w-full px-[20px] py-[36px] sm:p-[36px] rounded-[20px] flex shadow-classic text-left border-1 border-border"

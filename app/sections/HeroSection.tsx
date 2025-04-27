@@ -5,6 +5,10 @@ import MainSlider from "@/components/MainSlider";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import {
+  containerVariants,
+  itemVariants,
+} from "@/components/variantsAnimation";
 
 export default function HeroSection() {
   const [isLight, setLight] = useState<boolean | null>(null);
@@ -24,28 +28,11 @@ export default function HeroSection() {
     return () => observer.disconnect();
   }, []);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.22,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
   return (
-    <main id="Home" className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 pt-[160px] mb-[100px] lg:mb-[200px]">
+    <main
+      id="Home"
+      className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 pt-[160px] mb-[100px] lg:mb-[200px]"
+    >
       <motion.div
         initial="hidden"
         animate="visible"
@@ -54,7 +41,7 @@ export default function HeroSection() {
       >
         {/* Text content */}
         <div className="text-center lg:text-left">
-          <div className="space-y-[32px] m-b-[163px]">
+          <div className="space-y-[32px]">
             <motion.h1
               variants={itemVariants}
               className="text-[40px] sm:text-[54px] font-heading font-bold text-foreground leading-tight"
@@ -87,13 +74,15 @@ export default function HeroSection() {
                     alt="avatar1"
                     width={50}
                     height={50}
+                    loading="lazy"
                   />
                   <Image
-                    className="rounded-full border border-white border-[1px] -tranform-[-20%]"
+                    className="rounded-full border border-white border-[1px]"
                     src="/img/avatar2.png"
                     alt="avatar2"
                     width={50}
                     height={50}
+                    loading="lazy"
                   />
                   <Image
                     className="rounded-full border border-white border-[1px]"
@@ -101,6 +90,7 @@ export default function HeroSection() {
                     alt="avatar3"
                     width={50}
                     height={50}
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -131,6 +121,7 @@ export default function HeroSection() {
                 width={600}
                 height={400}
                 className="rounded-lg w-full h-auto"
+                priority
               />
             )}
           </motion.div>

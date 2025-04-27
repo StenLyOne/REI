@@ -3,25 +3,12 @@
 import GlowIcon from "@/components/GlowIcon";
 import Question from "@/components/Question";
 import { motion } from "framer-motion";
+import {
+  containerVariants,
+  itemVariants,
+} from "@/components/variantsAnimation";
 
 export default function FAQ() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: 0.3 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
   return (
     <motion.section
       id="FAQ"
@@ -30,6 +17,7 @@ export default function FAQ() {
       viewport={{ once: true, margin: "-100px" }}
       variants={containerVariants}
       className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[200px]"
+      aria-label="Frequently Asked Questions"
     >
       <motion.div className="md:w-[66px]" variants={itemVariants}>
         <GlowIcon text="FAQ" img={false} />
@@ -42,7 +30,7 @@ export default function FAQ() {
           <motion.div variants={itemVariants}>
             <Question
               q="What is a certified real estate investor?"
-              a="A certified real estate investor is a professional who has completed specialized training and demonstrated expertise in property investment strategies, market analysis, and portfolio building. Certification increases credibility and opens up more investment opportunities.r"
+              a="A certified real estate investor is a professional who has completed specialized training and demonstrated expertise in property investment strategies, market analysis, and portfolio building. Certification increases credibility and opens up more investment opportunities."
             />
           </motion.div>
           <motion.div variants={itemVariants}>

@@ -2,6 +2,10 @@
 
 import { motion } from "framer-motion";
 import GlowIcon from "@/components/GlowIcon";
+import {
+  containerVariants,
+  itemVariants,
+} from "@/components/variantsAnimation";
 
 export default function Benefits() {
   const data = [
@@ -43,68 +47,29 @@ export default function Benefits() {
     },
   ];
 
-  const container = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, scale: 0.95, y: 20 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: "easeOut" },
-    },
-  };
-
-  const containerFadeUp = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemFadeUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
   return (
-    <section id="Benefits" className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[200px]">
+    <motion.section
+      id="Benefits"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      variants={containerVariants}
+      className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[200px]"
+    >
       <div className="flex flex-col items-center text-center space-y-[48px]">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={containerFadeUp}
-        >
-          <motion.div variants={itemFadeUp}>
+        <div>
+          <motion.div variants={itemVariants}>
             <GlowIcon text="Benefits" img={false} />
           </motion.div>
           <div className="max-w-[780px] text-center space-y-[24px]">
-            <motion.h2 variants={itemFadeUp}>
+            <motion.h2 variants={itemVariants}>
               Transform
               <span className="gradient-text"> Your Real Estate Career </span>
               With REI Institute Certification
             </motion.h2>
 
             <motion.p
-              variants={itemFadeUp}
+              variants={itemVariants}
               className="max-w-[800px] mx-auto text-center"
             >
               Whether you are starting fresh or scaling your existing real
@@ -113,18 +78,12 @@ export default function Benefits() {
               competitive edge.
             </motion.p>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[24px]"
-          variants={container}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[24px]">
           {data.map((benefit, i) => (
-            <motion.div
-              variants={item}
+            <motion.article
+              variants={itemVariants}
               key={i}
               className="p-[20px] space-y-[24px] rounded-[20px] text-left border-1 border-border shadow-classic"
               style={{ background: "var(--secondary)" }}
@@ -136,9 +95,9 @@ export default function Benefits() {
                 <h4>{benefit.title}</h4>
                 <p>{benefit.description}</p>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
-        </motion.div>
+        </div>
       </div>
 
       <motion.div
@@ -155,21 +114,6 @@ export default function Benefits() {
           },
         }}
       ></motion.div>
-
-      {/* <motion.div
-        className="absolute overflow-visible top-[10%] right-[0%] w-[1500px] h-[1000px] z-[-1] bg-gradient-soft-purple pointer-events-none"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={{
-          hidden: { opacity: 0, scale: 0.5 },
-          visible: {
-            opacity: 1,
-            scale: 1,
-            transition: { duration: 2, ease: "easeOut", delay: 0.3 }, 
-          },
-        }}
-      ></motion.div> */}
-    </section>
+    </motion.section>
   );
 }

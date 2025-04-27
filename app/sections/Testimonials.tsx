@@ -2,25 +2,116 @@
 
 import GlowIcon from "@/components/GlowIcon";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import {
+  containerVariants,
+  itemVariants,
+} from "@/components/variantsAnimation";
 
 const screenshots = [
-  "/screenshots/screenshot",
-  "/screenshots/screenshot",
-  "/screenshots/screenshot",
-  "/screenshots/screenshot",
-  "/screenshots/screenshot",
-  "/screenshots/screenshot",
-  "/screenshots/screenshot",
-  "/screenshots/screenshot",
-  "/screenshots/screenshot",
-  "/screenshots/screenshot",
+  {
+    src: "/screenshots/screenshot",
+    description:
+      "Sopmeone shares his real estate success story with REI Institute",
+  },
+  {
+    src: "/screenshots/screenshot",
+    description:
+      "Sopmeone shares his real estate success story with REI Institute",
+  },
+  {
+    src: "/screenshots/screenshot",
+    description:
+      "Sopmeone shares his real estate success story with REI Institute",
+  },
+  {
+    src: "/screenshots/screenshot",
+    description:
+      "Sopmeone shares his real estate success story with REI Institute",
+  },
+  {
+    src: "/screenshots/screenshot",
+    description:
+      "Sopmeone shares his real estate success story with REI Institute",
+  },
+  {
+    src: "/screenshots/screenshot",
+    description:
+      "Sopmeone shares his real estate success story with REI Institute",
+  },
+  {
+    src: "/screenshots/screenshot",
+    description:
+      "Sopmeone shares his real estate success story with REI Institute",
+  },
+  {
+    src: "/screenshots/screenshot",
+    description:
+      "Sopmeone shares his real estate success story with REI Institute",
+  },
+  {
+    src: "/screenshots/screenshot",
+    description:
+      "Sopmeone shares his real estate success story with REI Institute",
+  },
+  {
+    src: "/screenshots/screenshot",
+    description:
+      "Sopmeone shares his real estate success story with REI Institute",
+  },
+  {
+    src: "/screenshots/screenshot",
+    description:
+      "Sopmeone shares his real estate success story with REI Institute",
+  },
+  {
+    src: "/screenshots/screenshot",
+    description:
+      "Sopmeone shares his real estate success story with REI Institute",
+  },
+  {
+    src: "/screenshots/screenshot",
+    description:
+      "Sopmeone shares his real estate success story with REI Institute",
+  },
+  {
+    src: "/screenshots/screenshot",
+    description:
+      "Sopmeone shares his real estate success story with REI Institute",
+  },
+  {
+    src: "/screenshots/screenshot",
+    description:
+      "Sopmeone shares his real estate success story with REI Institute",
+  },
+  {
+    src: "/screenshots/screenshot",
+    description:
+      "Sopmeone shares his real estate success story with REI Institute",
+  },
 ];
 
 export default function Testimonials() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const isUserScrolling = useRef(false);
+  const scrollTimeout = useRef<NodeJS.Timeout | null>(null);
+  const [isLight, setLight] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    const updateTheme = () => {
+      setLight(document.documentElement.classList.contains("light"));
+    };
+
+    const observer = new MutationObserver(updateTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    updateTheme();
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const container = scrollRef.current;
@@ -32,10 +123,10 @@ export default function Testimonials() {
 
     const handleScroll = () => {
       isUserScrolling.current = true;
-      clearTimeout((handleScroll as any).timeout);
-      (handleScroll as any).timeout = setTimeout(() => {
+      if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+      scrollTimeout.current = setTimeout(() => {
         isUserScrolling.current = false;
-      }, 10);
+      }, 5);
     };
 
     container.addEventListener("scroll", handleScroll);
@@ -72,44 +163,34 @@ export default function Testimonials() {
     };
   }, []);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: 0.3 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
   return (
     <motion.section
       id="Testimonials"
-      className="relative w-full py-12 space-y-[48px] mb-[100px] lg:mb-[200px]"
+      className="relative w-full mb-[100px] lg:mb-[200px]"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
       variants={containerVariants}
     >
-      <motion.div className="px-4 sm:px-6 lg:px-12" variants={itemVariants}>
+      <motion.div className="px-4 sm:px-6 lg:px-12 mb-[48px]" variants={itemVariants}>
         <GlowIcon text="Testimonials" img={false} />
-        <h2 className="text-center">What Our Students Say</h2>
-        <p className="mx-auto text-center max-w-[700px] mt-[24px]">
+        <h2 className="text-center max-w-[670px] mx-auto">
+          Student Testimonials from Our{" "}
+          <span className="gradient-text">
+            {" "}
+            Real Estate Certification Program
+          </span>
+        </h2>
+        <p className="mx-auto text-center max-w-[800px] mt-[24px]">
           Thousands of students have transformed their financial futures through
-          the REI Institute Certification. Here’s what some of them have to say
-          about their journey and success.
+          the REI Institute Real Estate Certification. Hear directly from those
+          who built wealth, closed more deals, and gained true financial
+          freedom.
         </p>
       </motion.div>
 
       <motion.div
-        className="no-scrollbar relative overflow-visible"
+        className="no-scrollbar relative overflow-visible "
         variants={itemVariants}
       >
         <div
@@ -119,14 +200,19 @@ export default function Testimonials() {
           onMouseLeave={() => (isUserScrolling.current = false)}
         >
           {screenshots.map((item, i) => (
-            <Image
+            <div
               key={i}
-              className="no-scrollbar w-[60%] h-auto md:w-[200px] md:h-[414px] lg:w-[300px] lg:h-[621px] flex-shrink-0"
-              src={`${item}.png`}
-              alt={`screenshot-${i}`}
-              width={392}
-              height={312}
-            />
+              className="w-[200px] h-auto md:w-[200px] lg:w-[300px] lg:h-[621px] flex-shrink-0"
+            >
+              <Image
+                className="no-scrollbar w-full h-auto  object-cover "
+                src={`${item.src}-${isLight ? "light" : "dark"}.png`}
+                alt={`Testimonial from REI Institute student ${i + 1}`}
+                width={392}
+                height={312}
+              />
+              <div className="sr-only">{item.description}</div>
+            </div>
           ))}
         </div>
       </motion.div>

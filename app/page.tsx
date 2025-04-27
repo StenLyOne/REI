@@ -1,21 +1,8 @@
 "use client";
 
-import HeroSection from "@/sections/HeroSection";
-import Header from "./sections/Header";
-import HowReiWorks from "./sections/HowReiWorks";
-import Benefits from "./sections/Benefits";
-import SuccessStories from "./sections/SuccessStories";
-import Testimonials from "./sections/Testimonials";
-import WhoSItFor from "./sections/WhoSItFor";
-import Ecosystem from "./sections/Ecosystem";
-import Founders from "./sections/Founders";
-import FAQ from "./sections/FAQ";
-import CTA from "./sections/CTA";
-import Footer from "./sections/Footer";
-import Section1 from "./sections/WhatYouLearn";
-import Section2 from "./sections/StartHere";
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import HomeContent from "./components/HomeContent";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -24,7 +11,7 @@ export default function Home() {
     const handleLoad = () => {
       setTimeout(() => {
         setIsLoading(false);
-      }, 500); // Небольшая задержка для более естественного исчезновения
+      }, 50);
     };
 
     if (document.readyState === "complete") {
@@ -38,37 +25,18 @@ export default function Home() {
 
   return (
     <>
-      <AnimatePresence>
-        {isLoading && (
-          <motion.div
-            className="flex items-center justify-center w-screen h-screen bg-black text-white text-2xl"
-            initial={{ opacity: 1 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <LoadingDots />
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {!isLoading && (
-        <div className="overflow-hidden">
-          <Header />
-          <HeroSection />
-          <HowReiWorks />
-          <Benefits />
-          <SuccessStories />
-          <WhoSItFor />
-          <Testimonials />
-          <Ecosystem />
-          <Founders />
-          <Section1 />
-          <Section2 />
-          <FAQ />
-          <CTA />
-          <Footer />
-        </div>
+      {isLoading ? (
+        <motion.div
+          className="flex items-center justify-center w-screen h-screen bg-black text-white text-2xl fixed top-0 left-0 z-[9999]"
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <LoadingDots />
+        </motion.div>
+      ) : (
+        <HomeContent />
       )}
     </>
   );

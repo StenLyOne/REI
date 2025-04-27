@@ -4,20 +4,50 @@ import { useEffect, useRef, useState } from "react";
 import GlowIcon from "@/components/GlowIcon";
 import VideoModal from "@/components/VideoModal";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import {
+  containerVariants,
+  itemVariants,
+} from "@/components/variantsAnimation";
 
 const videos = [
-  "/videos/Stefan.mp4",
-  "/videos/Stefan.mp4",
-  "/videos/Stefan.mp4",
-  "/videos/Stefan.mp4",
-  "/videos/Stefan.mp4",
-  "/videos/Stefan.mp4",
+  {
+    src: "/videos/forest.mp4",
+    description:
+      "Sopmeone shares his real estate success story with REI Institute",
+  },
+  {
+    src: "/videos/forest.mp4",
+    description:
+      "Sopmeone shares his real estate success story with REI Institute",
+  },
+  {
+    src: "/videos/forest.mp4",
+    description:
+      "Sopmeone shares his real estate success story with REI Institute",
+  },
+  {
+    src: "/videos/forest.mp4",
+    description:
+      "Sopmeone shares his real estate success story with REI Institute",
+  },
+  {
+    src: "/videos/forest.mp4",
+    description:
+      "Sopmeone shares his real estate success story with REI Institute",
+  },
+  {
+    src: "/videos/forest.mp4",
+    description:
+      "Sopmeone shares his real estate success story with REI Institute",
+  },
 ];
 
 export default function SuccessStories() {
   const [openVideo, setOpenVideo] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const isUserScrolling = useRef(false);
+  const scrollTimeout = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const container = scrollRef.current;
@@ -29,8 +59,8 @@ export default function SuccessStories() {
 
     const handleScroll = () => {
       isUserScrolling.current = true;
-      clearTimeout((handleScroll as any).timeout);
-      (handleScroll as any).timeout = setTimeout(() => {
+      if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+      scrollTimeout.current = setTimeout(() => {
         isUserScrolling.current = false;
       }, 5);
     };
@@ -68,26 +98,6 @@ export default function SuccessStories() {
     };
   }, []);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
   return (
     <section
       id="SuccessStories"
@@ -108,7 +118,7 @@ export default function SuccessStories() {
           variants={itemVariants}
           className="text-[36px] font-semibold text-foreground"
         >
-          REI Institute <span className="gradient-text">Success Stories</span>
+          REI Institute <span className="gradient-text"> Success Stories</span>
         </motion.h2>
 
         {/* Desktop Videos */}
@@ -116,15 +126,15 @@ export default function SuccessStories() {
           className="hidden sm:grid grid-cols-2 lg:grid-cols-3 gap-6 mt-[48px]"
           variants={containerVariants} // контейнер для карточек
         >
-          {videos.map((src, i) => (
+          {videos.map((video, i) => (
             <motion.div
               key={i}
               variants={itemVariants} // каждый элемент анимируется отдельно
               className="relative rounded-[20px] overflow-hidden shadow-lg group cursor-pointer"
-              onClick={() => setOpenVideo(src)}
+              onClick={() => setOpenVideo(video.src)}
             >
               <video
-                src={src}
+                src={video.src}
                 className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
                 muted
                 loop
@@ -133,9 +143,15 @@ export default function SuccessStories() {
               />
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <div className="w-12 h-12 bg-primary rounded-full text-white text-xl flex items-center justify-center shadow-xl">
-                  ▶
+                  <Image
+                    src="/icons/play.svg"
+                    alt="Plat"
+                    width={48}
+                    height={48}
+                  />
                 </div>
               </div>
+              <div className="sr-only">{video.description}</div>
             </motion.div>
           ))}
         </motion.div>
@@ -147,15 +163,15 @@ export default function SuccessStories() {
           variants={containerVariants} // контейнер для карточек мобилки
         >
           <div className="flex gap-4">
-            {videos.map((src, i) => (
+            {videos.map((video, i) => (
               <motion.div
                 key={i}
                 variants={itemVariants}
                 className="min-w-full w-full relative rounded-[20px] overflow-hidden shadow-lg group cursor-pointer"
-                onClick={() => setOpenVideo(src)}
+                onClick={() => setOpenVideo(video.src)}
               >
                 <video
-                  src={src}
+                  src={video.src}
                   className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
                   muted
                   loop

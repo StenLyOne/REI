@@ -5,6 +5,10 @@ import Button from "../components/Button";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import {
+  containerVariants,
+  itemVariants,
+} from "@/components/variantsAnimation";
 
 const features = [
   "Hands-On Assignments",
@@ -30,23 +34,6 @@ export default function Section1() {
 
     return () => observer.disconnect();
   }, []);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: 0.3 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
 
   return (
     <section
@@ -83,7 +70,7 @@ export default function Section1() {
               Through practical assignments, real-world case studies, and
               interactive mentorship, our certification program ensures you’re
               ready to make confident investment decisions from day one. You
-              won't just learn theory — you'll be prepared to execute deals,
+              won&apos;t just learn theory — you&apos;ll be prepared to execute deals,
               build your portfolio, and grow sustainable income streams.
             </motion.p>
           </div>

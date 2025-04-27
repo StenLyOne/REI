@@ -3,6 +3,10 @@
 import GlowIcon from "@/components/GlowIcon";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import {
+  containerVariants,
+  itemVariants,
+} from "@/components/variantsAnimation";
 
 const data = [
   {
@@ -10,38 +14,18 @@ const data = [
     job: "Co-Founder of REI Institute",
     img: "/img/man.jpg",
     description:
-      "Lorem ipsum cursus egestas libero sed pulvinar purus nullam phasellus in a aliquet enim id odio ultrices viverra aliquam adipiscing velit justo aliquam vel non euismod pulvinar nisl neque sed et mi accumsan sodales ut ",
+      "David Gorski is a seasoned real estate investor with decades of experience in building successful portfolios and mentoring future leaders in the industry.",
   },
   {
-    name: "David Gorski",
+    name: "Sarah Johnson",
     job: "Co-Founder of REI Institute",
-    img: "/img/man.jpg",
+    img: "/img/woman.jpg",
     description:
-      "Lorem ipsum cursus egestas libero sed pulvinar purus nullam phasellus in a aliquet enim id odio ultrices viverra aliquam adipiscing velit justo aliquam vel non euismod pulvinar nisl neque sed et mi accumsan sodales ut ",
+      "Sarah Johnson specializes in real estate finance and education, helping aspiring investors turn knowledge into tangible wealth.",
   },
 ];
 
 export default function Founders() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
   return (
     <motion.section
       id="Founders"
@@ -69,28 +53,28 @@ export default function Founders() {
           </motion.p>
         </div>
         <div className="flex gap-[24px] flex-col sm:flex-row">
-          {data.map((item, i) => (
-            <motion.div
+          {data.map((founder, i) => (
+            <motion.article
               variants={itemVariants}
               key={i}
               className="space-y-[24px] bg-secondary w-full sm:max-w-[400] rounded-[20px] text-left border-1 border-border shadow-classic"
               style={{ background: "var(--secondary)" }}
             >
               <Image
-                src={item.img}
-                alt={item.name}
-                width={650}
-                height={650}
-                className="rounded-[20px] w-full"
+                src={founder.img}
+                alt={`${founder.name} - ${founder.job}`}
+                width={400}
+                height={400}
+                className="rounded-[20px] w-full h-auto object-cover"
               />
               <div className="space-y-[20px] pb-[36px] px-[20px] md:px-[24px]">
                 <div className="space-y-[3px]">
-                  <h4>{item.name}</h4>
-                  <p>{item.job}</p>
+                  <h4>{founder.name}</h4>
+                  <p>{founder.job}</p>
                 </div>
-                <p>{item.description}</p>
+                <p>{founder.description}</p>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>

@@ -2,7 +2,10 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { m, motion } from "framer-motion";
+import { motion } from "framer-motion";import {
+  containerVariants,
+  itemVariants,
+} from "@/components/variantsAnimation";
 
 const items = [
   { value: "12+", label: "Years Experience" },
@@ -19,26 +22,6 @@ export default function StatsShowcase() {
     }, 3000);
     return () => clearInterval(interval);
   }, []);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
 
   return (
     <div className="z-10 relative">

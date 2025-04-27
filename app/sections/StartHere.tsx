@@ -6,11 +6,15 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import {
+  containerVariants,
+  itemVariants,
+} from "@/components/variantsAnimation";
 
 const stats = [
   { value: 100, label: "Real Estate Knowledge" },
   { value: 100, label: "Deal Closing Skills" },
-  { value: 100, label: "Portfolio Growth Strategi" },
+  { value: 100, label: "Portfolio Growth Strategy" },
 ];
 
 export default function Section2() {
@@ -19,7 +23,7 @@ export default function Section2() {
   const [counts, setCounts] = useState([0, 0, 0]);
 
   useEffect(() => {
-    const duration = 1000; // 1s
+    const duration = 1000;
     const interval = 30;
     const steps = duration / interval;
 
@@ -37,7 +41,7 @@ export default function Section2() {
           });
         }, interval);
       });
-    }, 1000); // Задержка старта на 1 секунду
+    }, duration);
 
     return () => {
       clearTimeout(timeout);
@@ -60,23 +64,6 @@ export default function Section2() {
     return () => observer.disconnect();
   }, []);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: 0.3 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
   return (
     <section
       id="StartHere"
@@ -96,7 +83,7 @@ export default function Section2() {
           >
             <Image
               src="/img/section2.png"
-              alt="section"
+              alt="Real Estate Investment Certification Course"
               width={900}
               height={638}
               className="rounded-r-[20px] w-full h-full object-cover"
@@ -118,13 +105,14 @@ export default function Section2() {
           </motion.div>
           <div className="space-y-[24px]">
             <motion.h2 variants={itemVariants}>
-              Start Your Journey Toward{" "}
-              <span className="gradient-text"> Financial Freedom Today</span>
+              Start Your{" "}
+              <span className="gradient-text">Real Estate Investment</span>{" "}
+              Journey Today
             </motion.h2>
             <motion.div className="w-full lg:hidden" variants={itemVariants}>
               <Image
                 src="/img/section2.png"
-                alt="section"
+                alt="Real Estate Investment Certification Course"
                 width={900}
                 height={638}
                 className="rounded-[20px] w-full"
@@ -176,6 +164,10 @@ export default function Section2() {
         }}
         className="absolute overflow-visible top-[-50%] right-[10%] w-[1500px] h-[1000px] z-[-1] bg-gradient-soft-purple pointer-events-none"
       ></motion.div>
+      <p className="sr-only">
+        Enroll in the REI Institute certification program to master real estate
+        investment, deal closing, and portfolio growth strategies.
+      </p>
     </section>
   );
 }

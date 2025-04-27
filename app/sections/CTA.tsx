@@ -3,31 +3,19 @@
 import Button from "@/components/Button";
 import GlowIcon from "@/components/GlowIcon";
 import { motion } from "framer-motion";
+import {
+  containerVariants,
+  itemVariants,
+} from "@/components/variantsAnimation";
 
 export default function CTA() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: 0.3 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
   return (
     <motion.section
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
       variants={containerVariants}
+      aria-label="Call to Action Section"
       className="mx-auto max-w-[1380px] px-4 sm:px-6 lg:px-12 mb-[100px] sm:mb-[200px] "
     >
       <motion.div className="px-[20px] py-[48px] sm:p-[48px] bg-[url('/img/ctaBg.jpg')] bg-cover bg-center rounded-[20px] shadow-classic">

@@ -7,7 +7,9 @@ export default function GlowIcon({
 }) {
   return (
     <div
-      className={`relative rounded-[20px] ${img ? "w-[78px] h-[78px]" : "h-[44px] mb-[12px]"}`}
+      className={`relative rounded-[20px] ${
+        img ? "w-[78px] h-[78px]" : "h-[44px] mb-[12px]"
+      }`}
     >
       <div className="icon-anim-inner py-[6px] px-[6px]">
         {/* animated gradient border */}
@@ -29,7 +31,7 @@ export default function GlowIcon({
           <img
             className={`${img ? "" : "hidden"}`}
             src={text}
-            alt="icon"
+            alt={text}
             width={50}
             height={50}
           />

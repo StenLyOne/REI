@@ -4,30 +4,17 @@ import Button from "@/components/Button";
 import GlowIcon from "@/components/GlowIcon";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import {
+  containerVariants,
+  itemVariants,
+} from "@/components/variantsAnimation";
 
 export default function WhoSItFor() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.22,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
   return (
-    <section id="WhoSItFor" className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[200px]">
+    <section
+      id="WhoSItFor"
+      className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[200px]"
+    >
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -43,16 +30,19 @@ export default function WhoSItFor() {
           <GlowIcon text="Who’s it for" img={false} />
         </motion.div>
 
-        <div className="text-center max-w-[810px] mx-auto mb-[48px]">
+        <div className="text-center max-w-[680px] mx-auto mb-[48px]">
           <motion.h2 variants={itemVariants}>
-            Is <span className="gradient-text">This Program Right</span> For
-            You?
+            This Program Right Who Should{" "}
+            <span className="gradient-text">
+              Join the REI Certification Program
+            </span>{" "}
+            ?
           </motion.h2>
 
           <motion.p className="pb-[36px] pt-[24px]" variants={itemVariants}>
-            If you're ready to build lasting wealth through real estate, our
-            program provides the roadmap, tools, and certification you need to
-            thrive in today's competitive market.
+            If you&apos;re ready to build lasting wealth through real estate,
+            our program provides the roadmap, tools, and certification you need
+            to thrive in today&apos;s competitive market.
           </motion.p>
 
           <motion.div className="w-max mx-auto" variants={itemVariants}>
@@ -60,16 +50,16 @@ export default function WhoSItFor() {
           </motion.div>
         </div>
         <motion.div
-          className="grid md:grid-cols-3 gap-[24px]"
+          className="grid lg:grid-cols-3 gap-[24px]"
           variants={containerVariants}
         >
           {/* Card 1 */}
           <motion.div
             variants={itemVariants}
-            className="rounded-[20px] px-[24px] py-[36px] space-y-[24px] shadow-classic text-left border-1 border-border"
+            className="max-w-[430px] rounded-[20px] px-[24px] py-[36px] space-y-[24px] shadow-classic text-left border-1 border-border mx-auto"
             style={{ background: "var(--secondary)" }}
           >
-            <div className="relative">
+            <div className="relative max-w-[362px]">
               <div className="w-full h-[313px] flex ">
                 <div className="absolute insert-0 w-full h-full">
                   <span></span>
@@ -159,10 +149,10 @@ export default function WhoSItFor() {
           {/* Card 2 */}
           <motion.div
             variants={itemVariants}
-            className="rounded-[20px] px-[24px] py-[36px] space-y-[24px] shadow-classic text-left border-1 border-border"
+            className="max-w-[430px] rounded-[20px] px-[24px] py-[36px] space-y-[24px] shadow-classic text-left border-1 border-border mx-auto"
             style={{ background: "var(--secondary)" }}
           >
-            <div className=" rounded-[20px] h-[313px] flex flex-col justify-between">
+            <div className="max-w-[362px] rounded-[20px] h-[313px] flex flex-col justify-between">
               <div
                 className="w-full flex flex-col items-center p-[12px] rounded-[20px] space-y-[6px] shadow-classic border-1 border-border-two"
                 style={{ background: "var(--secondary)" }}
@@ -170,7 +160,7 @@ export default function WhoSItFor() {
                 <span className="text-[20px] font-bold flex gap-[10px]">
                   <Image
                     src="/icons/arrowGrow.svg"
-                    alt="arrowGrow"
+                    alt="Arrow indicating growth in investment"
                     width={24}
                     height={24}
                   />
@@ -185,7 +175,7 @@ export default function WhoSItFor() {
                 <span className="text-[20px] font-bold flex gap-[10px]">
                   <Image
                     src="/icons/arrowGrow.svg"
-                    alt="arrowGrow"
+                    alt="Arrow indicating growth in investment"
                     width={24}
                     height={24}
                   />
@@ -215,11 +205,11 @@ export default function WhoSItFor() {
           {/* Card 3 */}
           <motion.div
             variants={itemVariants}
-            className="rounded-[20px] px-[24px] py-[36px] space-y-[24px] shadow-classic text-left border-1 border-border"
+            className="max-w-[430px] rounded-[20px] px-[24px] py-[36px] space-y-[24px] shadow-classic text-left border-1 border-border mx-auto"
             style={{ background: "var(--secondary)" }}
           >
             <div
-              className="rounded-[20px] shadow-classic text-left border-1 border-border"
+              className="max-w-[362px] rounded-[20px] shadow-classic text-left border-1 border-border "
               style={{ background: "var(--secondary)" }}
             >
               <div className="p-[10px] flex flex-start gap-[6px] border-b-1 border-gray-200">
