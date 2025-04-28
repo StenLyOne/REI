@@ -104,6 +104,11 @@ export default function Founders() {
           height={500}
         />
       </motion.div>
+      <p className="sr-only">
+        Meet the founders of REI Institute, experienced real estate investors
+        and educators committed to empowering the next generation of real estate
+        professionals.
+      </p>
     </motion.section>
   );
 }

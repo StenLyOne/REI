@@ -194,6 +194,11 @@ export default function SuccessStories() {
         src={openVideo ?? ""}
         onClose={() => setOpenVideo(null)}
       />
+      <p className="sr-only">
+        Watch success stories from certified real estate investors who completed
+        the REI Institute program and achieved financial growth through property
+        investing.
+      </p>
     </section>
   );
 }

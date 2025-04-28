@@ -172,7 +172,10 @@ export default function Testimonials() {
       viewport={{ once: true, margin: "-100px" }}
       variants={containerVariants}
     >
-      <motion.div className="px-4 sm:px-6 lg:px-12 mb-[48px]" variants={itemVariants}>
+      <motion.div
+        className="px-4 sm:px-6 lg:px-12 mb-[48px]"
+        variants={itemVariants}
+      >
         <GlowIcon text="Testimonials" img={false} />
         <h2 className="text-center max-w-[670px] mx-auto">
           Student Testimonials from Our{" "}
@@ -231,6 +234,11 @@ export default function Testimonials() {
           },
         }}
       ></motion.div>
+      <p className="sr-only">
+        Read direct testimonials from students of the REI Institute
+        Certification Program sharing their real experiences and investment
+        success stories.
+      </p>
     </motion.section>
   );
 }

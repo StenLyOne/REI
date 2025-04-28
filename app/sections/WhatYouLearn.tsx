@@ -70,8 +70,8 @@ export default function Section1() {
               Through practical assignments, real-world case studies, and
               interactive mentorship, our certification program ensures you’re
               ready to make confident investment decisions from day one. You
-              won&apos;t just learn theory — you&apos;ll be prepared to execute deals,
-              build your portfolio, and grow sustainable income streams.
+              won&apos;t just learn theory — you&apos;ll be prepared to execute
+              deals, build your portfolio, and grow sustainable income streams.
             </motion.p>
           </div>
           {/* List */}
@@ -138,6 +138,11 @@ export default function Section1() {
         }}
         className="absolute overflow-visible top-[-50%] right-[10%] w-[1500px] h-[1000px] z-[-1] bg-gradient-soft-pink pointer-events-none"
       ></motion.div>
+      <p className="sr-only">
+        Understand the practical skills and real-world knowledge you will gain
+        from the REI Institute Certification Program, including deal execution
+        and portfolio growth.
+      </p>
     </section>
   );
 }

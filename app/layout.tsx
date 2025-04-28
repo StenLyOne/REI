@@ -69,6 +69,8 @@ export default function RootLayout({
           href="/favicon-16x16.png"
         />
         <meta name="theme-color" content="#ffffff" />
+
+        {/* Question json */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

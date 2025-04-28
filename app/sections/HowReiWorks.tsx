@@ -252,6 +252,11 @@ export default function HowReiWorks() {
           },
         }}
       ></motion.div>
+      <p className="sr-only">
+        Explore the complete curriculum offered by REI Institute, including real
+        estate fundamentals, market research, property acquisition, and rental
+        management skills.
+      </p>
     </motion.section>
   );
 }

@@ -156,6 +156,11 @@ export default function HeroSection() {
         ))}
       </div>
       <div className="absolute bottom-0 left-0 w-[120%] h-[10%] bg-gradient-main"></div>
+      <p className="sr-only">
+        Enroll in the REI Institute Certification Program to become a certified
+        real estate investor and start earning income through property
+        investments.
+      </p>
     </main>
   );
 }

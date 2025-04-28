@@ -354,6 +354,11 @@ export default function Ecosystem() {
           },
         }}
       />
+      <p className="sr-only">
+        Compare the advantages of being an REI Institute Certified Realtor
+        versus traditional agents, focusing on wealth building, investment
+        knowledge, and client success.
+      </p>
     </motion.section>
   );
 }

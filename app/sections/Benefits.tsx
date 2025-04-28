@@ -114,6 +114,11 @@ export default function Benefits() {
           },
         }}
       ></motion.div>
+      <p className="sr-only">
+        Discover the benefits of the REI Institute Certification Program,
+        including faster deal closures, client acquisition, database growth, and
+        wealth building strategies.
+      </p>
     </motion.section>
   );
 }
