@@ -2,6 +2,7 @@
 
 import Button from "@/components/Button";
 import MainSlider from "@/components/MainSlider";
+import VideoModal from "@/components/VideoModal";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -12,6 +13,7 @@ import {
 
 export default function HeroSection() {
   const [isLight, setLight] = useState<boolean | null>(null);
+  const [openVideo, setOpenVideo] = useState<string | null>(null);
 
   useEffect(() => {
     const updateTheme = () => {
@@ -109,7 +111,7 @@ export default function HeroSection() {
         </div>
 
         {/* Visual preview */}
-        <div className="relative">
+        <div className="relative cursor-pointer" onClick={() => setOpenVideo("/videos/forest.mp4")}>
           <motion.div
             variants={itemVariants}
             className="rounded-[20px] shadow-classic"
@@ -120,7 +122,7 @@ export default function HeroSection() {
                 alt="Dashboard preview"
                 width={600}
                 height={400}
-                className="rounded-lg w-full h-auto"
+                className="rounded-lg w-full h-auto hover:scale-[105%] transition-all duration-600"
                 priority
               />
             )}
@@ -156,6 +158,11 @@ export default function HeroSection() {
         ))}
       </div>
       <div className="absolute bottom-0 left-0 w-[120%] h-[10%] bg-gradient-main"></div>
+      <VideoModal
+        isOpen={!!openVideo}
+        src={openVideo ?? ""}
+        onClose={() => setOpenVideo(null)}
+      />
       <p className="sr-only">
         Enroll in the REI Institute Certification Program to become a certified
         real estate investor and start earning income through property
