@@ -11,46 +11,45 @@ import {
 
 const data = [
   {
-    icon: "/icons/calls.svg",
-    iconAlt: "Real Estate Calls Icon",
-    images: ["/img/calls1.png", "/img/calls2.png", "/img/calls3.png"],
+    icon: "/icons/Fundamentals.svg",
+    images: [
+      "/img/Fundamentals1.png",
+      "/img/Fundamentals2.png",
+      "/img/Fundamentals3.png",
+    ],
     title: "Fundamentals of Real Estate Investment",
   },
   {
-    icon: "/icons/online.svg",
-    iconAlt: "Real Estate online Icon",
-    images: ["/img/online1.png", "/img/online2.png", "/img/online3.png"],
+    icon: "/icons/Market.svg",
+    images: ["/img/Market1.png", "/img/Market2.png", "/img/Market3.png"],
     title: "Market Research & Analysis",
   },
   {
-    icon: "/icons/coaching.svg",
-    images: ["/img/coaching1.png", "/img/coaching2.png", "/img/coaching3.png"],
+    icon: "/icons/Financing.svg",
+    images: [
+      "/img/Financing1.png",
+      "/img/Financing2.png",
+      "/img/Financing3.png",
+    ],
     title: "Financing & Funding Options",
   },
   {
-    icon: "/icons/mastermind.svg",
-    images: [
-      "/img/mastermind1.png",
-      "/img/mastermind2.png",
-      "/img/mastermind3.png",
-    ],
+    icon: "/icons/Property.svg",
+    images: ["/img/Property1.png", "/img/Property2.png", "/img/Property3.png"],
     title: "Property Acquisition Strategies",
   },
   {
-    icon: "/icons/calls.svg",
-    images: ["/img/calls1.png", "/img/calls2.png", "/img/calls3.png"],
+    icon: "/icons/Managing.svg",
+    images: ["/img/Managing1.png", "/img/Managing2.png", "/img/Managing3.png"],
     title: "Managing Rental Properties",
   },
   {
-    icon: "/icons/investment.svg",
-    images: [
-      "/img/investment1.png",
-      "/img/investment2.png",
-      "/img/investment3.png",
-    ],
+    icon: "/icons/Exit.svg",
+    images: ["/img/Exit1.png", "/img/Exit2.png", "/img/Exit3.png"],
     title: "Exit Strategies & Profit Maximization",
   },
 ];
+
 export default function HowReiWorks() {
   const pathVariants = {
     hidden: { pathLength: 0, opacity: 0 },
