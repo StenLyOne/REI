@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function GlowIcon({
   text,
   img,
@@ -28,13 +30,7 @@ export default function GlowIcon({
           >
             {text}
           </p>
-          <img
-            className={`${img ? "" : "hidden"}`}
-            src={text}
-            alt={text}
-            width={50}
-            height={50}
-          />
+          {img && <Image src={text} alt={text} width={50} height={50} />}
         </div>
       </div>
     </div>

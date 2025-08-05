@@ -9,37 +9,37 @@ import {
 export default function Benefits() {
   const data = [
     {
-      gif: "/icons/profit.gif",
+      gif: "/icons/profit.webp",
       title: "Investor Ecosystem",
       description:
         "Learn to build your own Investor EFFECT Ecosystem to become the go-to real estate investment specialist and 4X your business in 12 months.",
     },
     {
-      gif: "/icons/handshake.gif",
+      gif: "/icons/handshake.webp",
       title: "Fast Closures",
       description:
         "Secure two investment properties under contract within 30 days of completing the REIS Certification.",
     },
     {
-      gif: "/icons/Database.gif",
+      gif: "/icons/Database.webp",
       title: "Database Growth",
       description:
         "Increase your qualified investor database by 10%-20% within 30 days of completing your REIS Certification.",
     },
     {
-      gif: "/icons/engagement.gif",
+      gif: "/icons/allocation.webp",
       title: "Client Acquisition",
       description:
         "Quickly find clients in a saturated market with proven strategies.",
     },
     {
-      gif: "/icons/choosing-customer.gif",
+      gif: "/icons/choosing.webp",
       title: "Lead by Example",
       description:
         "Invest in real estate yourself and become a role model for clients, family, and colleagues.",
     },
     {
-      gif: "/icons/growth.gif",
+      gif: "/icons/growth.webp",
       title: "Wealth Building",
       description:
         "Build wealth passively while reducing the stress of chasing new clients.",

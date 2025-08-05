@@ -97,21 +97,15 @@ export default function HeroSection() {
               <Button />
             </m.div>
           </div>
-
+         
           {/* Visual preview */}
           <div
             className="relative cursor-pointer"
-            onClick={() =>
-              setOpenVideo(
-                "https://www.youtube.com/embed/s7OLmH7DKSg?si=HTTxBFX7lqq_TABd"
-              )
-            }
+            onClick={() => setOpenVideo("https://www.youtube.com/embed/s7OLmH7DKSg?si=HTTxBFX7lqq_TABd")}
           >
             <m.div
               variants={itemVariants}
               className="rounded-[20px] shadow-classic"
-              style={{ willChange: "transform" }}
-              initial={false}
             >
               {isLight !== null && (
                 <Image
@@ -119,10 +113,8 @@ export default function HeroSection() {
                   alt="Dashboard preview"
                   width={600}
                   height={400}
-                  sizes="(max-width: 768px) 100vw, 600px"
-                  priority
-                  quality={70} // если используешь next/image
                   className="rounded-lg w-full h-auto hover:scale-[105%] transition-all duration-600"
+                  priority
                 />
               )}
             </m.div>
