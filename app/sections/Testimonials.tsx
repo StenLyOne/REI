@@ -2,12 +2,14 @@
 
 import GlowIcon from "@/components/GlowIcon";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import * as m from "motion/react-m";
+import { LazyMotion, domAnimation } from "motion/react";
 import {
   containerVariants,
   itemVariants,
 } from "@/components/variantsAnimation";
+import useIsLight from "@/hooks/useIsLight";
 
 const screenshots = [
   {
@@ -96,22 +98,7 @@ export default function Testimonials() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const isUserScrolling = useRef(false);
   const scrollTimeout = useRef<NodeJS.Timeout | null>(null);
-  const [isLight, setLight] = useState<boolean | null>(null);
-
-  useEffect(() => {
-    const updateTheme = () => {
-      setLight(document.documentElement.classList.contains("light"));
-    };
-
-    const observer = new MutationObserver(updateTheme);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["class"],
-    });
-
-    updateTheme();
-    return () => observer.disconnect();
-  }, []);
+  const isLight = useIsLight();
 
   useEffect(() => {
     const container = scrollRef.current;
@@ -164,81 +151,85 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <motion.section
-      id="Testimonials"
-      className="relative w-full mb-[100px] lg:mb-[200px]"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
-      variants={containerVariants}
-    >
-      <motion.div
-        className="px-4 sm:px-6 lg:px-12 mb-[48px]"
-        variants={itemVariants}
-      >
-        <GlowIcon text="Testimonials" img={false} />
-        <h2 className="text-center max-w-[670px] mx-auto">
-          Student Testimonials from Our{" "}
-          <span className="gradient-text">
-            {" "}
-            Real Estate Certification Program
-          </span>
-        </h2>
-        <p className="mx-auto text-center max-w-[800px] mt-[24px]">
-          Thousands of students have transformed their financial futures through
-          the REI Institute Real Estate Certification. Hear directly from those
-          who built wealth, closed more deals, and gained true financial
-          freedom.
-        </p>
-      </motion.div>
-
-      <motion.div
-        className="no-scrollbar relative overflow-visible "
-        variants={itemVariants}
-      >
-        <div
-          ref={scrollRef}
-          className="flex gap-[24px] no-scrollbar overflow-x-auto"
-          onMouseEnter={() => (isUserScrolling.current = true)}
-          onMouseLeave={() => (isUserScrolling.current = false)}
+    <section>
+      <LazyMotion features={domAnimation} strict>
+        <m.div
+          id="Testimonials"
+          className="relative w-full mb-[100px] lg:mb-[200px]"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={containerVariants}
         >
-          {screenshots.map((item, i) => (
-            <div
-              key={i}
-              className="w-[200px] h-auto md:w-[200px] lg:w-[300px] lg:h-[621px] flex-shrink-0"
-            >
-              <Image
-                className="no-scrollbar w-full h-auto  object-cover "
-                src={`${item.src}-${isLight ? "light" : "dark"}.png`}
-                alt={`Testimonial from REI Institute student ${i + 1}`}
-                width={392}
-                height={312}
-              />
-              <div className="sr-only">{item.description}</div>
-            </div>
-          ))}
-        </div>
-      </motion.div>
+          <m.div
+            className="px-4 sm:px-6 lg:px-12 mb-[48px]"
+            variants={itemVariants}
+          >
+            <GlowIcon text="Testimonials" img={false} />
+            <h2 className="text-center max-w-[670px] mx-auto">
+              Student Testimonials from Our{" "}
+              <span className="gradient-text">
+                {" "}
+                Real Estate Certification Program
+              </span>
+            </h2>
+            <p className="mx-auto text-center max-w-[800px] mt-[24px]">
+              Thousands of students have transformed their financial futures
+              through the REI Institute Real Estate Certification. Hear directly
+              from those who built wealth, closed more deals, and gained true
+              financial freedom.
+            </p>
+          </m.div>
 
-      <motion.div
-        className="absolute overflow-visible top-[0%] left-[-40%] w-[1500px] h-[1000px] z-[-1] bg-gradient-soft-pink pointer-events-none"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={{
-          hidden: { opacity: 0, scale: 0.5 },
-          visible: {
-            opacity: 0.4,
-            scale: 1,
-            transition: { duration: 2, ease: "easeOut", delay: 1 },
-          },
-        }}
-      ></motion.div>
-      <p className="sr-only">
-        Read direct testimonials from students of the REI Institute
-        Certification Program sharing their real experiences and investment
-        success stories.
-      </p>
-    </motion.section>
+          <m.div
+            className="no-scrollbar relative overflow-visible "
+            variants={itemVariants}
+          >
+            <div
+              ref={scrollRef}
+              className="flex gap-[24px] no-scrollbar overflow-x-auto"
+              onMouseEnter={() => (isUserScrolling.current = true)}
+              onMouseLeave={() => (isUserScrolling.current = false)}
+            >
+              {screenshots.map((item, i) => (
+                <div
+                  key={i}
+                  className="w-[200px] h-auto md:w-[200px] lg:w-[300px] lg:h-[621px] flex-shrink-0"
+                >
+                  <Image
+                    className="no-scrollbar w-full h-auto  object-cover "
+                    src={`${item.src}-${isLight ? "light" : "dark"}.png`}
+                    alt={`Testimonial from REI Institute student ${i + 1}`}
+                    width={392}
+                    height={312}
+                  />
+                  <div className="sr-only">{item.description}</div>
+                </div>
+              ))}
+            </div>
+          </m.div>
+
+          <m.div
+            className="absolute overflow-visible top-[0%] left-[-40%] w-[1500px] h-[1000px] z-[-1] bg-gradient-soft-pink pointer-events-none"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: { opacity: 0, scale: 0.5 },
+              visible: {
+                opacity: 0.4,
+                scale: 1,
+                transition: { duration: 2, ease: "easeOut", delay: 1 },
+              },
+            }}
+          ></m.div>
+          <p className="sr-only">
+            Read direct testimonials from students of the REI Institute
+            Certification Program sharing their real experiences and investment
+            success stories.
+          </p>
+        </m.div>
+      </LazyMotion>
+    </section>
   );
 }
