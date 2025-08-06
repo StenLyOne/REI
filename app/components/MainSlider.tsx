@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";import {
+import { motion } from "framer-motion";
+import {
   containerVariants,
   itemVariants,
 } from "@/components/variantsAnimation";
@@ -44,6 +45,8 @@ export default function StatsShowcase() {
                     alt={`avatar-${i}`}
                     width={50}
                     height={50}
+                    priority={false}
+                    loading="lazy"
                   />
                 </motion.div>
               )
