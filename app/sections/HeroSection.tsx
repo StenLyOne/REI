@@ -60,7 +60,7 @@ export default function HeroSection() {
                   <div className="flex items-center -space-x-3">
                     <Image
                       className="rounded-full border border-white border-[1px]"
-                      src="/img/avatar1.png"
+                      src="/img-optimized/avatar1.webp"
                       alt="avatar1"
                       width={50}
                       height={50}
@@ -68,7 +68,7 @@ export default function HeroSection() {
                     />
                     <Image
                       className="rounded-full border border-white border-[1px]"
-                      src="/img/avatar2.png"
+                      src="/img-optimized/avatar2.webp"
                       alt="avatar2"
                       width={50}
                       height={50}
@@ -76,7 +76,7 @@ export default function HeroSection() {
                     />
                     <Image
                       className="rounded-full border border-white border-[1px]"
-                      src="/img/avatar3.png"
+                      src="/img-optimized/avatar3.webp"
                       alt="avatar3"
                       width={50}
                       height={50}
@@ -109,7 +109,7 @@ export default function HeroSection() {
             >
               {isLight !== null && (
                 <Image
-                  src={`/img/hero-dashboard-${isLight ? "light" : "dark"}.png`}
+                  src={`/img-optimized/hero-dashboard-${isLight ? "light" : "dark"}.webp`}
                   alt="Dashboard preview"
                   width={600}
                   height={400}

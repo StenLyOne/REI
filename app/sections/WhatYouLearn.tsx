@@ -45,7 +45,7 @@ export default function Section1() {
               </m.h2>
               <m.div variants={itemVariants} className="w-full lg:hidden">
                 <Image
-                  src="/img/section1.png"
+                  src="/img-optimized/section1.webp"
                   alt="section"
                   width={900}
                   height={638}
@@ -97,7 +97,7 @@ export default function Section1() {
           <div className="w-max absolute translate-x-[65%] hidden lg:block">
             <div className="relative w-[900px] h-[638px] rounded-l-[20px] overflow-hidden">
               <Image
-                src="/img/section1.png"
+                src="/img-optimized/section1.webp"
                 alt="section"
                 width={900}
                 height={638}

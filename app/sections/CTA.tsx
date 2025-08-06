@@ -19,7 +19,7 @@ export default function CTA() {
           aria-label="Call to Action Section"
           className="mx-auto max-w-[1380px] px-4 sm:px-6 lg:px-12 mb-[100px] sm:mb-[200px] "
         >
-          <m.div className="px-[20px] py-[48px] sm:p-[48px] bg-[url('/img/ctaBg.jpg')] bg-cover bg-center rounded-[20px] shadow-classic">
+          <m.div className="px-[20px] py-[48px] sm:p-[48px] bg-[url('/img-optimized/ctaBg.webp')] bg-cover bg-center rounded-[20px] shadow-classic">
             <div className="max-w-[680px]">
               <m.div className="w-[191px]" variants={itemVariants}>
                 <GlowIcon text="Ready to get started?" img={false} />

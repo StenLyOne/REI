@@ -11,14 +11,14 @@ const data = [
   {
     name: "David Gorski",
     job: "Co-Founder of REI Institute",
-    img: "/img/man.jpg",
+    img: "/img-optimized/man.webp",
     description:
       "David Gorski is a seasoned real estate investor with decades of experience in building successful portfolios and mentoring future leaders in the industry.",
   },
   {
     name: "Sarah Johnson",
     job: "Co-Founder of REI Institute",
-    img: "/img/woman.jpg",
+    img: "/img-optimized/woman.webp",
     description:
       "Sarah Johnson specializes in real estate finance and education, helping aspiring investors turn knowledge into tangible wealth.",
   },

@@ -75,7 +75,7 @@ export default function Section2() {
               className="relative w-[900px] h-[638px] rounded-r-[20px] overflow-hidden"
             >
               <Image
-                src="/img/section2.png"
+                src="/img-optimized/section2.webp"
                 alt="Real Estate Investment Certification Course"
                 width={900}
                 height={638}
@@ -102,7 +102,7 @@ export default function Section2() {
               </m.h2>
               <m.div className="w-full lg:hidden" variants={itemVariants}>
                 <Image
-                  src="/img/section2.png"
+                  src="/img-optimized/section2.webp"
                   alt="Real Estate Investment Certification Course"
                   width={900}
                   height={638}

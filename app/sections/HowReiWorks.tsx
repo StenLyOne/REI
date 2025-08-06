@@ -9,39 +9,39 @@ const data = [
   {
     icon: "/icons/Fundamentals.svg",
     images: [
-      "/img/Fundamentals1.png",
-      "/img/Fundamentals2.png",
-      "/img/Fundamentals3.png",
+      "/img-optimized/Fundamentals1.webp",
+      "/img-optimized/Fundamentals2.webp",
+      "/img/Fundamentals3.webp",
     ],
     title: "Fundamentals of Real Estate Investment",
   },
   {
     icon: "/icons/Market.svg",
-    images: ["/img/Market1.png", "/img/Market2.png", "/img/Market3.png"],
+    images: ["/img-optimized/Market1.webp", "/img-optimized/Market2.webp", "/img-optimized/Market3.webp"],
     title: "Market Research & Analysis",
   },
   {
     icon: "/icons/Financing.svg",
     images: [
-      "/img/Financing1.png",
-      "/img/Financing2.png",
-      "/img/Financing3.png",
+      "/img-optimized/Financing1.webp",
+      "/img-optimized/Financing2.webp",
+      "/img-optimized/Financing3.webp",
     ],
     title: "Financing & Funding Options",
   },
   {
     icon: "/icons/Property.svg",
-    images: ["/img/Property1.png", "/img/Property2.png", "/img/Property3.png"],
+    images: ["/img-optimized/Property1.webp", "/img-optimized/Property2.webp", "/img-optimized/Property3.webp"],
     title: "Property Acquisition Strategies",
   },
   {
     icon: "/icons/Managing.svg",
-    images: ["/img/Managing1.png", "/img/Managing2.png", "/img/Managing3.png"],
+    images: ["/img-optimized/Managing1.webp", "/img-optimized/Managing2.webp", "/img-optimized/Managing3.webp"],
     title: "Managing Rental Properties",
   },
   {
     icon: "/icons/Exit.svg",
-    images: ["/img/Exit1.png", "/img/Exit2.png", "/img/Exit3.png"],
+    images: ["/img-optimized/Exit1.webp", "/img-optimized/Exit2.webp", "/img-optimized/Exit3.webp"],
     title: "Exit Strategies & Profit Maximization",
   },
 ];

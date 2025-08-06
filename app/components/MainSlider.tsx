@@ -36,7 +36,7 @@ export default function StatsShowcase() {
         {/* Left avatars */}
         <motion.div className="flex items-center gap-4" variants={itemVariants}>
           <div className="flex -space-x-3">
-            {["/img/avatar1.png", "/img/avatar2.png", "/img/avatar3.png"].map(
+            {["/img-optimized/avatar1.webp", "/img-optimized/avatar2.webp", "/img-optimized/avatar3.webp"].map(
               (src, i) => (
                 <motion.div key={i} variants={itemVariants}>
                   <Image
