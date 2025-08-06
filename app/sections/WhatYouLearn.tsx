@@ -50,6 +50,7 @@ export default function Section1() {
                   width={900}
                   height={638}
                   className="rounded-[20px] w-full"
+                  loading="lazy"
                 />
               </m.div>
               <m.p variants={itemVariants}>
@@ -101,6 +102,7 @@ export default function Section1() {
                 alt="section"
                 width={900}
                 height={638}
+                loading="lazy"
                 className="rounded-l-[20px] w-full h-full object-cover"
               />
               <div

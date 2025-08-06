@@ -11,7 +11,7 @@ const data = [
     images: [
       "/img-optimized/Fundamentals1.webp",
       "/img-optimized/Fundamentals2.webp",
-      "/img/Fundamentals3.webp",
+      "/img-optimized/Fundamentals3.webp",
     ],
     title: "Fundamentals of Real Estate Investment",
   },

@@ -24,21 +24,20 @@ export default function Home() {
   }, []);
 
   return (
-    <>
-      {isLoading ? (
+    <div className="relative">
+      <HomeContent />
+      {isLoading && (
         <motion.div
-          className="flex items-center justify-center w-screen h-screen bg-black text-white text-2xl fixed top-0 left-0 z-[9999]"
+          className="absolute inset-0 flex items-center justify-center bg-black text-white z-50 pointer-events-none"
           initial={{ opacity: 1 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          animate={{ opacity: 0 }}
           transition={{ duration: 0.8 }}
+          onAnimationComplete={() => setIsLoading(false)}
         >
           <LoadingDots />
         </motion.div>
-      ) : (
-        <HomeContent />
       )}
-    </>
+    </div>
   );
 }
 

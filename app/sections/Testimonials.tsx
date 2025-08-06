@@ -202,6 +202,7 @@ export default function Testimonials() {
                     alt={`Testimonial from REI Institute student ${i + 1}`}
                     width={392}
                     height={312}
+                    loading="lazy"
                   />
                   <div className="sr-only">{item.description}</div>
                 </div>

@@ -67,6 +67,7 @@ export default function Founders() {
                     width={400}
                     height={400}
                     className="rounded-[20px] w-full h-auto object-cover"
+                    loading="lazy"
                   />
                   <div className="space-y-[20px] pb-[36px] px-[20px] md:px-[24px]">
                     <div className="space-y-[3px]">
@@ -89,6 +90,7 @@ export default function Founders() {
               alt="elipse"
               width={1004}
               height={1004}
+              loading="lazy"
             />
             <Image
               className="w-[744px] h-[744px] absolute top-[13%] right-[12%] spin-reverse-slow"
@@ -96,6 +98,7 @@ export default function Founders() {
               alt="elipse"
               width={744}
               height={744}
+              loading="lazy"
             />
             <Image
               className="w-[500px] h-[500px] absolute top-[25%] right-[22%] spin-slow"
@@ -103,6 +106,7 @@ export default function Founders() {
               alt="elipse"
               width={500}
               height={500}
+              loading="lazy"
             />
           </m.div>
           <p className="sr-only">

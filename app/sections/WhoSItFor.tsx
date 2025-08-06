@@ -340,7 +340,7 @@ export default function WhoSItFor() {
         ></m.div>
         <p className="sr-only">
           Learn who should enroll in the REI Institute Certification Program,
-          whether you're new to real estate investing, transitioning to
+          whether you&apos;re new to real estate investing, transitioning to
           full-time, or seeking passive income.
         </p>
       </LazyMotion>

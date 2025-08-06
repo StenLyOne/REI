@@ -80,6 +80,7 @@ export default function Section2() {
                 width={900}
                 height={638}
                 className="rounded-r-[20px] w-full h-full object-cover"
+                loading="lazy"
               />
               <div
                 className="absolute top-0 left-0 h-full w-[30%] pointer-events-none z-10"
@@ -107,6 +108,7 @@ export default function Section2() {
                   width={900}
                   height={638}
                   className="rounded-[20px] w-full"
+                  loading="lazy"
                 />
               </m.div>
               <m.p variants={itemVariants}>

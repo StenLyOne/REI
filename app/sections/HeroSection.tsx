@@ -59,7 +59,7 @@ export default function HeroSection() {
                 <div className="flex">
                   <div className="flex items-center -space-x-3">
                     <Image
-                      className="rounded-full border border-white border-[1px]"
+                      className="rounded-full border-white border-[1px]"
                       src="/img-optimized/avatar1.webp"
                       alt="avatar1"
                       width={50}
@@ -67,7 +67,7 @@ export default function HeroSection() {
                       loading="lazy"
                     />
                     <Image
-                      className="rounded-full border border-white border-[1px]"
+                      className="rounded-full  border-white border-[1px]"
                       src="/img-optimized/avatar2.webp"
                       alt="avatar2"
                       width={50}
@@ -75,7 +75,7 @@ export default function HeroSection() {
                       loading="lazy"
                     />
                     <Image
-                      className="rounded-full border border-white border-[1px]"
+                      className="rounded-full border-white border-[1px]"
                       src="/img-optimized/avatar3.webp"
                       alt="avatar3"
                       width={50}
@@ -97,25 +97,45 @@ export default function HeroSection() {
               <Button />
             </m.div>
           </div>
-         
+
           {/* Visual preview */}
           <div
             className="relative cursor-pointer"
-            onClick={() => setOpenVideo("https://www.youtube.com/embed/s7OLmH7DKSg?si=HTTxBFX7lqq_TABd")}
+            onClick={() =>
+              setOpenVideo(
+                "https://www.youtube.com/embed/s7OLmH7DKSg?si=HTTxBFX7lqq_TABd"
+              )
+            }
           >
             <m.div
               variants={itemVariants}
               className="rounded-[20px] shadow-classic"
             >
               {isLight !== null && (
-                <Image
-                  src={`/img-optimized/hero-dashboard-${isLight ? "light" : "dark"}.webp`}
-                  alt="Dashboard preview"
-                  width={600}
-                  height={400}
-                  className="rounded-lg w-full h-auto hover:scale-[105%] transition-all duration-600"
-                  priority
-                />
+                <>
+                  <Image
+                    src={`/img-optimized/hero-dashboard-${
+                      isLight ? "light" : "dark"
+                    }.webp`}
+                    alt="Dashboard preview"
+                    width={600}
+                    height={400}
+                    className="hidden md:block rounded-lg w-full h-auto hover:scale-[105%] transition-all duration-600"
+                    priority
+                    sizes="(min-width: 768px) 600px, 0px"
+                  />
+                  <Image
+                    src={`/img-optimized/hero-dashboard-mob-${
+                      isLight ? "light" : "dark"
+                    }.webp`}
+                    alt="Dashboard preview"
+                    width={600}
+                    height={400}
+                    className="md:hidden rounded-lg w-full h-auto hover:scale-[105%] transition-all duration-600"
+                    priority
+                    sizes="(max-width: 767px) 600px, 0px"
+                  />
+                </>
               )}
             </m.div>
           </div>

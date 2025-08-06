@@ -19,7 +19,7 @@ export default function FeatureCard({ icon, images, title }: FeatureCardProps) {
             alt={`preview-${i}`}
             width={50}
             height={50}
-            className={`rounded-[10px] w-[40px] min-w-[40px] h-[40[px] min-h-[40px]} ${
+            className={`rounded-[10px] w-[40px] min-w-[40px] h-[40px] min-h-[40px]} ${
               i === 1 ? "-translate-y-1/3" : ""
             }`}
           />
