@@ -1,6 +1,7 @@
 import { Inter, Manrope } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
+import { LazyAnimations } from "./hooks/LazyAnimations";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
@@ -162,12 +163,14 @@ export default function RootLayout({
             }),
           }}
         />
+
       </head>
 
       <body className={`${manrope.variable} ${inter.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
         </ThemeProvider>
+        <LazyAnimations />
       </body>
     </html>
   );

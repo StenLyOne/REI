@@ -9,37 +9,37 @@ import {
 export default function Benefits() {
   const data = [
     {
-      gif: "/icons/profit.webp",
+      gif: "/icons/profit.mp4",
       title: "Investor Ecosystem",
       description:
         "Learn to build your own Investor EFFECT Ecosystem to become the go-to real estate investment specialist and 4X your business in 12 months.",
     },
     {
-      gif: "/icons/handshake.webp",
+      gif: "/icons/handshake.mp4",
       title: "Fast Closures",
       description:
         "Secure two investment properties under contract within 30 days of completing the REIS Certification.",
     },
     {
-      gif: "/icons/Database.webp",
+      gif: "/icons/database.mp4",
       title: "Database Growth",
       description:
         "Increase your qualified investor database by 10%-20% within 30 days of completing your REIS Certification.",
     },
     {
-      gif: "/icons/allocation.webp",
+      gif: "/icons/allocation.mp4",
       title: "Client Acquisition",
       description:
         "Quickly find clients in a saturated market with proven strategies.",
     },
     {
-      gif: "/icons/choosing.webp",
+      gif: "/icons/choosing-custome.mp4",
       title: "Lead by Example",
       description:
         "Invest in real estate yourself and become a role model for clients, family, and colleagues.",
     },
     {
-      gif: "/icons/growth.webp",
+      gif: "/icons/growth.mp4",
       title: "Wealth Building",
       description:
         "Build wealth passively while reducing the stress of chasing new clients.",
@@ -93,7 +93,7 @@ export default function Benefits() {
                   style={{ background: "var(--secondary)" }}
                 >
                   <div className="w-[78px] h-[78px]">
-                    <GlowIcon text={benefit.gif} img={true} />
+                    <GlowIcon text={benefit.gif} video={true} />
                   </div>
                   <div className="space-y-[12px]">
                     <h4>{benefit.title}</h4>
