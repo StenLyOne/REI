@@ -111,7 +111,12 @@ export default function HeroSection() {
               variants={itemVariants}
               className="rounded-[20px] shadow-classic"
             >
-              {isLight !== null && (
+              {isLight === null ? (
+                <div
+                  style={{ height: 400 }}
+                  className="w-full bg-gray-100 rounded-lg"
+                />
+              ) : (
                 <>
                   <Image
                     src={`/img-optimized/hero-dashboard-${
