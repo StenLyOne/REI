@@ -25,7 +25,7 @@ export default function Footer() {
             <m.div variants={itemVariants}>
               <Link href="/" aria-label="Home">
                 <Image
-                  src="/logo.png"
+                  src="/Logo.png"
                   alt="REI Institute Logo"
                   width={214}
                   height={23}
