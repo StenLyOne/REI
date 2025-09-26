@@ -2,15 +2,36 @@
 
 import Button from "@/components/ui/Button";
 import { useProportions } from "@/hooks/proportions";
-import AnimatedSection from "@/lib/variantsAnimation";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import { useRef } from "react";
+
+const container: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.25, // очередь для h5 → h1 → (группа h4+Button) → видео
+      delayChildren: 0.3,
+    },
+  },
+};
+
+// обычный шаг (для отдельных элементов)
+const item: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
 export default function HeroSection() {
   const isMobile =
     useProportions().width <= 768
       ? "Become an REI Investor"
       : "Become A Real Estate Investment Specialist (TM)";
+
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -22,14 +43,22 @@ export default function HeroSection() {
   return (
     <main
       id="Home"
-      className="relative  mx-auto px-4 sm:px-6 lg:px-12 pt-[200px] pb-20  lg:pb-[100px]"
+      className="relative mx-auto px-4 sm:px-6 lg:px-12 pt-[200px] pb-20 lg:pb-[100px]"
     >
-      <AnimatedSection className="grid z-3 grid-cols-1 gap-[70px] items-center  relative">
-        {/* Text content */}
+      {/* Контейнер с variants */}
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        className="grid z-3 grid-cols-1 gap-[70px] items-center relative"
+      >
+        {/* TEXT CONTENT */}
         <div className="text-center space-y-5 md:space-y-10">
-          <div className="space-y-4 lg:space-y-1">
-            <div className="w-max mx-auto bg-white/20 c rounded-4xl border border-white/40 backdrop-blur-[20px]">
-              <h5 className="px-6 py-4 max-[360px]:text-[14px] text-[16px] md:text-[20px] font-bold uppercase max-[360px]:leading-5 max-[500px]:leading-6 lg:leading-5 text-white ">
+          {/* h5 */}
+          <motion.div variants={item} className="space-y-4 lg:space-y-1">
+            <div className="w-max mx-auto bg-white/20 rounded-4xl border border-white/40 backdrop-blur-[20px]">
+              <h5 className="px-6 py-4 max-[360px]:text-[14px] text-[16px] md:text-[20px] font-bold uppercase max-[360px]:leading-5 max-[500px]:leading-6 lg:leading-5 text-white">
                 Be Wealthy. Be Certified.{" "}
                 <br className="hidden max-[500px]:block" />
                 Be the Professional{" "}
@@ -37,25 +66,38 @@ export default function HeroSection() {
                 <br className="hidden max-[500px]:block" /> & Homebuyers Trust
               </h5>
             </div>
-            <motion.h1 className="max-w-[1240px] text-[32px] sm:text-[54px] lg:text-[84px] text-center mx-auto font-bold  leading-tight  text-white">
-              Prospect Smarter. Do More Deals. Build Clients for Life.
-            </motion.h1>
-          </div>
+          </motion.div>
 
-          <motion.div className="flex justify- items-center flex-col gap-6">
-            <motion.h4 className="max-w-[840px] mx-auto font-bold  text-white">
-              First‑of‑its‑kind REALTOR® investment certification in North
-              America* — built by educators who’ve trained 25,000+ real estate
-              investors.
-            </motion.h4>
+          {/* h1 */}
+          <motion.h1
+            variants={item}
+            className="max-w-[1240px] text-[32px] sm:text-[54px] lg:text-[84px] text-center mx-auto font-bold leading-tight text-white"
+          >
+            Prospect Smarter. Do More Deals. Build Clients for Life.
+          </motion.h1>
+
+          {/* h4 + Button вместе */}
+          {/* h4 */}
+          <motion.h4
+            variants={item}
+            className="max-w-[840px] mx-auto font-bold text-white"
+          >
+            First-of-its-kind REALTOR® investment certification in North
+            America* — built by educators who’ve trained 25,000+ real estate
+            investors.
+          </motion.h4>
+
+          {/* Button */}
+          <motion.div variants={item} className="mx-auto w-max">
             <Button label={isMobile} />
           </motion.div>
         </div>
 
-        {/* { MOBILE VIDEO} */}
+        {/* MOBILE VIDEO */}
         <motion.div
+          variants={item}
           id="video"
-          className="block md:hidden  aspect-video rounded-2xl overflow-hidden mx-auto w-full"
+          className="block md:hidden aspect-video rounded-2xl overflow-hidden mx-auto w-full"
         >
           <iframe
             src="https://player.vimeo.com/video/288344114?h=63fff44243&autoplay=1&muted=1&background=1"
@@ -66,9 +108,10 @@ export default function HeroSection() {
           ></iframe>
         </motion.div>
 
-        {/* { DESKTOP VIDEO} */}
-        <div
-          className="hidden md:block relative h-[200vh] cursor-pointer "
+        {/* DESKTOP VIDEO */}
+        <motion.div
+          variants={item}
+          className="hidden md:block relative h-[200vh] cursor-pointer"
           ref={ref}
         >
           <motion.div
@@ -84,11 +127,13 @@ export default function HeroSection() {
               allowFullScreen
             ></iframe>
           </motion.div>
-        </div>
-      </AnimatedSection>
-      <div
-        className={`absolute z-2 inset-0 w-full h-full bg-[#B34AE4]/20 backdrop-blur-[400px]`}
-      ></div>
+        </motion.div>
+      </motion.div>
+
+      {/* ФОН */}
+      <div className="absolute z-2 inset-0 w-full h-full bg-[#B34AE4]/20 backdrop-blur-[400px]"></div>
+
+      {/* ГРАДИЕНТ */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className="absolute z-1 w-[250%] md:w-full sm:-translate-y-0 aspect-square rounded-full bg-[conic-gradient(from_180deg_at_50%_50%,#6D55ED_21%,#7055EC_34%,#7D52EA_49%,#A44DE6_74%,#B34AE4_86%,#B44BE4_100%)]"

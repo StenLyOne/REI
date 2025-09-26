@@ -167,7 +167,7 @@ export default function RootLayout({
       </head>
 
       <body className={`${manrope.variable} ${inter.variable} antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           {children}
         </ThemeProvider>
         <LazyAnimations />

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ThemeToggle from "@/components/ui/ThemeToggle";
+// import ThemeToggle from "@/components/ui/ThemeToggle";
 import { motion } from "framer-motion";
 
 export default function Header() {
@@ -39,7 +39,7 @@ export default function Header() {
 
           <div className="flex items-center gap-6">
             <motion.div className="z-[100] flex justify-center items-center cursor-pointer">
-              <ThemeToggle />
+              {/* <ThemeToggle /> */}
             </motion.div>
 
             <motion.button
