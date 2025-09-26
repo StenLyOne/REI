@@ -127,22 +127,48 @@ body {
 }
 
 @layer utilities {
-  h2 {
-    @apply text-[32px] sm:text-[42px] leading-tight font-semibold tracking-tight;
+  .h2-default {
+    @apply text-[32px] sm:text-[42px] leading-[44px] md:leading-[52px] font-semibold;
+  }
+
+  .h2-large {
+    @apply text-[36px] leading-[48px] md:text-[48px] md:leading-[60px] font-semibold;
   }
 
   h4 {
-    @apply text-[24px] sm:text-[24px] leading-tight font-semibold tracking-tight;
+    @apply text-[20px] md:text-[28px] sm:text-[24px] md:leading-[36px] font-bold;
+  }
+
+  .p-default {
+    @apply text-[18px] leading-[32px] font-normal  font-inter;
+  }
+
+  h5 {
+    @apply text-[20px]  font-inter;
   }
 
   p {
-    @apply text-[16px] leading-tight font-medium tracking-tight font-inter;
-    line-height: 24px;
+    @apply font-inter;
   }
+
+  .p-16 {
+    @apply text-[16px] leading-6 font-normal;
+  }
+
+  .section-default {
+    @apply relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 py-[140px] md:py-[240px];
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE и Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .shadow-classic {
   box-shadow: var(--shadow-classic);
 }
-
-

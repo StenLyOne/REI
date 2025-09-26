@@ -7,8 +7,8 @@ export function useProportions() {
 
   useEffect(() => {
     const updateSize = () => {
-      const w = window.innerWidth * 0.8;
-      const h = window.innerHeight * 0.8;
+      const w = window.innerWidth;
+      const h = window.innerHeight;
       setProportions({ width: w, height: h });
     };
 
