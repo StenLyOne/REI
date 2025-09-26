@@ -78,26 +78,12 @@ const data = [
 ];
 
 export default function HowReiWorks() {
-
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.16,
-        delayChildren: 0.01,
-      },
-    },
-  };
-
   return (
     <section className="relative overflow-hidden">
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        variants={containerVariants}
         id="HowReiWorks"
         className="section-default"
       >
