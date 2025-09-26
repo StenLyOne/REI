@@ -13,7 +13,7 @@ export default function ThemeToggle() {
 
   return (
     <button
-      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      onClick={() => setTheme(theme === "light" ? "light" : "light")}
       className="text-lg text-[30px] cursor-pointer"
     >
       {theme === "light" ? (
