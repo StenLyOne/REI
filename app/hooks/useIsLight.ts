@@ -7,8 +7,8 @@ export default function useIsLight() {
 
   useEffect(() => {
     const updateTheme = () => {
-      const isLightMode = document.documentElement.classList.contains("light");
-      setIsLight(isLightMode);
+      // const isLightMode = document.documentElement.classList.contains("light");
+      setIsLight(true);
     };
 
     updateTheme(); // сразу чек
