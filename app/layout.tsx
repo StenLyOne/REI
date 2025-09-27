@@ -163,11 +163,10 @@ export default function RootLayout({
             }),
           }}
         />
-
       </head>
-
+      {/* enableSystem */}
       <body className={`${manrope.variable} ${inter.variable} antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="light">
           {children}
         </ThemeProvider>
         <LazyAnimations />
