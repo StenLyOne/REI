@@ -1,5 +1,6 @@
-// Trends.tsx
+import { motion } from "framer-motion";
 import CardHorizontal from "./CardHorizontal";
+import { container, item } from "@/lib/variantsAnimation";
 
 const data = [
   {
@@ -25,8 +26,14 @@ const data = [
 
 export default function Trends() {
   return (
-    <section className="section-default ">
-      <h2 className="h2-default mb-16 text-center" >
+    <motion.section
+      variants={container}
+      initial="hidden"
+      whileInView="visible"
+     viewport={{ once: true, margin: "-50px" }}
+      className="section-default "
+    >
+      <motion.h2 variants={item} className="h2-default mb-16 text-center">
         These trends mean{" "}
         <span className="gradient-text font-bold">prospecting smarter—not</span>{" "}
         harder—wins. The agents who can{" "}
@@ -34,10 +41,10 @@ export default function Trends() {
         <span className="gradient-text font-bold">manage risk</span>, and map a
         <span className="gradient-text font-bold"> path to wealth</span> will
         own the next decade.
-      </h2>
+      </motion.h2>
 
       {/* ОБЩИЙ контейнер для всех карточек */}
-      <div className="relative h-[300vh]"> 
+      <motion.div variants={item} className="relative h-[300vh]">
         {data.map((item, i) => (
           <div
             key={i}
@@ -47,7 +54,7 @@ export default function Trends() {
             <CardHorizontal {...item} />
           </div>
         ))}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }

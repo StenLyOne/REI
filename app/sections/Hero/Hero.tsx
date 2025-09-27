@@ -1,30 +1,8 @@
-"use client";
-
 import Button from "@/components/ui/Button";
 import { useProportions } from "@/hooks/proportions";
-import { motion, useScroll, useTransform, Variants } from "framer-motion";
+import { container, item } from "@/lib/variantsAnimation";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-
-const container: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.25, // очередь для h5 → h1 → (группа h4+Button) → видео
-      delayChildren: 0.3,
-    },
-  },
-};
-
-// обычный шаг (для отдельных элементов)
-const item: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
 
 export default function HeroSection() {
   const isMobile =
@@ -38,7 +16,7 @@ export default function HeroSection() {
     offset: ["start center", "end end"],
   });
 
-  const videoWidth = useTransform(scrollYProgress, [0.1, 1], ["40%", "90%"]);
+  const videoWidth = useTransform(scrollYProgress, [0.1, 1], ["40%", "85%"]);
 
   return (
     <main
@@ -50,13 +28,13 @@ export default function HeroSection() {
         variants={container}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true }}
         className="grid z-3 grid-cols-1 gap-[70px] items-center relative"
       >
         {/* TEXT CONTENT */}
-        <div className="text-center space-y-5 md:space-y-10">
+        <div className="text-center ">
           {/* h5 */}
-          <motion.div variants={item} className="space-y-4 lg:space-y-1">
+          <motion.div variants={item} className="pb-4 lg:pb-1">
             <div className="w-max mx-auto bg-white/20 rounded-4xl border border-white/40 backdrop-blur-[20px]">
               <h5 className="px-6 py-4 max-[360px]:text-[14px] text-[16px] md:text-[20px] font-bold uppercase max-[360px]:leading-5 max-[500px]:leading-6 lg:leading-5 text-white">
                 Be Wealthy. Be Certified.{" "}
@@ -80,7 +58,7 @@ export default function HeroSection() {
           {/* h4 */}
           <motion.h4
             variants={item}
-            className="max-w-[840px] mx-auto font-bold text-white"
+            className="max-w-[860px] mx-auto font-bold text-white pt-6 md:pt-9 pb-5 md:pb-8"
           >
             First-of-its-kind REALTOR® investment certification in North
             America* — built by educators who’ve trained 25,000+ real estate
@@ -117,7 +95,7 @@ export default function HeroSection() {
           <motion.div
             id="video"
             style={{ width: videoWidth }}
-            className="sticky top-[20%] aspect-video rounded-2xl overflow-hidden mx-auto"
+            className="sticky top-[10%] aspect-video rounded-2xl overflow-hidden mx-auto"
           >
             <iframe
               src="https://player.vimeo.com/video/288344114?h=63fff44243&autoplay=1&muted=1&background=1"
@@ -132,6 +110,7 @@ export default function HeroSection() {
 
       {/* ФОН */}
       <div className="absolute z-2 inset-0 w-full h-full bg-[#B34AE4]/20 backdrop-blur-[400px]"></div>
+      <div className="absolute z-3 bottom-0 left-0 w-full h-[60px] bg-gradient-to-b from-transparent to-[#f6f6f6]"></div>
 
       {/* ГРАДИЕНТ */}
       <div className="absolute inset-0 overflow-hidden">

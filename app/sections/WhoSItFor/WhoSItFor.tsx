@@ -3,7 +3,6 @@ import GlowIcon from "@/components/ui/GlowIcon";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-
 export default function WhoSItFor() {
   return (
     <section
@@ -14,13 +13,12 @@ export default function WhoSItFor() {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-     
+        viewport={{ once: true, margin: "-50px" }}
       >
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-50px" }}
         >
           <GlowIcon text="Who’s it for" img={false} />
         </motion.div>
@@ -44,10 +42,7 @@ export default function WhoSItFor() {
             <Button />
           </motion.div>
         </div>
-        <motion.div
-          className="grid lg:grid-cols-3 gap-[24px]"
-         
-        >
+        <motion.div className="grid lg:grid-cols-3 gap-[24px]">
           {/* Card 1 */}
           <motion.div
             className="max-w-[430px] rounded-[20px] px-[24px] py-[36px] space-y-[24px] shadow-classic text-left border-1 border-border mx-auto"
@@ -300,34 +295,6 @@ export default function WhoSItFor() {
           </motion.div>
         </motion.div>
       </motion.div>
-      <motion.div
-        className="absolute overflow-visible top-[-50%] right-[45%] w-[1500px] h-[1000px] z-[-1] bg-gradient-soft-purple pointer-events-none"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={{
-          hidden: { opacity: 0, scale: 0.5 },
-          visible: {
-            opacity: 0.4,
-            scale: 1,
-            transition: { duration: 2, ease: "easeOut", delay: 1 },
-          },
-        }}
-      ></motion.div>
-      <motion.div
-        className="absolute overflow-visible top-[50%] right-[-45%] w-[1500px] h-[1000px] z-[-1] bg-gradient-soft-purple pointer-events-none"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={{
-          hidden: { opacity: 0, scale: 0.5 },
-          visible: {
-            opacity: 0.4,
-            scale: 1,
-            transition: { duration: 2, ease: "easeOut", delay: 1.3 },
-          },
-        }}
-      ></motion.div>
       <p className="sr-only">
         Learn who should enroll in the REI Institute Certification Program,
         whether you&apos;re new to real estate investing, transitioning to

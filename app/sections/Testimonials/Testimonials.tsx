@@ -1,8 +1,8 @@
-"use client";
-
 import { useRef } from "react";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
+import { container, item } from "@/lib/variantsAnimation";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -45,9 +45,18 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="section-default ">
+    <motion.section
+      variants={container}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-50px" }}
+      className="section-default "
+    >
       <div className=" text-center space-y-6">
-        <h2 className="text-left w-full text-[24px] leading-[36px] md:text-[32px] md:leading-[44px] font-semibold">
+        <motion.h2
+          variants={item}
+          className="text-left w-full text-[24px] leading-[36px] md:text-[32px] md:leading-[44px] font-semibold"
+        >
           <span className="gradient-text font-bold">
             Realtors are not the enemy
           </span>
@@ -68,13 +77,16 @@ export default function Testimonials() {
             {" "}
             loyal & repeat buyers.{" "}
           </span>
-        </h2>
+        </motion.h2>
         <div className="w-full flex justify-between">
-          <Button label="Book Your Prospect‑Smarter Call"></Button>
+          <motion.div variants={item}>
+            <Button label="Book Your Prospect‑Smarter Call"></Button>
+          </motion.div>
 
           {/* стрелки */}
           <div className="hidden md:flex w-max h-max  p-1 gap-1 bg-[#F0F0F0] rounded-full">
-            <button
+            <motion.button
+              variants={item}
               onClick={() => handleScroll("left")}
               className="w-10 h-10 flex items-center justify-center  bg-white shadow rounded-full p-2"
             >
@@ -92,8 +104,9 @@ export default function Testimonials() {
                   fill="#333333"
                 />
               </svg>
-            </button>
-            <button
+            </motion.button>
+            <motion.button
+              variants={item}
               onClick={() => handleScroll("right")}
               className="w-10 h-10 flex items-center justify-center  bg-white shadow rounded-full p-2 rotate-180"
             >
@@ -111,7 +124,7 @@ export default function Testimonials() {
                   fill="#333333"
                 />
               </svg>
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>
@@ -123,7 +136,8 @@ export default function Testimonials() {
           className="flex  justify-start overflow-x-auto no-scrollbar scroll-smooth py-10 px-2"
         >
           {testimonials.map((t, i) => (
-            <div
+            <motion.div
+              variants={item}
               key={i}
               className="bg-white rounded-xl shadow-classic p-6 text-left flex flex-col justify-between gap-6 flex-shrink-0 basis-3/3 max-w-[70%] md:basis-2/3 md:max-w-[48%] lg:basis-1/3 lg:max-w-[32%] mx-3"
             >
@@ -144,11 +158,13 @@ export default function Testimonials() {
                   <p className="text-sm text-gray-500">{t.role}</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-      <p>Outcomes are graduate‑reported and vary by market and effort.</p>
-    </section>
+      <motion.p variants={item}>
+        Outcomes are graduate‑reported and vary by market and effort.
+      </motion.p>
+    </motion.section>
   );
 }

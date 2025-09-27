@@ -1,7 +1,6 @@
-"use client";
-
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { container, item } from "@/lib/variantsAnimation";
 
 import CardSimple from "@/components/ui/CardSimple";
 
@@ -48,30 +47,39 @@ export default function BlueOcean() {
     target: refSection,
     offset: ["start end", "end end"],
   });
-  const imageWidth = useTransform(
-    scrollYProgress,
-    [0.3, 1],
-    ["40%", "100%"]
-  );
+  const imageWidth = useTransform(scrollYProgress, [0.3, 1], ["40%", "100%"]);
 
   return (
-    <section className="section-default  space-y-25">
+    <motion.section
+      variants={container}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-50px" }}
+      className="section-default  space-y-25"
+    >
       <div ref={refSection} className="space-y-15">
         <div className="space-y-6">
-          <h2 className="h2-large mx-auto w-max text-center">
+          <motion.h2
+            variants={item}
+            className="h2-large mx-auto w-max text-center"
+          >
             Your Blue Ocean: <br className="block md:hidden" /> The{" "}
             <span className="text-[#1830E4]"> 98% </span>
-          </h2>
-          <h4 className="max-w-[886px] mx-auto text-center">
+          </motion.h2>
+          <motion.h4
+            variants={item}
+            className="max-w-[886px] mx-auto text-center"
+          >
             Most homeowners aren’t
             <span className="text-[#1830E4]"> “in the market” </span> today—but
             they are interested in{" "}
             <span className="text-[#1830E4]"> building wealth </span>. Be the
             pro who brings the plan, not the pitch.
-          </h4>
+          </motion.h4>
         </div>
         <motion.img
           style={{ width: imageWidth }}
+          variants={item}
           src="/img/blueOcean.png"
           className="w-full h-[50vh] md:h-auto rounded-[20px] mx-auto object-cover"
           width={1240}
@@ -79,28 +87,44 @@ export default function BlueOcean() {
           alt=" Your Blue Ocean: The 98%"
         ></motion.img>
       </div>
-      <div className="space-y-15">
-        <h2 className="h2-default text-center">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+        className="space-y-15"
+      >
+        <motion.h2 variants={item} className="h2-default text-center">
           Turn the <span className="text-[#1830E4]">98% of homes</span> not
           listing into a pipeline
-        </h2>
+        </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-6 justify-between">
-          {data98Homes.map((item, i) => (
-            <CardSimple key={i} {...item} />
+          {data98Homes.map((homes, i) => (
+            <motion.div variants={item} key={i}>
+              <CardSimple {...homes} />
+            </motion.div>
           ))}
         </div>
-      </div>
-      <div className="space-y-15">
-        <h2 className="h2-default text-center">
+      </motion.div>
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+        className="space-y-15"
+      >
+        <motion.h2 variants={item} className="h2-default text-center">
           How REIS™ operationalizes the{" "}
           <span className="text-[#1830E4]">Blue Ocean</span>
-        </h2>
+        </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-6 justify-between">
-          {blueOcean.map((item, i) => (
-            <CardSimple key={i} {...item} />
+          {blueOcean.map((homes, i) => (
+            <motion.div variants={item} key={i}>
+              <CardSimple {...homes} />
+            </motion.div>
           ))}
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }

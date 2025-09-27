@@ -1,5 +1,7 @@
 import { CardIllustration } from "@/components/ui/CardIllustration";
 import TabbedContent from "@/components/ui/TabbedContent";
+import { container, item } from "@/lib/variantsAnimation";
+import { motion } from "framer-motion";
 
 const data = [
   {
@@ -89,19 +91,25 @@ const data = [
 
 export default function Gap() {
   return (
-    <section className="section-default">
+    <motion.section
+      variants={container}
+      initial="hidden"
+      viewport={{ once: true, margin: "-50px" }}
+      whileInView="visible"
+      className="section-default"
+    >
       <div className="space-y-6 mx-auto max-w-[672px] text-center mb-10">
-        <h2 className="h2-large">
+        <motion.h2 variants={item} className="h2-large">
           The <span className="gradient-text">Gap</span> Investors Feel And How
           You Win By Closing It
-        </h2>
-        <h4>
+        </motion.h2>
+        <motion.h4 variants={item}>
           After training <span className="gradient-text">25,000+ </span>
           investors and buying across North America, Gord heard the same pain
           points again and again:
-        </h4>
+        </motion.h4>
       </div>
       <TabbedContent data={data} cardComponent={CardIllustration} />
-    </section>
+    </motion.section>
   );
 }

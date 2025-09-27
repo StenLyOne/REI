@@ -1,6 +1,8 @@
 "ule client";
 
 import { useEffect, useRef, useState } from "react";
+import { item } from "@/lib/variantsAnimation";
+import { motion } from "framer-motion";
 
 type CardProps = {
   title: string;
@@ -20,13 +22,16 @@ export default function TabbedContent({ data, cardComponent: Card }: Props) {
   const [activeTab, setActiveTab] = useState(0);
   const labels = data.map((item) => item.label);
   return (
-    <div className="space-y-13">
-      <div className="overflow-x-auto whitespace-nowrap -mx-4 px-4 py-2">
+    <div>
+      <motion.div
+        variants={item}
+        className="overflow-x-auto whitespace-nowrap -mx-4 px-4 py-2"
+      >
         <Tab labels={labels} onChange={setActiveTab} activeIndex={activeTab} />
-      </div>
+      </motion.div>
 
       <div className="grid">
-        {data.map((item, i) => (
+        {data.map((ele, i) => (
           <div
             key={i}
             className={`col-start-1 row-start-1 transition-opacity duration-300
@@ -34,8 +39,10 @@ export default function TabbedContent({ data, cardComponent: Card }: Props) {
       `}
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-6 justify-between">
-              {item.cards.map((card, j) => (
-                <Card key={j} {...card} />
+              {ele.cards.map((card, j) => (
+                <motion.div variants={item} key={j}>
+                  <Card {...card} />
+                </motion.div>
               ))}
             </div>
           </div>
@@ -69,7 +76,7 @@ function Tab({
   return (
     <div
       ref={containerRef}
-      className="relative p-2 w-max mx-auto shadow-classic bg-white rounded-full flex gap-5"
+      className="relative mb-5 md:mb-10 p-2 w-max mx-auto shadow-classic bg-white rounded-full flex gap-5"
     >
       {/* фиолетовый бегунок */}
       <span

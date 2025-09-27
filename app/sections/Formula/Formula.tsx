@@ -1,5 +1,7 @@
 import Button from "@/components/ui/Button";
 import CardSimple from "@/components/ui/CardSimple";
+import { motion } from "framer-motion";
+import { container, item } from "@/lib/variantsAnimation";
 
 const data = [
   {
@@ -31,28 +33,45 @@ const data = [
 
 export function Formula() {
   return (
-    <section className="section-default flex flex-col md:flex-row justify-between gap-20 md:gap-8">
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      variants={container}
+      viewport={{ once: true, margin: "-50px" }}
+      className="section-default flex flex-col md:flex-row justify-between gap-20 md:gap-8"
+    >
       <div className="relative w-full md:w-1/2">
         <div className="sticky top-[30vh] space-y-10">
           <div className="space-y-6">
-            <h2 className="h2-default">
+            <motion.h2 variants={item} className="h2-default max-w-[410px]">
               The{" "}
-              <span className="gradient-text"> Agent Freedom Formula™ </span>{" "}
+              <span className="gradient-text"> Agent Freedom  Formula™ </span>{" "}
               Your Prospecting System
-            </h2>
-            <p className="p-default">
+            </motion.h2>
+            <motion.p variants={item} className="p-default max-w-[390px]">
               Stop competing in the same crowded silo. The Agent Freedom Formula
               turns education into a repeatable deal machine:
-            </p>
+            </motion.p>
           </div>
-          <Button label="Get The Agent Freedom Formula Launch Kit" />
+          <motion.div variants={item}>
+            {" "}
+            <Button label="Get The Agent Freedom Formula Launch Kit" />
+          </motion.div>
         </div>
       </div>
       <div className="space-y-15">
-        {data.map((item, index) => (
-          <CardSimple key={index} {...item} />
+        {data.map((card, index) => (
+          <motion.div
+            key={index}
+            variants={item}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }} // появится, когда ~30% карточки в экране
+          >
+            <CardSimple {...card} />
+          </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }

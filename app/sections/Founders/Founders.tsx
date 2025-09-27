@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { container, item } from "@/lib/variantsAnimation";
 
 const data = [
   {
@@ -19,15 +20,18 @@ export default function Founders() {
     <section>
       <motion.div
         id="Founders"
+        variants={container}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "-50px" }}
         className="relative section-default"
       >
         <div className="space-y-[48px]">
           <div className="text-center space-y-6">
-            <motion.h2 className="h2-large">Meet the Founders</motion.h2>
-            <motion.h4 className=" max-w-[748px] mx-auto">
+            <motion.h2 variants={item} className="h2-large">
+              Meet the Founders
+            </motion.h2>
+            <motion.h4 variants={item} className=" max-w-[748px] mx-auto">
               <span className="gradient-text font-bold">
                 {" "}
                 50+ years combined
@@ -44,6 +48,7 @@ export default function Founders() {
             {data.map((founder, i) => (
               <motion.article
                 key={i}
+                variants={item}
                 className="space-y-[24px] bg-secondary w-full sm:max-w-[400] rounded-[20px] text-left border-1 border-border shadow-classic"
                 style={{ background: "var(--secondary)" }}
               >

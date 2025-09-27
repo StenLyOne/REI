@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import GlowIcon from "@/components/ui/GlowIcon";
+import { container, item } from "@/lib/variantsAnimation";
 
 export default function Benefits() {
   const data = [
@@ -39,19 +40,23 @@ export default function Benefits() {
     <section className="relative overflow-hidden">
       <motion.div
         id="Benefits"
+        variants={container}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "-50px" }}
         className="section-default  "
       >
         <div className="flex flex-col items-center text-center space-y-[48px]">
           <div>
             <div className=" text-center space-y-[24px]">
-              <motion.h2 className="h2-large">
+              <motion.h2 variants={item} className="h2-large">
                 Who We Serve And How Each Group Wins
               </motion.h2>
 
-              <motion.h4 className="max-w-[782px] mx-auto text-center ">
+              <motion.h4
+                variants={item}
+                className="max-w-[782px] mx-auto text-center "
+              >
                 Gain the{" "}
                 <span className="gradient-text font-bold"> skills</span>,
                 <span className="gradient-text font-bold"> systems</span> , and
@@ -66,6 +71,7 @@ export default function Benefits() {
             {data.map((benefit, i) => (
               <motion.article
                 key={i}
+                variants={item}
                 className="p-[20px] space-y-[24px] rounded-[20px] text-left border-1 border-border shadow-classic"
                 style={{ background: "var(--secondary)" }}
               >
@@ -81,20 +87,6 @@ export default function Benefits() {
           </div>
         </div>
       </motion.div>
-      <motion.div
-        className="absolute overflow-visible top-[40%] right-[-20%] w-[1500px] h-[1000px] z-[-1] bg-gradient-soft-pink pointer-events-none"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={{
-          hidden: { opacity: 0, scale: 0.5 },
-          visible: {
-            opacity: 0.4,
-            scale: 1,
-            transition: { duration: 2, ease: "easeOut", delay: 1 },
-          },
-        }}
-      ></motion.div>
     </section>
   );
 }

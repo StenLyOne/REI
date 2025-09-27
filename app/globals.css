@@ -17,12 +17,29 @@
   --color-border-two: var(--border);
   --color-primary-gradient: linear-gradient(to right, #6c54ec 0%, #b34ae4 100%);
   --сolor-neutral-gray: var(--neutral-gray);
+
+  --color-soft-purple: #b34ae4;
+  --color-soft-pink: #ec549b;
+  --color-soft-blue: #549bec;
+  --color-soft-green: #54ec9b;
+  --color-soft-orange: #ec9b54;
+  --color-soft-yellow: #ece254;
+  --color-soft-red: #ec5454;
+  --color-soft-cyan: #54ece2;
+  --color-soft-indigo: #6d55ed;
+  --color-soft-lime: #9bec54;
+  --color-soft-rose: #ec549b;
+  --color-soft-violet: #b34ae4;
+  --color-soft-teal: #54b3e4;
+  --color-soft-fuchsia: #e454ec;
+  --color-soft-emerald: #54ec9b;
 }
 
 .light {
   --background: #f6f6f6;
   --secondary: #ffffff;
   --foreground: #333333;
+  --text: #505050;
   --grey: #bdbdbd;
   --grey-second: #e5e5e5;
   --border: #fff;
@@ -68,6 +85,7 @@
   --border: #717171;
   --border-two: #e0e0e0;
   --foreground: #ffffff;
+  --text: #ffffff;
   --grey: #bdbdbd;
   --color-gray-200: #717171;
   --neutral-gray: #14131e;
@@ -122,29 +140,33 @@
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: var(--text);
   font-family: "Manrope", Helvetica, sans-serif;
 }
 
 @layer utilities {
   .h2-default {
-    @apply text-[32px] sm:text-[42px] leading-[44px] md:leading-[52px] font-semibold;
+    @apply text-[32px] sm:text-[42px] leading-[44px] md:leading-[52px] font-semibold text-foreground;
   }
 
   .h2-large {
-    @apply text-[36px] leading-[48px] md:text-[48px] md:leading-[60px] font-semibold;
+    @apply text-[36px] leading-[48px] md:text-[48px] md:leading-[60px] font-semibold text-foreground;
   }
 
   h4 {
-    @apply text-[20px] md:text-[28px] sm:text-[24px] md:leading-[36px] font-bold;
+    @apply text-[20px] md:text-[24px] sm:text-[24px] md:leading-[36px] font-bold text-foreground;
   }
 
   .p-default {
-    @apply text-[18px] leading-[32px] font-normal  font-inter;
+    @apply text-[16px] leading-[28px] md:text-[18px] md:leading-[28px] font-normal  font-inter;
   }
 
   h5 {
-    @apply text-[20px]  font-inter;
+    @apply text-[18px] md:text-[20px]  font-inter text-foreground;
+  }
+
+  h3 {
+    @apply text-foreground;
   }
 
   p {

@@ -1,5 +1,7 @@
 import CardImage from "@/components/ui/CardImage";
 import TabbedContent from "@/components/ui/TabbedContent";
+import { container, item } from "@/lib/variantsAnimation";
+import { motion } from "framer-motion";
 
 const data = [
   {
@@ -74,22 +76,28 @@ const data = [
 
 export default function Certification() {
   return (
-    <section className="section-default space-y-10">
+    <motion.section
+      variants={container}
+      initial="hidden"
+      viewport={{ once: true, margin: "-50px" }}
+      whileInView="visible"
+      className="section-default space-y-10"
+    >
       <div className="space-y-6  text-center">
-        <h2 className="h2-large max-w-[900px] mx-auto">
+        <motion.h2 variants={item} className="h2-large max-w-[900px] mx-auto">
           The <span className="gradient-text"> REIS™ Certification </span> 12
           Weeks → Prospecting Competency
-        </h2>
-        <h4 className="max-w-[800px] mx-auto">
+        </motion.h2>
+        <motion.h4 variants={item} className="max-w-[800px] mx-auto">
           A rigorous, modern certification focused on prospecting smarter,
           generating quality leads, and{" "}
           <span className="gradient-text">
             {" "}
             building lifelong relationships.{" "}
           </span>
-        </h4>
+        </motion.h4>
       </div>
       <TabbedContent data={data} cardComponent={CardImage} />
-    </section>
+    </motion.section>
   );
 }

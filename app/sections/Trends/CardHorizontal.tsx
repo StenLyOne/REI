@@ -17,7 +17,7 @@ export default function CardHorizontal({
 }: Props) {
   return (
     <div
-      className={`w-full h-screen shadow-[0_-2px_4px_rgba(0,0,0,0.09)] md:h-auto flex justify-between rounded-[20px] ${color}  border border-gray-200 overflow-hidden`}
+      className={`w-full h-screen shadow-[0_-2px_4px_rgba(0,0,0,0.09)] md:shadow-none md:h-auto flex justify-between rounded-[20px] ${color}  border border-gray-200 overflow-hidden`}
     >
       <div className="text-center md:text-left w-full md:w-1/2 min-[800]:min-w-[507px] space-y-3 px-10 md:px-0 md:pl-10 md:pr-6 py-10 md:py-4 flex items-center md:items-start justify-center flex-col">
         <div className="space-y-6 flex flex-col md:items-start items-center">

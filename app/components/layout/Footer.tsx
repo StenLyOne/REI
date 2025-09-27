@@ -10,7 +10,7 @@ export default function Footer() {
         style={{ background: "var(--secondary)" }}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "-50px" }}
       >
         <div className="flex flex-col min-[800px]:flex-row justify-between gap-[48px]">
           {/* Logo + Social */}

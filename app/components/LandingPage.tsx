@@ -17,10 +17,11 @@ import Testimonials from "@/sections/Testimonials/Testimonials";
 import Certification from "@/sections/Certification/Certification";
 import { Formula } from "@/sections/Formula/Formula";
 import Retirement from "@/sections/Retirement/Retirement";
+import BackgroundGradients from "./ui/BackgroundGradients";
 
 export default function LandingPage() {
   return (
-    <div className="">
+    <div className="relative">
       <Header />
       <Hero />
       <RightImage />
@@ -40,6 +41,8 @@ export default function LandingPage() {
       <Founders />
       {/* <CTA /> */}
       <Footer />
+
+      <BackgroundGradients />
     </div>
   );
 }
