@@ -20,7 +20,7 @@ const blobs = [
 
 export default function BackgroundGradients() {
   return (
-    <div className="absolute inset-0 w-screen h-full overflow-hidden pointer-events-none z-[-1]">
+    <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-[-1]">
       {blobs.map((b, i) => (
         <motion.div
           key={i}
