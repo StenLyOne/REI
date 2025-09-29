@@ -1,3 +1,5 @@
+import { useProportions } from "@/hooks/proportions";
+
 type Props = { link?: string; label?: string; primary?: boolean };
 
 export default function Button({
@@ -5,15 +7,16 @@ export default function Button({
   label = "Book a Free Strategy Call",
   primary = true,
 }: Props) {
+  const isMobile = useProportions().width <= 768;
   return (
     <a
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group w-max  py-[12px] pl-[20px] ${
+      className={`group ${!isMobile ? "w-max " : "w-full justify-between"} py-[12px] pl-[20px] ${
         primary
           ? " bg-primary text-white pr-3"
-          : "group-hover:text-white bg-white text-primary pr-5"
+          : "hover:text-white bg-white text-primary pr-5"
       } rounded-full flex items-center gap-4 font-semibold glow cursor-pointer`}
     >
       {label}

@@ -29,14 +29,16 @@ export default function LeftImage() {
             variants={imgItem}
             className="relative w-full md:w-[900px] md:h-[600px] rounded-r-[20px] overflow-hidden"
           >
-            <Image
-              src="/img-optimized/section2.webp"
-              alt="Real Estate Investment Certification Course"
-              width={900}
-              height={638}
-              className="rounded-[20px] md:rounded-[20px] md:rounded-r-[20px] w-full h-[50vh] md:h-full object-cover"
-              loading="lazy"
-            />
+            <motion.div variants={imgItem}>
+              <Image
+                src="/img/certifiedPro.png"
+                alt="Real Estate Investment Certification Course "
+                width={900}
+                height={638}
+                className="rounded-[20px]  w-full h-[50vh] md:h-full object-cover"
+                loading="lazy"
+              />
+            </motion.div>
             <div
               className="hidden md:block absolute top-0 left-0 h-full w-[30%] pointer-events-none z-10"
               style={{
@@ -51,7 +53,10 @@ export default function LeftImage() {
             Find a <span className="gradient-text">REIS Certified Pro</span>{" "}
             Directory
           </motion.h2>
-          <motion.p variants={item} className="p-default mt-5 md:mt-6 mb-5 md:mb-10">
+          <motion.p
+            variants={item}
+            className="p-default mt-5 md:mt-6 mb-5 md:mb-10"
+          >
             Tap into our{" "}
             <span className="gradient-text font-semibold">
               North American Referral Directory

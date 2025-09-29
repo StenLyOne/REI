@@ -9,24 +9,24 @@ const testimonials = [
     name: "Marilyn S",
     role: "REIS Graduate (Royal LePage)",
     text: "“Before REIS, I was working twice as hard for half the return. Now I attract clients who buy 3–4 homes a year. GCI up 27% and I’m finally building something that lasts.”",
-    avatar: "/img/calculator.png",
+    avatar: "/icons/realtors.png",
   },
   {
     name: "GTA Agent",
     role: "REIS Graduate",
     text: "“First Investor Night with your kit: 38 attendees → 11 consults → 3 offers in 14 days.”",
-    avatar: "/img/calculator.png",
+    avatar: "/icons/realtors1.png",
   },
   {
     name: "Calgary Agent",
     role: "Team Lead",
     text: "“Re‑engaged 7 past buyers with an investor review. 5 transactions in 90 days.”",
-    avatar: "/img/calculator.png",
+    avatar: "/icons/realtors2.png",
   },
   {
     name: "Vancouver Island Agent",
     text: "“Added 18% qualified investors to my database in 60 days. Calls feel like strategy, not sales.”",
-    avatar: "/img/calculator.png",
+    avatar: "/icons/realtors3.png",
   },
 ];
 
@@ -88,7 +88,7 @@ export default function Testimonials() {
             <motion.button
               variants={item}
               onClick={() => handleScroll("left")}
-              className="w-10 h-10 flex items-center justify-center  bg-white shadow rounded-full p-2"
+              className="w-10 h-10 flex items-center justify-center  bg-white shadow rounded-full p-2 cursor-pointer"
             >
               <svg
                 width="10"
@@ -108,7 +108,7 @@ export default function Testimonials() {
             <motion.button
               variants={item}
               onClick={() => handleScroll("right")}
-              className="w-10 h-10 flex items-center justify-center  bg-white shadow rounded-full p-2 rotate-180"
+              className="w-10 h-10 flex items-center justify-center  bg-white shadow rounded-full p-2 rotate-180 cursor-pointer"
             >
               <svg
                 width="10"
@@ -151,7 +151,7 @@ export default function Testimonials() {
                   alt={t.name}
                   width={50}
                   height={50}
-                  className="rounded-full"
+                  className="rounded-full w-full h-full max-w-[50px] max-h-[50px]"
                 />
                 <div>
                   <h5 className="font-semibold">{t.name}</h5>

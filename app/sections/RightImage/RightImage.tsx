@@ -42,10 +42,10 @@ export default function RightImage() {
             {/* 🔹 Мобильная картинка */}
             <motion.div
               variants={imgItem}
-              className="relative w-full max-w-[530px] h-[300px] rounded-[20px] overflow-hidden lg:hidden mb-6"
+              className="relative w-full lg:max-w-[530px] h-[50vh] lg:h-[300px] rounded-[20px] overflow-hidden lg:hidden mb-6"
             >
               <Image
-                src="/img-optimized/section1.webp"
+                src="/img/section1.png"
                 alt="section"
                 fill
                 loading="lazy"
@@ -108,14 +108,14 @@ export default function RightImage() {
             variants={imgItem}
             className="w-max absolute translate-x-[65%] hidden lg:block"
           >
-            <div className="relative w-[900px] h-[638px] rounded-l-[20px] overflow-hidden">
+            <div className="relative w-full h-[50vh] lg:w-[900px] lg:h-[638px] rounded-l-[20px] overflow-hidden">
               <Image
-                src="/img-optimized/section1.webp"
+               src="/img/section1.png"
                 alt="section"
                 width={900}
                 height={638}
                 loading="lazy"
-                className="rounded-l-[20px] w-full h-full object-cover"
+                className="rounded-l-[20px] w-full md:h-full object-cover"
               />
               <div
                 className="absolute top-0 right-0 h-full w-[30%] pointer-events-none z-10"

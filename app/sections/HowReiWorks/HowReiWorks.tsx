@@ -10,7 +10,7 @@ import {
 
 const data = [
   {
-    icon: "/icons/Fundamentals.svg",
+    icon: "/icons/cashFlow.png",
     images: [
       "/img-optimized/Fundamentals1.webp",
       "/img-optimized/Fundamentals2.webp",
@@ -19,7 +19,7 @@ const data = [
     title: "Cash flow",
   },
   {
-    icon: "/icons/Market.svg",
+    icon: "/icons/instantEquity.png",
     images: [
       "/img-optimized/Market1.webp",
       "/img-optimized/Market2.webp",
@@ -28,7 +28,7 @@ const data = [
     title: "Instant Equity",
   },
   {
-    icon: "/icons/Financing.svg",
+    icon: "/icons/leverage.svg",
     images: [
       "/img-optimized/Financing1.webp",
       "/img-optimized/Financing2.webp",
@@ -37,16 +37,16 @@ const data = [
     title: "Leverage",
   },
   {
-    icon: "/icons/Property.svg",
+    icon: "/icons/principalPaydown.png",
     images: [
       "/img-optimized/Property1.webp",
       "/img-optimized/Property2.webp",
       "/img-optimized/Property3.webp",
     ],
-    title: "Principal paydown",
+    title: "Principal Paydown",
   },
   {
-    icon: "/icons/Managing.svg",
+    icon: "/icons/marketAppreciation.png",
     images: [
       "/img-optimized/Managing1.webp",
       "/img-optimized/Managing2.webp",
@@ -55,16 +55,16 @@ const data = [
     title: "Market Appreciation",
   },
   {
-    icon: "/icons/Exit.svg",
+    icon: "/icons/forcedAppreciation.png",
     images: [
       "/img-optimized/Exit1.webp",
       "/img-optimized/Exit2.webp",
       "/img-optimized/Exit3.webp",
     ],
-    title: "Forced appreciation ",
+    title: "Forced appreciation",
   },
   {
-    icon: "/icons/Exit.svg",
+    icon: "/icons/taxAdvantages.png",
     images: [
       "/img-optimized/Exit1.webp",
       "/img-optimized/Exit2.webp",
@@ -73,7 +73,7 @@ const data = [
     title: "Tax advantages",
   },
   {
-    icon: "/icons/Exit.svg",
+    icon: "/icons/refinancing.png",
     images: [
       "/img-optimized/Exit1.webp",
       "/img-optimized/Exit2.webp",
@@ -255,7 +255,7 @@ export default function HowReiWorks() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-2 gap-y-[65px] justify-center pt-[30px] w-full max-w-[700px] mx-auto lg:hidden"
+          className="grid grid-cols-2 gap-y-[65px] justify-start pt-[30px] w-full max-w-[700px] mx-auto lg:hidden"
         >
           {data.map((props, i) => (
             <motion.div key={i} variants={item}>
@@ -289,7 +289,7 @@ export default function HowReiWorks() {
           </div>
 
           <div className="absolute w-full left-1/2 top-1/2 -translate-x-[50%] -translate-y-[130px] flex justify-center gap-[348px]">
-            {[data[1], data[4]].map((props, i) => (
+            {[data[6], data[7]].map((props, i) => (
               <motion.div key={i} variants={item}>
                 <FeatureCard {...props} />
               </motion.div>

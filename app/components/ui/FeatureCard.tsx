@@ -26,7 +26,7 @@ export default function FeatureCard({ icon, images, title }: FeatureCardProps) {
         ))}
       </div>
 
-      <div className="w-max h-max bg-primary/90 rounded-[20px] p-[12px] z-1 shadow-primaryy">
+      <div className="w-max h-max bg-primary rounded-[20px] p-[12px] z-1 shadow-primaryy">
         <Image src={icon} alt="icon" width={32} height={32} />
       </div>
 

@@ -2,6 +2,7 @@ import Button from "@/components/ui/Button";
 import CardSimple from "@/components/ui/CardSimple";
 import { motion } from "framer-motion";
 import { container, item } from "@/lib/variantsAnimation";
+import { useProportions } from "@/hooks/proportions";
 
 const data = [
   {
@@ -32,6 +33,11 @@ const data = [
 ];
 
 export function Formula() {
+  const isMobile =
+    useProportions().width <= 768
+      ? "Get The Agent Freedom Formula"
+      : "Get The Agent Freedom Formula Launch Kit";
+
   return (
     <motion.section
       initial="hidden"
@@ -45,7 +51,7 @@ export function Formula() {
           <div className="space-y-6">
             <motion.h2 variants={item} className="h2-default max-w-[410px]">
               The{" "}
-              <span className="gradient-text"> Agent Freedom  Formula™ </span>{" "}
+              <span className="gradient-text"> Agent Freedom Formula™ </span>{" "}
               Your Prospecting System
             </motion.h2>
             <motion.p variants={item} className="p-default max-w-[390px]">
@@ -55,7 +61,7 @@ export function Formula() {
           </div>
           <motion.div variants={item}>
             {" "}
-            <Button label="Get The Agent Freedom Formula Launch Kit" />
+            <Button label={isMobile} />
           </motion.div>
         </div>
       </div>
