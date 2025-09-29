@@ -77,6 +77,7 @@ const data = [
 export default function Certification() {
   return (
     <motion.section
+      id="Certification"
       variants={container}
       initial="hidden"
       viewport={{ once: true, margin: "-50px" }}

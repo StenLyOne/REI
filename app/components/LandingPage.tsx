@@ -1,7 +1,7 @@
 import Hero from "@/sections/Hero/Hero";
 import Header from "@/components/layout/Header";
-import HowReiWorks from "@/sections/HowReiWorks/HowReiWorks";
-import Benefits from "@/sections/Benefits/Benefits";
+import Stats from "@/sections/Stats/Stats";
+import Serve from "@/sections/Serve/Serve";
 import Ecosystem from "@/sections/Ecosystem/Ecosystem";
 import Founders from "@/sections/Founders/Founders";
 // import CTA from "@/sections/CTA/CTA";
@@ -27,8 +27,8 @@ export default function LandingPage() {
       <RightImage />
       <Brands />
       <LeftImage />
-      <Benefits />
-      <HowReiWorks />
+      <Serve />
+      <Stats />
       <Trends />
       <BlueOcean />
       <Gap />
@@ -39,7 +39,7 @@ export default function LandingPage() {
       <Formula />
       <Retirement />
       <Founders />
-      {/* <CTA /> */}
+  
       <Footer />
 
       <BackgroundGradients />

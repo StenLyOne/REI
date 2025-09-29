@@ -40,6 +40,7 @@ export function Formula() {
 
   return (
     <motion.section
+      id="Formula"
       initial="hidden"
       whileInView="visible"
       variants={container}

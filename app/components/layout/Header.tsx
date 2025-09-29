@@ -1,35 +1,30 @@
 import { useState } from "react";
-// import ThemeToggle from "@/components/ui/ThemeToggle";
 import { motion } from "framer-motion";
+import Button from "@/components/ui/Button";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navigation = [
     { label: "Home", href: "#Home" },
-    { label: "How REI Works", href: "#HowReiWorks" },
-    { label: "Benefits", href: "#Benefits" },
-    { label: "Success Stories", href: "#SuccessStories" },
-    { label: "Who’s it for", href: "#WhoSItFor" },
-    { label: "Testimonials", href: "#Testimonials" },
-    { label: "Ecosystem", href: "#Ecosystem" },
+    { label: "Directory", href: "#Directory" },
+    { label: "Serve", href: "#Serve" },
+    { label: "Stats", href: "#Stats" },
+    { label: "Certification", href: "#Certification" },
+    { label: "Formula", href: "#Formula" },
     { label: "Founders", href: "#Founders" },
-    { label: "What You Learn", href: "#WhatYouLearn" },
-    { label: "Start Here", href: "#StartHere" },
-    { label: "FAQ", href: "#FAQ" },
   ];
 
   return (
     <header>
-      {" "}
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-       
-        className="fixed top-0 left-0 w-full z-50 bg-background border-b-1 border-gray-400"
+        className="fixed top-0 left-0 w-full z-50 bg-background border-b border-gray-400"
       >
         <div className="max-w-[1380px] w-full mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-12 py-5">
+          {/* Логотип */}
           <motion.a
             href="#Home"
             className="text-2xl font-bold text-primary z-[100]"
@@ -37,15 +32,37 @@ export default function Header() {
             REI INSTITUTE
           </motion.a>
 
-          <div className="flex items-center gap-6">
-            <motion.div className="z-[100] flex justify-center items-center cursor-pointer">
-              {/* <ThemeToggle /> */}
-            </motion.div>
+          {/* Навигация на десктопе */}
+          <nav className="hidden min-[1000px]:flex items-center gap-8">
+            {navigation.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-[16px] font-medium text-foreground hover:text-primary transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
 
+          {/* Кнопка (только на >=1000px) */}
+          <button
+            className="hidden min-[1000px]:flex bg-primary py-2 px-6 text-white rounded-full font-bold 
+            transition-colors duration-300 hover:bg-primary/90 hover:shadow-lg"
+          >
+            Get Certified
+          </button>
+
+          {/* Иконки справа (бургер только <1000px) */}
+          <div className="flex max-[1000px]:flex min-[1000px]:hidden items-center gap-6">
+            {/* ThemeToggle можно вернуть сюда */}
+            <motion.div className="z-[100] flex justify-center items-center cursor-pointer"></motion.div>
+
+            {/* Бургер */}
             <motion.button
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
-              className="w-8 h-8 flex items-center justify-center p-1 z-[100] cursor-pointer"
+              className="w-8 h-8 items-center justify-center p-1 z-[100] cursor-pointer"
             >
               {isOpen ? (
                 <svg
@@ -99,6 +116,9 @@ export default function Header() {
                 {link.label}
               </a>
             ))}
+            <div className="pt-6">
+              <Button label="Get Certified" link="#Certification" primary />
+            </div>
           </nav>
         </div>
       </motion.div>

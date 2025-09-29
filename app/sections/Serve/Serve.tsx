@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import GlowIcon from "@/components/ui/GlowIcon";
 import { container, item } from "@/lib/variantsAnimation";
 
-export default function Benefits() {
+export default function Serve() {
   const data = [
     {
       gif: "/icons/profit.mp4",
@@ -39,7 +39,7 @@ export default function Benefits() {
   return (
     <section className="relative overflow-hidden">
       <motion.div
-        id="Benefits"
+        id="Serve"
         variants={container}
         initial="hidden"
         whileInView="visible"

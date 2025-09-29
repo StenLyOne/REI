@@ -83,7 +83,7 @@ const data = [
   },
 ];
 
-export default function HowReiWorks() {
+export default function Stats() {
   return (
     <section className="relative overflow-hidden">
       <motion.div
@@ -91,7 +91,7 @@ export default function HowReiWorks() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
-        id="HowReiWorks"
+        id="Stats"
         className="section-default"
       >
         <div>
