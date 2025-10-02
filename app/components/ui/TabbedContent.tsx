@@ -35,7 +35,7 @@ export default function TabbedContent({ data, cardComponent: Card }: Props) {
           <div
             key={i}
             className={`col-start-1 row-start-1 transition-opacity duration-300
-        ${i === activeTab ? "z-10 opacity-100" : "z-0 opacity-0"}
+        ${i === activeTab ? "z-10 opacity-100" : "z-0 opacity-0 hidden"}
       `}
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-6 justify-between">
@@ -76,7 +76,7 @@ function Tab({
   return (
     <div
       ref={containerRef}
-      className="relative mb-5 md:mb-10 p-2 w-max mx-auto shadow-classic bg-white rounded-full flex gap-5"
+      className="relative mb-5 md:mb-6 p-2 w-max mx-auto shadow-classic bg-white rounded-full flex gap-5"
     >
       {/* фиолетовый бегунок */}
       <span

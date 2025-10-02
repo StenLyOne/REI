@@ -2,13 +2,14 @@ import Button from "@/components/ui/Button";
 import { useProportions } from "@/hooks/proportions";
 import { container, item } from "@/lib/variantsAnimation";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
 import { useRef } from "react";
 
 export default function HeroSection() {
   const isMobile =
     useProportions().width <= 768
-      ? "Become an REI Investor"
-      : "Become A Real Estate Investment Specialist (TM)";
+      ? "Become an REI Investor ™"
+      : "Become A Real Estate Investment Specialist ™";
 
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -16,7 +17,7 @@ export default function HeroSection() {
     offset: ["start center", "end end"],
   });
 
-  const videoWidth = useTransform(scrollYProgress, [0.1, 1], ["40%", "85%"]);
+  // const videoWidth = useTransform(scrollYProgress, [0.21, 1], ["40%", "85%"]);
 
   return (
     <main
@@ -34,14 +35,44 @@ export default function HeroSection() {
         {/* TEXT CONTENT */}
         <div className="text-center ">
           {/* h5 */}
-          <motion.div variants={item} className="pb-4 lg:pb-1">
+          {/* <motion.div variants={item} className="pb-4 lg:pb-1">
             <div className="w-max mx-auto bg-white/20 rounded-4xl border border-white/40 backdrop-blur-[20px]">
               <h5 className="px-6 py-4 max-[360px]:text-[14px] text-[16px] md:text-[20px] font-bold uppercase max-[360px]:leading-5 max-[500px]:leading-6 lg:leading-5 text-white">
                 Be Wealthy. Be Certified.{" "}
                 <br className="hidden max-[500px]:block" />
                 Be the Professional{" "}
                 <br className="max-[500px]:hidden lg:hidden " /> Investors{" "}
-                <br className="hidden max-[500px]:block" /> & Homebuyers Trust
+                <br className="hidden max-[500px]:block" /> & Homeowners Trust
+              </h5>
+            </div>
+          </motion.div> */}
+
+          <motion.div variants={item} className="pb-4 lg:pb-8 mt-10">
+            <div className="w-max mx-auto rounded-full border border-white/30 bg-white/10 backdrop-blur-lg shadow-[0_1px_4px_0_rgba(0,0,0,1)]]">
+              <h5 className="px-6 py-4 max-[360px]:text-[14px] text-[16px] md:text-[20px] tracking-[0.8px] font-semibold  max-[360px]:leading-5 max-[500px]:leading-6 lg:leading-5 text-white">
+                Be{" "}
+                <TypeAnimation
+                  sequence={[
+                    `Wealthy. Be Certified.`,
+                    2000,
+                    "",
+                    500,
+                    `the Professional\nInvestors`,
+                    2000,
+                    "",
+                    500,
+                    `the Professional\n& Homeowners Trust`,
+                    2000,
+                    "",
+                    500,
+                  ]}
+                  wrapper="span"
+                  speed={50}
+                  deletionSpeed={40}
+                  repeat={Infinity}
+                  cursor={true}
+                  className="max-[500px]:whitespace-pre-line whitespace-normal"
+                />
               </h5>
             </div>
           </motion.div>
@@ -49,16 +80,15 @@ export default function HeroSection() {
           {/* h1 */}
           <motion.h1
             variants={item}
-            className="max-w-[1240px] text-[32px] sm:text-[54px] lg:text-[84px] text-center mx-auto font-bold leading-tight text-white"
+            className=" max-w-[1240px] text-[32px] sm:text-[54px] lg:text-[84px] text-center mx-auto font-bold leading-tight text-white"
           >
             Prospect Smarter. Do More Deals. Build Clients for Life.
           </motion.h1>
 
-          {/* h4 + Button вместе */}
           {/* h4 */}
           <motion.h4
             variants={item}
-            className="max-w-[860px] mx-auto font-bold text-white pt-6 md:pt-9 pb-5 md:pb-8"
+            className="max-w-[890px] mx-auto font-bold text-[#ECE7FA] pt-6 md:pt-12 pb-5 md:pb-9"
           >
             First-of-its-kind REALTOR® investment certification in North
             America* — built by educators who’ve trained 25,000+ real estate
@@ -89,22 +119,26 @@ export default function HeroSection() {
         {/* DESKTOP VIDEO */}
         <motion.div
           variants={item}
-          className="hidden md:block relative h-[200vh] cursor-pointer"
+          className="hidden md:block relative h-[250vh] -mt-12 md:-mt-40" // контейнер длиннее экрана
           ref={ref}
         >
-          <motion.div
-            id="video"
-            style={{ width: videoWidth }}
-            className="sticky top-[10%] aspect-video rounded-2xl overflow-hidden mx-auto"
-          >
-            <iframe
-              src="https://player.vimeo.com/video/288344114?h=63fff44243&autoplay=1&muted=1&background=1"
-              className="w-full h-full"
-              frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </motion.div>
+          {/* sticky-зона во весь экран */}
+          <div className="sticky top-0 h-screen flex items-center justify-center">
+            <motion.div
+              className="rounded-2xl overflow-hidden origin-center w-[70vw] max-w-[1200px] aspect-video"
+              style={{
+                scale: useTransform(scrollYProgress, [0.2, 1], [0.7, 1.15]),
+              }}
+            >
+              <iframe
+                src="https://player.vimeo.com/video/288344114?h=63fff44243&autoplay=1&muted=1&background=1"
+                className="w-full h-full"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+              />
+            </motion.div>
+          </div>
         </motion.div>
       </motion.div>
 

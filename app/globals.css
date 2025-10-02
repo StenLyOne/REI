@@ -7,7 +7,7 @@
 }
 
 @theme {
-  --font-inter: "Intter";
+  --font-inter: "Montserrat";
   --color-primary: #6c54ec;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -17,6 +17,7 @@
   --color-border-two: var(--border);
   --color-primary-gradient: linear-gradient(to right, #6c54ec 0%, #b34ae4 100%);
   --сolor-neutral-gray: var(--neutral-gray);
+  --color-blue: #042f9c;
 
   --color-soft-purple: #b34ae4;
   --color-soft-pink: #ec549b;
@@ -33,6 +34,7 @@
   --color-soft-teal: #54b3e4;
   --color-soft-fuchsia: #e454ec;
   --color-soft-emerald: #54ec9b;
+  --color-enterprise-gray: oklch(73.8% 0 0);
 }
 
 .light {
@@ -141,7 +143,7 @@
 body {
   background: var(--background);
   color: var(--text);
-  font-family: "Manrope", Helvetica, sans-serif;
+  font-family: "Poppins", Helvetica, sans-serif;
 }
 
 @layer utilities {
@@ -154,11 +156,11 @@ body {
   }
 
   h4 {
-    @apply text-[20px] md:text-[24px] sm:text-[24px] md:leading-[36px] font-bold text-foreground;
+    @apply text-[20px] md:text-[24px] sm:text-[24px] md:leading-[36px] font-semibold font-inter text-foreground;
   }
 
   .p-default {
-    @apply text-[16px] leading-[28px] md:text-[18px] md:leading-[28px] font-normal  font-inter;
+    @apply text-[16px] leading-[28px] md:text-[18px] md:leading-[28px] font-medium  font-inter;
   }
 
   h5 {
@@ -170,7 +172,7 @@ body {
   }
 
   p {
-    @apply font-inter;
+    @apply font-inter font-medium;
   }
 
   .p-16 {
@@ -178,7 +180,7 @@ body {
   }
 
   .section-default {
-    @apply relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 py-[140px] md:py-[240px];
+    @apply relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 py-[100px] md:py-[160px];
   }
 }
 

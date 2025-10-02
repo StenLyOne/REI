@@ -143,7 +143,7 @@ export default function Testimonials() {
             >
               <div className="space-y-5">
                 <div className="flex  text-yellow-400">★ ★ ★ ★ ★</div>
-                <p className="text-gray-700 ">{t.text}</p>
+                <p className="text-gray-700 font-medium">{t.text}</p>
               </div>
               <div className="flex items-center gap-3">
                 <Image
@@ -155,16 +155,16 @@ export default function Testimonials() {
                 />
                 <div>
                   <h5 className="font-semibold">{t.name}</h5>
-                  <p className="text-sm text-gray-500">{t.role}</p>
+                  <p className="text-sm text-gray-500 font-medium">{t.role}</p>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
-      <motion.p variants={item}>
+      {/* <motion.p variants={item}>
         Outcomes are graduate‑reported and vary by market and effort.
-      </motion.p>
+      </motion.p> */}
     </motion.section>
   );
 }

@@ -82,14 +82,14 @@ export default function Certification() {
       initial="hidden"
       viewport={{ once: true, margin: "-50px" }}
       whileInView="visible"
-      className="section-default space-y-10"
+      className="section-default space-y-5"
     >
       <div className="space-y-6  text-center">
         <motion.h2 variants={item} className="h2-large max-w-[900px] mx-auto">
           The <span className="gradient-text"> REIS™ Certification </span> 12
           Weeks → Prospecting Competency
         </motion.h2>
-        <motion.h4 variants={item} className="max-w-[800px] mx-auto">
+        <motion.h4 variants={item} className="max-w-[900px] mx-auto">
           A rigorous, modern certification focused on prospecting smarter,
           generating quality leads, and{" "}
           <span className="gradient-text">

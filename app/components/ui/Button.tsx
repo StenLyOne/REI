@@ -13,11 +13,11 @@ export default function Button({
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group ${!isMobile ? "w-max " : "w-full justify-between"} py-[12px] pl-[20px] ${
+      className={`group ${!isMobile ? "w-max " : "w-full justify-between"} py-[12px] pl-[20px] min-h-14.5 ${
         primary
           ? " bg-primary text-white pr-3"
           : "hover:text-white bg-white text-primary pr-5"
-      } rounded-full flex items-center gap-4 font-semibold glow cursor-pointer`}
+      } rounded-full flex items-center gap-4 font-bold glow cursor-pointer`}
     >
       {label}
       {primary && (

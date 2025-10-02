@@ -21,7 +21,9 @@ export default function Header() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="fixed top-0 left-0 w-full z-50 bg-background border-b border-gray-400"
+        className="fixed top-0 left-0 w-full z-50 
+           bg-white/10 backdrop-blur-md border-b border-white/20 
+           shadow-[0_0px_ 0px_rgba(0,0,0,0.1)]"
       >
         <div className="max-w-[1380px] w-full mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-12 py-5">
           {/* Логотип */}
@@ -46,12 +48,13 @@ export default function Header() {
           </nav>
 
           {/* Кнопка (только на >=1000px) */}
-          <button
+          <a
+            href="https://calendar.rei.institute/#/discoverycall"
             className="hidden min-[1000px]:flex bg-primary py-2 px-6 text-white rounded-full font-bold 
-            transition-colors duration-300 hover:bg-primary/90 hover:shadow-lg"
+            transition-colors duration-300 hover:bg-primary/70 "
           >
             Get Certified
-          </button>
+          </a>
 
           {/* Иконки справа (бургер только <1000px) */}
           <div className="flex max-[1000px]:flex min-[1000px]:hidden items-center gap-6">

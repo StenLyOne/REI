@@ -14,7 +14,7 @@ export default function LeftImage() {
   return (
     <section
       id="StartHere"
-      className="relative w-full my-[100px] md:my-[440px] "
+      className="relative w-full my-[100px] md:my-[300px] "
     >
       {" "}
       <motion.div
@@ -51,7 +51,7 @@ export default function LeftImage() {
 
         <div className="md:max-w-[530px]">
           <motion.h2 variants={item} className="h2-default">
-            Find a <span className="gradient-text">REIS Certified Pro</span>{" "}
+            Find a <span className="gradient-text">REIS™ Certified Pro</span>{" "}
             Directory
           </motion.h2>
           <motion.p

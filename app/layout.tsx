@@ -1,10 +1,17 @@
-import { Inter, Manrope } from "next/font/google";
+import { Poppins, Montserrat } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import { LazyAnimations } from "./hooks/LazyAnimations";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
+});
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
 
 const title = "Real Estate Coaching | Become a Certified Investor Specialist";
 const description =
@@ -165,7 +172,7 @@ export default function RootLayout({
         />
       </head>
 
-      <body className={`${manrope.variable} ${inter.variable} antialiased`}>
+      <body className={`${montserrat.variable} ${poppins.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

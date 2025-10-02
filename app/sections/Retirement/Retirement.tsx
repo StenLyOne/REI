@@ -48,12 +48,12 @@ export default function Retirement() {
       viewport={{ once: true, margin: " -50px" }}
       className="section-default space-y-15 md:space-y-25"
     >
-      <div className="space-y-6 text-center max-w-[720px] mx-auto">
-        <motion.h2 variants={item} className="h2-large">
-          Your <span className="gradient-text"> Retirement Starts Now</span>:
+      <div className="space-y-6 text-center  mx-auto">
+        <motion.h2 variants={item} className="h2-large max-w-[740px] mx-auto">
+          Your <span className="gradient-text "> Retirement Starts Now</span>:
           Get In the Game
         </motion.h2>
-        <motion.h4 variants={item}>
+        <motion.h4 variants={item} className="max-w-[800px] mx-auto">
           <span className="gradient-text"> REALTORS® don’t get pensions. </span>{" "}
           Commission cheques aren’t a retirement plan.{" "}
           <span className="gradient-text"> The Agent Freedom Formula™ </span>{" "}

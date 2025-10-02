@@ -13,7 +13,7 @@ export default function GlowIcon({
   return (
     <div
       className={`relative rounded-[20px] ${
-        img || video? "w-[78px] h-[78px]" : "h-[44px] mb-[12px]"
+        img || video? "w-[32px] max-w-[32px] max-h-[32px] h-[32px]" : "h-[44px] mb-[12px]"
       }`}
     >
       <div className="icon-anim-inner py-[6px] px-[6px]">
@@ -22,7 +22,7 @@ export default function GlowIcon({
         {/* icon content */}
         <div
           className={`flex justify-center items-center w-full h-full ${
-            img || video ? "p-[0px] min-w-[66px] min-h-[66px]" : "py-[6px] px-[12px]"
+            img || video ? "p-[0px] min-w-[40px] min-h-[40px]" : "py-[6px] px-[12px]"
           } bg-white rounded-[10px] `}
           style={{ boxShadow: "0px 0px 20px 0px rgba(208, 208, 208, 0.6)" }}
         >
@@ -37,13 +37,13 @@ export default function GlowIcon({
           {video && (
             <video
               src={text}
-              width={50}
-              height={50}
+              width={32}
+              height={32}
               autoPlay
               loop
               muted
               playsInline
-              className="w-[50px] h-[50px] object-contain"
+              className="w-[32px] h-[32px] object-contain"
             />
           )}
         </div>

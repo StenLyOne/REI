@@ -28,7 +28,7 @@ export default function RightImage() {
           variants={container}
           initial="hidden"
           whileInView="visible"
-         viewport={{ once: true, margin: "-50px" }}
+          viewport={{ once: true, margin: "-50px" }}
           className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 flex flex-col lg:flex-row gap-[60px] lg:gap-[100px] items-center relative"
         >
           {/* Левая колонка */}
@@ -110,7 +110,7 @@ export default function RightImage() {
           >
             <div className="relative w-full h-[50vh] lg:w-[900px] lg:h-[638px] rounded-l-[20px] overflow-hidden">
               <Image
-               src="/img/section1.png"
+                src="/img/section1.png"
                 alt="section"
                 width={900}
                 height={638}

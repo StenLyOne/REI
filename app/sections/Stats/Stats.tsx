@@ -92,26 +92,26 @@ export default function Stats() {
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
         id="Stats"
-        className="section-default"
+        className="section-default "
       >
         <div>
-          <div className="mx-auto space-y-[24px] text-center max-w-[820px]">
+          <div className="mx-auto space-y-12 text-center ">
             <motion.h2 className="h2-large" variants={item}>
               Why the Industry Is
               <span className="gradient-text text-bold"> Shifting</span>
             </motion.h2>
 
-            <div className="space-y-5">
+            <div className="space-y-8">
               <motion.h4 variants={item}>
                 The old play—“it’ll be worth more next year”—isn’t a plan.
               </motion.h4>
-              <motion.p variants={item}>
+              <motion.h4 variants={item} className="max-w-[700px] mx-auto">
                 Pre‑construction is mostly an appreciation bet (useful in some
                 cycles), but it’s just{" "}
                 <span className="gradient-text font-bold">one of eight</span>{" "}
                 profit centres.
-              </motion.p>
-              <motion.p variants={item}>
+              </motion.h4>
+              <motion.h4 variants={item}>
                 With renewals squeezing households, clients want{" "}
                 <span className="gradient-text font-bold">
                   numbers‑first guidance
@@ -122,7 +122,7 @@ export default function Stats() {
                   stack all eight profit centres
                 </span>
                 —win now.
-              </motion.p>
+              </motion.h4>
             </div>
           </div>
         </div>
@@ -270,17 +270,21 @@ export default function Stats() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="relative w-full max-w-[1200px] mx-auto min-h-[600px] hidden lg:flex"
+          className="relative w-full max-w-[1200px] mx-auto min-h-[400px] hidden lg:flex "
         >
-          <div className="absolute w-full left-1/2 top-1/2 -translate-x-[50%] -translate-y-[255px] flex justify-center gap-[890px]">
+          <div className="absolute w-full left-1/2 top-[88%] -translate-x-[50%] -translate-y-[255px] flex justify-center gap-[890px]">
             {[data[0], data[5]].map((props, i) => (
-              <motion.div key={i} variants={item}>
+              <motion.div
+                key={i}
+                variants={item}
+                className=""
+              >
                 <FeatureCard {...props} />
               </motion.div>
             ))}
           </div>
 
-          <div className="absolute w-full left-1/2 top-1/2 -translate-x-[50%] -translate-y-[190px] flex justify-center  gap-[638px]">
+          <div className="absolute w-full left-1/2 top-[85%] -translate-x-[50%] -translate-y-[190px] flex justify-center  gap-[638px]">
             {[data[1], data[4]].map((props, i) => (
               <motion.div key={i} variants={item}>
                 <FeatureCard {...props} />
@@ -288,7 +292,7 @@ export default function Stats() {
             ))}
           </div>
 
-          <div className="absolute w-full left-1/2 top-1/2 -translate-x-[50%] -translate-y-[130px] flex justify-center gap-[348px]">
+          <div className="absolute w-full left-1/2 top-[82%] -translate-x-[50%] -translate-y-[130px] flex justify-center gap-[348px]">
             {[data[6], data[7]].map((props, i) => (
               <motion.div key={i} variants={item}>
                 <FeatureCard {...props} />
@@ -296,7 +300,7 @@ export default function Stats() {
             ))}
           </div>
 
-          <div className="absolute w-full left-1/2 top-1/2 -translate-x-[50%] -translate-y-1/2 flex justify-center gap-[60px]">
+          <div className="absolute w-full left-1/2 top-[75%] -translate-x-[50%] -translate-y-1/2 flex justify-center gap-[60px]">
             {[data[2], data[3]].map((props, i) => (
               <motion.div key={i} variants={item}>
                 <FeatureCard {...props} />

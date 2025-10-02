@@ -7,7 +7,7 @@ export default function Quote() {
   // 0..1 прогресс появления секции в вьюпорте
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["0.3 0.6", "0.6 0.3"], // настраивай зону активации
+    offset: ["0.4 1", "1 0.4"], // настраивай зону активации
   });
 
   // храним число, чтобы не дергать хук в map
@@ -22,20 +22,18 @@ export default function Quote() {
     <section ref={ref} className="section-default space-y-6">
       <h2 className="h2-default text-center mx-auto max-w-[970px] leading-relaxed flex flex-wrap justify-center">
         {words.map((word, i) => {
-          // интервал «ответственности» каждого слова на шкале 0..1
-          const start = i / words.length;
-          const end = (i + 1) / words.length;
+          const compress = 0.6; // к какой доле скролла заканчиваем закрашивание
 
-          // локальный прогресс слова (0..1), без хуков
+          // новые границы интервала
+          const start = (i / words.length) * compress;
+          const end = ((i + 1) / words.length) * compress;
+
           const local =
             p <= start ? 0 : p >= end ? 1 : (p - start) / (end - start);
 
           return (
             <span key={i} className="relative mx-1">
-              {/* нижний слой — серый текст */}
               <span className="text-gray-400">{word}</span>
-
-              {/* верхний слой — градиент, проявляется по opacity */}
               <span
                 className="absolute left-0 top-0 gradient-text"
                 style={{ opacity: local }}

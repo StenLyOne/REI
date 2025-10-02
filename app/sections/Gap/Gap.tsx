@@ -98,12 +98,12 @@ export default function Gap() {
       whileInView="visible"
       className="section-default"
     >
-      <div className="space-y-6 mx-auto max-w-[672px] text-center mb-10">
-        <motion.h2 variants={item} className="h2-large">
+      <div className="space-y-6 mx-auto  text-center mb-4">
+        <motion.h2 variants={item} className="h2-default">
           The <span className="gradient-text">Gap</span> Investors Feel And How
           You Win By Closing It
         </motion.h2>
-        <motion.h4 variants={item}>
+        <motion.h4 variants={item} className="max-w-[842px] mx-auto">
           After training <span className="gradient-text">25,000+ </span>
           investors and buying across North America, Gord heard the same pain
           points again and again:

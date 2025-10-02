@@ -5,7 +5,7 @@ import { container, item } from "@/lib/variantsAnimation";
 
 const data = [
   {
-    label: "REIS™‑Certified",
+    label: "REIS™ Certified",
     text: [
       "Lead with education—win on value",
       "Attract (don’t chase) multi‑deal clients",
@@ -40,7 +40,7 @@ export default function Ecosystem() {
           <div className="flex flex-col md:flex-row justify-between w-full gap-5">
             <motion.h2 variants={item} className="h2-large ">
               Traditional vs.
-              <span className="gradient-text"> REIS™‑Certified </span> Rreal
+              <span className="gradient-text"> REIS™ Certified </span> Rreal
               Talk
             </motion.h2>
             <motion.div variants={item} className="">
@@ -59,7 +59,7 @@ export default function Ecosystem() {
                     variants={item}
                     className="md:w-[50%] pb-[24px] mb-[12px]"
                   >
-                    REIS Certified Realtors
+                    REIS™ Certified Realtors
                   </motion.h4>
                   <motion.h4
                     variants={item}

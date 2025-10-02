@@ -10,7 +10,7 @@ interface FeatureCardProps {
 
 export default function FeatureCard({ icon, images, title }: FeatureCardProps) {
   return (
-    <div className="flex flex-col items-center text-center space-y-3">
+    <div className="hover:-translate-y-3 hover:scale-[1.1] duration-200 z-10   flex flex-col items-center text-center space-y-3">
       <div className="flex -space-x-3 mb-[-15px] translate-y-1/4">
         {images.map((src, i) => (
           <Image

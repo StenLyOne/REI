@@ -7,26 +7,31 @@ import { useProportions } from "@/hooks/proportions";
 const data = [
   {
     title: "Attract",
+    color: "gradient-text",
     text: "Blue‑Ocean outreach, Investor Nights, and numbers‑first content that filters for serious clients.",
     imageUrl: "/img/attract.png",
   },
   {
     title: "Diagnose",
+    color: "gradient-text",
     text: "Wealth Review → Deal Criteria → Financing Path in one tight consult.",
     imageUrl: "/img/diagnose.png",
   },
   {
     title: "Prescribe",
+    color: "gradient-text",
     text: "Strategy‑matched Property Packs within 48 hours (Deal Analyzer snapshot + risk notes).",
     imageUrl: "/img/prescribe.png",
   },
   {
     title: "Execute",
+    color: "gradient-text",
     text: "Power Team aliances (mortgage, legal, PM, construction, lenders) to move quickly and cleanly.",
     imageUrl: "/img/execute.png",
   },
   {
     title: "Compound",
+    color: "gradient-text",
     text: "Post‑close cadence: review, refi, redeploy → multi‑deal clients.",
     imageUrl: "/img/compound.png",
   },
@@ -50,12 +55,15 @@ export function Formula() {
       <div className="relative w-full md:w-1/2">
         <div className="sticky top-[30vh] space-y-10">
           <div className="space-y-6">
-            <motion.h2 variants={item} className="h2-default max-w-[410px]">
+            <motion.h2 variants={item} className="h2-default max-w-[510px]">
               The{" "}
               <span className="gradient-text"> Agent Freedom Formula™ </span>{" "}
               Your Prospecting System
             </motion.h2>
-            <motion.p variants={item} className="p-default max-w-[390px]">
+            <motion.p
+              variants={item}
+              className="p-default max-w-[390px] !font-medium"
+            >
               Stop competing in the same crowded silo. The Agent Freedom Formula
               turns education into a repeatable deal machine:
             </motion.p>

@@ -31,7 +31,7 @@ export default function Founders() {
             <motion.h2 variants={item} className="h2-large">
               Meet the Founders
             </motion.h2>
-            <motion.h4 variants={item} className=" max-w-[748px] mx-auto">
+            <motion.h4 variants={item} className=" max-w-[808px] mx-auto">
               <span className="gradient-text font-bold">
                 {" "}
                 50+ years combined

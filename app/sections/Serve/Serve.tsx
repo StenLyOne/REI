@@ -55,7 +55,7 @@ export default function Serve() {
 
               <motion.h4
                 variants={item}
-                className="max-w-[782px] mx-auto text-center "
+                className="max-w-[900px] mx-auto text-center "
               >
                 Gain the{" "}
                 <span className="gradient-text font-bold"> skills</span>,
@@ -72,14 +72,14 @@ export default function Serve() {
               <motion.article
                 key={i}
                 variants={item}
-                className="p-[20px] space-y-[24px] rounded-[20px] text-left border-1 border-border shadow-classic"
+                className="p-4 space-y-3 rounded-[20px] text-left border-1 border-border shadow-classic"
                 style={{ background: "var(--secondary)" }}
               >
-                <div className="w-[78px] h-[78px]">
+                <div className="w-[50px] h-[50px] ml-2 mt-2">
                   <GlowIcon text={benefit.gif} video={true} />
                 </div>
                 <div className="space-y-[12px]">
-                  <h4>{benefit.title}</h4>
+                  <h5 className="font-semibold">{benefit.title}</h5>
                   <p>{benefit.description}</p>
                 </div>
               </motion.article>

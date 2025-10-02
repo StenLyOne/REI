@@ -19,7 +19,7 @@ export default function EcosystemItem({ rei, text }: EcosystemItemProps) {
           height={14}
         />
       </span>
-      <p className={`${rei ? "font-medium" : "font-normal"}`}>{text}</p>
+      <p className={`${rei ? "font-bold" : "font-medium"}`}>{text}</p>
     </div>
   );
 }

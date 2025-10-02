@@ -24,9 +24,11 @@ export default function CardHorizontal({
           <h3 className=" text-[80px] leading-[92px] gradient-text font-bold">
             {stat}
           </h3>
-          <h4 className="w-4/5 md:w-full ">{text}</h4>
+          <h4 className="w-4/5 md:w-full text-[24px] leading-[32px] md:text-[32px] md:leading-[40px]">
+            {text}
+          </h4>
         </div>
-        <p className="text-[#707070] ">{name}</p>
+        <h5 className="text-[#707070] font-medium">{name}</h5>
       </div>
       <div className="hidden md:block relative w-[713px] h-[581px]">
         <Image
