@@ -34,7 +34,7 @@ export default function Ecosystem() {
         variants={container}
         viewport={{ once: true, margin: "-50px" }}
         aria-label="Ecosystem comparison between REI Certified and Traditional Realtors"
-        className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 mb-[100px] lg:mb-[200px]"
+        className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 my-[80px] lg:my-[100px]"
       >
         <motion.div className="space-y-[48px]">
           <div className="flex flex-col md:flex-row justify-between w-full gap-5">

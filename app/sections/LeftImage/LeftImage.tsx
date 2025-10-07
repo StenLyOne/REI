@@ -14,7 +14,7 @@ export default function LeftImage() {
   return (
     <section
       id="StartHere"
-      className="relative w-full my-[100px] md:my-[300px] "
+      className="relative w-full my-[100px] md:my-[220px] "
     >
       {" "}
       <motion.div

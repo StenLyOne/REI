@@ -219,7 +219,7 @@ body {
   }
 
   .section-default {
-    @apply relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 py-[100px] md:py-[160px];
+    @apply relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-12 py-[80px] md:py-[100px];
   }
 }
 

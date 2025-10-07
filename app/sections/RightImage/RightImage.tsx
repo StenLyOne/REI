@@ -23,7 +23,7 @@ export default function RightImage() {
 
   return (
     <section id="WhatYouLearn" className="relative overflow-hidden">
-      <div className="w-full py-[100px] lg:py-[160px]">
+      <div className="w-full py-[80px] lg:py-[100px]">
         <motion.div
           variants={container}
           initial="hidden"
