@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isTop, setIsTop] = useState(true);
 
   const navigation = [
     { label: "Home", href: "#Home" },
@@ -14,6 +15,16 @@ export default function Header() {
     { label: "Formula", href: "#Formula" },
     { label: "Founders", href: "#Founders" },
   ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsTop(window.scrollY === 0);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header>
@@ -40,7 +51,11 @@ export default function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-[16px] font-medium text-foreground hover:text-primary transition-colors"
+                className={`text-[16px] font-semibold transition-colors ${
+                  isTop
+                    ? "text-white hover:text-primary"
+                    : "text-foreground hover:text-primary"
+                }`}
               >
                 {link.label}
               </a>

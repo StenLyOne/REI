@@ -40,8 +40,7 @@ export default function Ecosystem() {
           <div className="flex flex-col md:flex-row justify-between w-full gap-5">
             <motion.h2 variants={item} className="h2-large ">
               Traditional vs.
-              <span className="gradient-text"> REIS™ Certified </span> Rreal
-              Talk
+              <span className="gradient-text"> REIS™ Certified </span> realtors
             </motion.h2>
             <motion.div variants={item} className="">
               <Button label="Get Certified" />
