@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { container, item } from "@/lib/variantsAnimation";
 
 import CardSimple from "@/components/ui/CardSimple";
+import { useProportions } from "@/hooks/useProportions";
 
 const data98Homes = [
   {
@@ -48,19 +49,28 @@ const blueOcean = [
 
 export default function BlueOcean() {
   const refSection = useRef(null);
+  const { width } = useProportions();
 
   const { scrollYProgress } = useScroll({
     target: refSection,
-    offset: ["start end", "end end"],
+    offset: ["start end", "end start"],
   });
-  const imageWidth = useTransform(scrollYProgress, [0.3, 1], ["40%", "100%"]);
-  const wavesY = useTransform(scrollYProgress, [0, 0.3], [100, 0]);
-  const wavesOpacity = useTransform(scrollYProgress, [0, 0.15], [0, 1]);
+  const imageWidth = useTransform(scrollYProgress, [0.1, 0.2], ["40%", "100%"]);
+  const wavesY = useTransform(
+    scrollYProgress,
+    width >= 768 ? [0.05, 0.2] : [0.05, 0.1],
+    [200, 0]
+  );
+  const wavesOpacity = useTransform(
+    scrollYProgress,
+    width >= 768 ? [0.05, 0.2, 0.9, 0.95] : [0.05, 0.1, 0.9, 0.95],
+    [0, 1, 1, 0]
+  );
 
   return (
-    <section className="relative pt-100">
+    <section ref={refSection} className="relative pt-10">
       <div className="absolute inset-0 pointer-events-none">
-        <motion.div
+        {/* <motion.div
           style={{ y: wavesY, opacity: wavesOpacity }}
           className="sticky top-0 w-full h-max z-0"
         >
@@ -154,6 +164,17 @@ export default function BlueOcean() {
               className="transition-all duration-300 ease-in-out delay-150 path-3"
             ></path>
           </svg>
+          text-[#1830E4]
+        </motion.div> */}
+        <motion.div
+          style={{ y: wavesY, opacity: wavesOpacity }}
+          className="sticky top-0 w-full h-max z-0"
+        >
+          <img
+            src="/img/wave.png"
+            alt="wave"
+            className="w-full h-screen object-cover"
+          ></img>
         </motion.div>
       </div>
       <motion.div
@@ -163,23 +184,22 @@ export default function BlueOcean() {
         viewport={{ once: true, margin: "-50px" }}
         className="section-default  space-y-25 "
       >
-        <div ref={refSection} className="space-y-15">
+        <div className="space-y-15">
           <div className="space-y-6">
             <motion.h2
               variants={item}
               className="h2-large mx-auto w-max text-center !text-white"
             >
               Your Blue Ocean: <br className="block md:hidden" /> The{" "}
-              <span className="text-[#1830E4]"> 98% </span>
+              <span className=""> 98% </span>
             </motion.h2>
             <motion.h4
               variants={item}
               className="max-w-[926px] mx-auto text-center !text-white font-bold"
             >
               Most homeowners aren’t
-              <span className="text-[#1830E4]"> “in the market” </span>{" "}
-              today—but they are interested in{" "}
-              <span className="text-[#1830E4]"> building wealth </span>. Be the
+              <span className=""> “in the market” </span> today—but they are
+              interested in <span className=""> building wealth </span>. Be the
               pro who brings the plan, not the pitch.
             </motion.h4>
           </div>
@@ -204,13 +224,13 @@ export default function BlueOcean() {
             variants={item}
             className="h2-default text-center !text-white"
           >
-            Turn the <span className="">98% of homes</span> not
-            listing into a pipeline
+            Turn the <span className="">98% of homes</span> not listing into a
+            pipeline
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-6 justify-between">
             {data98Homes.map((homes, i) => (
               <motion.div variants={item} key={i}>
-                  <CardSimple {...homes} colorText="text-white" />
+                <CardSimple {...homes} colorText="text-white" />
               </motion.div>
             ))}
           </div>
@@ -226,10 +246,9 @@ export default function BlueOcean() {
             variants={item}
             className="h2-default text-center !text-white"
           >
-            How REIS™ operationalizes the{" "}
-            <span className="">Blue Ocean</span>
+            How REIS™ operationalizes the <span className="">Blue Ocean</span>
           </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-6 justify-between pb-100">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-6 justify-between pb-1">
             {blueOcean.map((homes, i) => (
               <motion.div variants={item} key={i}>
                 <CardSimple {...homes} colorText="text-white" />

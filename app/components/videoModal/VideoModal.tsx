@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { useProportions } from "@/hooks/proportions";
+import { useProportions } from "@/hooks/useProportions";
 
 interface VideoModalProps {
   isOpen: boolean;

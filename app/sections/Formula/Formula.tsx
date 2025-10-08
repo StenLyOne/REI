@@ -2,7 +2,7 @@ import Button from "@/components/ui/Button";
 import CardSimple from "@/components/ui/CardSimple";
 import { motion } from "framer-motion";
 import { container, item } from "@/lib/variantsAnimation";
-import { useProportions } from "@/hooks/proportions";
+import { useProportions } from "@/hooks/useProportions";
 
 const data = [
   {

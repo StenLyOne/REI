@@ -1,4 +1,4 @@
-import { useProportions } from "@/hooks/proportions";
+import { useProportions } from "@/hooks/useProportions";
 
 type Props = { link?: string; label?: string; primary?: boolean };
 

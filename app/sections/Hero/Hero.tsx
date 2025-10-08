@@ -1,5 +1,5 @@
 import Button from "@/components/ui/Button";
-import { useProportions } from "@/hooks/proportions";
+import { useProportions } from "@/hooks/useProportions";
 import { container, item } from "@/lib/variantsAnimation";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";

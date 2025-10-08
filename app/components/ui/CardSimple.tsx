@@ -12,7 +12,7 @@ export default function CardSimple({
   title,
   text,
   imageUrl,
-  color,
+  // color,
   colorText,
 }: Props) {
   return (
@@ -25,7 +25,7 @@ export default function CardSimple({
         height={386}
       ></Image>
       <div className="space-y-2">
-        <h3 className={`text-[32px] font-semibold ${color} leading-[40px] `}>
+        <h3 className={`text-[32px] font-semibold text-white leading-[40px] `}>
           {title}
         </h3>
         <p className={`p-default text-gray ${colorText} !font-bold `}>{text}</p>
