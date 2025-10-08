@@ -10,7 +10,7 @@ const features = [
   </>,
   <>
     Evaluate <span className="gradient-text font-bold">properties</span> and
-    <span className="gradient-text font-bold">deals</span>
+    <span className="gradient-text font-bold"> deals</span>
   </>,
   <>
     Lead clients from a first home to a <br className="hidden md:block" />

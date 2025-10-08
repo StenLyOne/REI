@@ -16,7 +16,7 @@ const data = [
       "/img-optimized/Fundamentals2.webp",
       "/img-optimized/Fundamentals3.webp",
     ],
-    title: "Cash flow",
+    title: "Cash Flow",
   },
   {
     icon: "/icons/instantEquity.png",
@@ -61,7 +61,7 @@ const data = [
       "/img-optimized/Exit2.webp",
       "/img-optimized/Exit3.webp",
     ],
-    title: "Forced appreciation",
+    title: "Forced Appreciation",
   },
   {
     icon: "/icons/taxAdvantages.png",
@@ -70,7 +70,7 @@ const data = [
       "/img-optimized/Exit2.webp",
       "/img-optimized/Exit3.webp",
     ],
-    title: "Tax advantages",
+    title: "Tax Advantages",
   },
   {
     icon: "/icons/refinancing.png",

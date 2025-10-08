@@ -34,6 +34,12 @@ export default function Serve() {
       description:
         "Connect with certified REALTORS® who speak your language, reduce risk, and help you scale.",
     },
+    {
+      gif: "/icons/choosing-custome.mp4",
+      title: "Home Owners",
+      description:
+        "Learn the language of real estate investing and create your own retirement plan.",
+    },
   ];
 
   return (
@@ -67,7 +73,7 @@ export default function Serve() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[24px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {data.map((benefit, i) => (
               <motion.article
                 key={i}

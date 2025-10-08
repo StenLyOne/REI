@@ -53,15 +53,7 @@ export default function HeroSection() {
                 Be{" "}
                 <TypeAnimation
                   sequence={[
-                    `Wealthy. Be Certified.`,
-                    2000,
-                    "",
-                    500,
-                    `the Professional\nInvestors`,
-                    2000,
-                    "",
-                    500,
-                    `the Professional\n& Homeowners Trust`,
+                    `Be the Professional Investors\n & Homebuyers Trust.`,
                     2000,
                     "",
                     500,
@@ -82,7 +74,7 @@ export default function HeroSection() {
             variants={item}
             className=" max-w-[1240px] text-[32px] sm:text-[54px] lg:text-[84px] text-center mx-auto font-bold leading-tight text-white"
           >
-            Prospect Smarter. Do More Deals. Build Clients for Life.
+            Prospect Smarter. Do More Deals. Build Clients for Life
           </motion.h1>
 
           {/* h4 */}

@@ -24,7 +24,7 @@ export default function Founders() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
-        className="relative section-default"
+        className="relative section-default mb-20"
       >
         <div className="space-y-[48px]">
           <div className="text-center space-y-6">

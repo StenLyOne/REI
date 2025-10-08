@@ -38,7 +38,7 @@ export default function TabbedContent({ data, cardComponent: Card }: Props) {
         ${i === activeTab ? "z-10 opacity-100" : "z-0 opacity-0 hidden"}
       `}
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-6 justify-between">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-5 justify-between">
               {ele.cards.map((card, j) => (
                 <motion.div variants={item} key={j}>
                   <Card {...card} />

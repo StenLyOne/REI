@@ -57,26 +57,8 @@ export default function Testimonials() {
           variants={item}
           className="text-left w-full text-[24px] leading-[36px] md:text-[32px] md:leading-[44px] font-semibold"
         >
-          <span className="gradient-text font-bold">
-            Realtors are not the enemy
-          </span>
-          they are simply not trained to have{" "}
-          <span className="gradient-text font-bold">
-            {" "}
-            wealth building conversations.{" "}
-          </span>
-          Once agents lead with{" "}
-          <span className="gradient-text font-bold"> numbers </span> and a{" "}
-          <span className="gradient-text font-bold"> plan, </span> clients get{" "}
-          <span className="gradient-text font-bold">
-            {" "}
-            excited about investing{" "}
-          </span>{" "}
-          and turn into your most{" "}
-          <span className="gradient-text font-bold">
-            {" "}
-            loyal & repeat buyers.{" "}
-          </span>
+          What Happens When You Prospect the{" "}
+          <span className="gradient-text font-bold">REIS™ Way</span>
         </motion.h2>
         <div className="w-full flex justify-between">
           <motion.div variants={item}>
