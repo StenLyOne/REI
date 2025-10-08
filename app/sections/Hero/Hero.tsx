@@ -50,7 +50,6 @@ export default function HeroSection() {
           <motion.div variants={item} className="pb-4 lg:pb-8 mt-10">
             <div className="w-max mx-auto rounded-full border border-white/30 bg-white/10 backdrop-blur-lg shadow-[0_1px_4px_0_rgba(0,0,0,1)]]">
               <h5 className="px-6 py-4 max-[360px]:text-[14px] text-[16px] md:text-[20px] tracking-[0.8px] font-semibold  max-[360px]:leading-5 max-[500px]:leading-6 lg:leading-5 text-white">
-                Be{" "}
                 <TypeAnimation
                   sequence={[
                     `Be the Professional Investors\n & Homebuyers Trust.`,
@@ -80,11 +79,11 @@ export default function HeroSection() {
           {/* h4 */}
           <motion.h4
             variants={item}
-            className="max-w-[890px] mx-auto font-bold text-[#ECE7FA] pt-6 md:pt-12 pb-5 md:pb-9"
+            className="max-w-[920px] mx-auto font-bold text-[#ECE7FA] pt-6 md:pt-12 pb-5 md:pb-9"
           >
-            First-of-its-kind REALTOR® investment certification in North
-            America* — built by educators who’ve trained 25,000+ real estate
-            investors.
+            First-of-its-kind REALTOR<span className="text-[20px] align-super">®</span> investment
+            certification in North America* - built by educators who have
+            trained over 25,000 investors and Realtors.
           </motion.h4>
 
           {/* Button */}

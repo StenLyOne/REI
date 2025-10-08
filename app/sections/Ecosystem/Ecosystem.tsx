@@ -41,6 +41,7 @@ export default function Ecosystem() {
             <motion.h2 variants={item} className="h2-large ">
               Traditional vs.
               <span className="gradient-text"> REIS™ Certified </span> realtors
+              <span className="text-[35px] align-bottom">®</span>
             </motion.h2>
             <motion.div variants={item} className="">
               <Button label="Get Certified" />
@@ -59,12 +60,13 @@ export default function Ecosystem() {
                     className="md:w-[50%] pb-[24px] mb-[12px]"
                   >
                     REIS™ Certified Realtors
+                    <span className="text-[17px] align-super">®</span>
                   </motion.h4>
                   <motion.h4
                     variants={item}
                     className="w-[50%] pb-[24px] mb-[12px] font-normal hidden md:block"
                   >
-                    Traditional Realtors
+                    Traditional Realtors<span className="text-[17px] align-super">®</span>  
                   </motion.h4>
                 </div>
                 {data[0].text.map((leftText, i) => (

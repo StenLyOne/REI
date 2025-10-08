@@ -83,7 +83,10 @@ export default function Retirement() {
                   className="block text-center"
                 >
                   Your{" "}
-                  <span className="gradient-text">Retirement Starts Now</span>.
+                  <span className="gradient-text">
+                    Your Retirement Plan Starts Now
+                  </span>
+                  
                 </motion.span>
 
                 {/* 2-я строка — скрыта в начале, появляется при скролле и едет вместе с первой */}
