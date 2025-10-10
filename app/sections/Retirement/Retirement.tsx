@@ -82,11 +82,9 @@ export default function Retirement() {
                   style={{ y: firstY }}
                   className="block text-center"
                 >
-                  Your{" "}
                   <span className="gradient-text">
                     Your Retirement Plan Starts Now
                   </span>
-                  
                 </motion.span>
 
                 {/* 2-я строка — скрыта в начале, появляется при скролле и едет вместе с первой */}

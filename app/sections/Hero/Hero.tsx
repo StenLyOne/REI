@@ -79,7 +79,7 @@ export default function HeroSection() {
           {/* h4 */}
           <motion.h4
             variants={item}
-            className="max-w-[920px] mx-auto font-bold text-[#ECE7FA] pt-6 md:pt-12 pb-5 md:pb-9"
+            className="max-w-[92  0px] mx-auto font-bold text-[#ECE7FA] pt-6 md:pt-12 pb-5 md:pb-9"
           >
             First-of-its-kind REALTOR<span className="text-[20px] align-super">®</span> investment
             certification in North America* - built by educators who have
