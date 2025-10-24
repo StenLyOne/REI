@@ -1,16 +1,16 @@
 import { motion } from "framer-motion";
 
 const blobs = [
-  { className: "bg-soft-purple", top: "-10%", right: "5%" },
+  { className: "bg-soft-purple", top: "-20%", right: "5%" },
   { className: "bg-soft-pink", top: "30%", right: "-5%" },
   { className: "bg-soft-blue", top: "60%", left: "-10%" },
 //   { className: "bg-soft-green", top: "10%", left: "0%" },
-  { className: "bg-soft-orange", bottom: "15%", right: "0%" },
+  { className: "bg-soft-orange", bottom: "25%", right: "0%" },
   { className: "bg-soft-pink", top: "40%", left: "0%" },
-  { className: "bg-soft-red", bottom: "20%", left: "-10%" },
+  { className: "bg-soft-red", bottom: "24%", left: "-10%" },
   { className: "bg-soft-cyan", top: "70%", right: "0%" },
-  { className: "bg-soft-indigo", top: "5%", left: "5%" },
-  { className: "bg-soft-red", bottom: "5%", right: "10%" },
+  { className: "bg-soft-indigo", top: "35%", left: "5%" },
+  { className: "bg-soft-red", bottom: "25%", right: "10%" },
   { className: "bg-soft-rose", top: "20%", right: "5%" },
   { className: "bg-soft-violet", bottom: "30%", left: "0%" },
   { className: "bg-soft-teal", top: "55%", left: "5%" },

@@ -22,7 +22,7 @@ export default function HeroSection() {
   return (
     <main
       id="Home"
-      className="relative mx-auto px-4 sm:px-6 lg:px-12 pt-[200px] pb-20 lg:pb-[100px]"
+      className="relative mx-auto px-4 sm:px-6 lg:px-12 pt-[200px] pb-20 lg:pb-[100px] z-10"
     >
       {/* Контейнер с variants */}
       <motion.div
@@ -34,19 +34,6 @@ export default function HeroSection() {
       >
         {/* TEXT CONTENT */}
         <div className="text-center ">
-          {/* h5 */}
-          {/* <motion.div variants={item} className="pb-4 lg:pb-1">
-            <div className="w-max mx-auto bg-white/20 rounded-4xl border border-white/40 backdrop-blur-[20px]">
-              <h5 className="px-6 py-4 max-[360px]:text-[14px] text-[16px] md:text-[20px] font-bold uppercase max-[360px]:leading-5 max-[500px]:leading-6 lg:leading-5 text-white">
-                Be Wealthy. Be Certified.{" "}
-                <br className="hidden max-[500px]:block" />
-                Be the Professional{" "}
-                <br className="max-[500px]:hidden lg:hidden " /> Investors{" "}
-                <br className="hidden max-[500px]:block" /> & Homeowners Trust
-              </h5>
-            </div>
-          </motion.div> */}
-
           <motion.div variants={item} className="pb-4 lg:pb-8 mt-10">
             <div className="w-max mx-auto rounded-full border border-white/30 bg-white/10 backdrop-blur-lg shadow-[0_1px_4px_0_rgba(0,0,0,1)]]">
               <h5 className="px-6 py-4 max-[360px]:text-[14px] text-[16px] md:text-[20px] tracking-[0.8px] font-semibold  max-[360px]:leading-5 max-[500px]:leading-6 lg:leading-5 text-white">
@@ -79,9 +66,10 @@ export default function HeroSection() {
           {/* h4 */}
           <motion.h4
             variants={item}
-            className="max-w-[92  0px] mx-auto font-bold text-[#ECE7FA] pt-6 md:pt-12 pb-5 md:pb-9"
+            className="max-w-[920px] mx-auto font-bold text-[#ECE7FA] pt-6 md:pt-12 pb-5 md:pb-9"
           >
-            First-of-its-kind REALTOR<span className="text-[20px] align-super">®</span> investment
+            First-of-its-kind REALTOR
+            <span className="text-[20px] align-super">®</span> investment
             certification in North America* - built by educators who have
             trained over 25,000 investors and Realtors.
           </motion.h4>

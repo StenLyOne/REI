@@ -1,5 +1,5 @@
 import Button from "@/components/ui/Button";
-import EcosystemItem from "@/sections/Ecosystem/EcosystemItem";
+import EcosystemItem from "@/mainPageSections/Ecosystem/EcosystemItem";
 import { motion } from "framer-motion";
 import { container, item } from "@/lib/variantsAnimation";
 

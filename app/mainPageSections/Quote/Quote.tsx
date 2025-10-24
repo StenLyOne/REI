@@ -1,13 +1,7 @@
 import { useScroll, useMotionValueEvent } from "framer-motion";
 import { useRef, useState } from "react";
 
-export default function Quote({
-  quote,
-  name,
-}: {
-  quote: string;
-  name: string;
-}) {
+export default function Quote({}) {
   const ref = useRef<HTMLDivElement>(null);
 
   // 0..1 прогресс появления секции в вьюпорте
@@ -20,11 +14,12 @@ export default function Quote({
   const [p, setP] = useState(0);
   useMotionValueEvent(scrollYProgress, "change", (v) => setP(v));
 
-  const text = `${quote}`;
+  const text =
+    "Realtors weren’t the enemy—they are simply under‑trained for investor deals. Once agents lead with numbers and a plan, investors become your most loyal, repeat clients";
   const words = text.split(" ");
 
   return (
-    <div ref={ref} className="space-y-6">
+    <section ref={ref} className="section-default space-y-6">
       <h2 className="h2-default text-center mx-auto max-w-[970px] leading-relaxed flex flex-wrap justify-center">
         {words.map((word, i) => {
           const compress = 0.6; // к какой доле скролла заканчиваем закрашивание
@@ -50,7 +45,9 @@ export default function Quote({
         })}
       </h2>
 
-      <h4 className="text-[#707070] mx-auto text-center">{name}</h4>
-    </div>
+      <h4 className="text-[#707070] mx-auto text-center">
+        — Gord Lemon, Co-Founder, REI Institute
+      </h4>
+    </section>
   );
 }

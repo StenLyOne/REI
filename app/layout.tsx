@@ -2,6 +2,8 @@ import { Poppins, Montserrat } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import { LazyAnimations } from "./hooks/LazyAnimations";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -172,13 +174,17 @@ export default function RootLayout({
         />
       </head>
 
-      <body className={`${montserrat.variable} ${poppins.variable} antialiased`}>
+      <body
+        className={`${montserrat.variable} ${poppins.variable} antialiased`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
           enableSystem={false}
         >
+          <Header />
           {children}
+          <Footer />
         </ThemeProvider>
         <LazyAnimations />
       </body>

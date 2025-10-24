@@ -1,28 +1,26 @@
-import Hero from "@/sections/Hero/Hero";
-import Header from "@/components/layout/Header";
-import Stats from "@/sections/Stats/Stats";
-import Serve from "@/sections/Serve/Serve";
-import Ecosystem from "@/sections/Ecosystem/Ecosystem";
-import Founders from "@/sections/Founders/Founders";
+import Hero from "@/mainPageSections/Hero/Hero";
+import Stats from "@/mainPageSections/Stats/Stats";
+import Serve from "@/mainPageSections/Serve/Serve";
+import Ecosystem from "@/mainPageSections/Ecosystem/Ecosystem";
+import Founders from "@/mainPageSections/Founders/Founders";
 // import CTA from "@/sections/CTA/CTA";
-import Footer from "@/components/layout/Footer";
-import RightImage from "@/sections/RightImage/RightImage";
-import LeftImage from "@/sections/LeftImage/LeftImage";
-import Brands from "@/sections/Brands/Brands";
-import Trends from "@/sections/Trends/Trends";
-import BlueOcean from "@/sections/BlueOcean/BlueOcean";
-import Gap from "@/sections/Gap/Gap";
-import Quote from "@/sections/Quote/Quote";
-import Testimonials from "@/sections/Testimonials/Testimonials";
-import Certification from "@/sections/Certification/Certification";
-import { Formula } from "@/sections/Formula/Formula";
-import Retirement from "@/sections/Retirement/Retirement";
+import RightImage from "@/mainPageSections/RightImage/RightImage";
+import LeftImage from "@/mainPageSections/LeftImage/LeftImage";
+import Brands from "@/mainPageSections/Brands/Brands";
+import Trends from "@/mainPageSections/Trends/Trends";
+import BlueOcean from "@/mainPageSections/BlueOcean/BlueOcean";
+import Gap from "@/mainPageSections/Gap/Gap";
+import Quote from "@/mainPageSections/Quote/Quote";
+import Testimonials from "@/mainPageSections/Testimonials/Testimonials";
+import Certification from "@/mainPageSections/Certification/Certification";
+import { Formula } from "@/mainPageSections/Formula/Formula";
+import Retirement from "@/mainPageSections/Retirement/Retirement";
 import BackgroundGradients from "./ui/BackgroundGradients";
 
 export default function LandingPage() {
   return (
     <div className="relative">
-      <Header />
+   
       <Hero />
       <RightImage />
       <Brands />
@@ -39,9 +37,7 @@ export default function LandingPage() {
       <Formula />
       <Retirement />
       <Founders />
-  
-      <Footer />
-
+      
       <BackgroundGradients />
     </div>
   );

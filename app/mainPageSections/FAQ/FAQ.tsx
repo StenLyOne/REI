@@ -1,5 +1,5 @@
 import GlowIcon from "@/components/ui/GlowIcon";
-import Question from "@/sections/FAQ/Question";
+import Question from "@/mainPageSections/FAQ/Question";
 import { motion } from "framer-motion";
 
 export default function FAQ() {

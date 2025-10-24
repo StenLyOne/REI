@@ -27,7 +27,13 @@ export default function TabbedContent({ data, cardComponent: Card }: Props) {
         variants={item}
         className="overflow-x-auto whitespace-nowrap -mx-4 px-4 py-2"
       >
-        <Tab labels={labels} onChange={setActiveTab} activeIndex={activeTab} />
+        {labels.length > 1 && (
+          <Tab
+            labels={labels}
+            onChange={setActiveTab}
+            activeIndex={activeTab}
+          />
+        )}
       </motion.div>
 
       <div className="grid">
