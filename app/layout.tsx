@@ -5,6 +5,7 @@ import { LazyAnimations } from "./hooks/LazyAnimations";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -186,6 +187,7 @@ export default function RootLayout({
           <Header />
           {children}
           <Footer />
+          <SpeedInsights />
           <Analytics />
         </ThemeProvider>
         <LazyAnimations />
