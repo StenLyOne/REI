@@ -101,7 +101,7 @@ export default function HeroSection() {
           id="video"
           className="block md:hidden aspect-video rounded-2xl overflow-hidden mx-auto w-full"
         >
-          <video className="w-full h-full" controls autoPlay>
+          <video className="w-full h-full" autoPlay muted playsInline loop>
             <source src="/videos/hero-video-2025.mp4" />
           </video>
         </motion.div>
