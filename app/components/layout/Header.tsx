@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
+import Image from "next/image";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,7 +53,7 @@ export default function Header() {
                 href="/"
                 className="text-2xl font-bold text-primary z-[100]"
               >
-                REI INSTITUTE
+                <Image width={200} height={60} alt="rei logo" src={"/logo.svg"}/>
               </motion.a>
             )}
 

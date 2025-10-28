@@ -50,24 +50,29 @@ const dataSecondSection = [
   {
     gif: "/icons/profit.mp4",
     title: "Boost Agent GCI and Deal Flow",
+    color: "text-soft-violet",
+
     description:
-      "REIS-trained agents increase productivity, repeat business, and average commission per client. Our graduates report a 15–25% average increase in GCI within the first year of completing the program.",
+      "REIS™ trained agents increase productivity, repeat business, and average commission per client. Our graduates report a 15–25% average increase in GCI within the first year of completing the program.",
   },
   {
     gif: "/icons/handshake.mp4",
     title: "Recruit Differently. Retain Longer",
+    color: "text-soft-blue",
     description:
       "Today’s agents want more than just a commission split. They want coaching, credibility, and a clear path to growth.",
   },
   {
     gif: "/icons/database.mp4",
     title: "Differentiate Your Value Prop",
+    color: "text-soft-indigo",
     description:
       "Offer a designation few brokerages provide—and become a magnet for talent seeking long-term success.",
   },
   {
     gif: "/icons/allocation.mp4",
     title: "Future-Proof Your Office",
+    color: "text-soft-teal",
     description:
       "As more consumers focus on wealth building, your team will be equipped to meet that demand.",
   },
@@ -122,7 +127,7 @@ const dataFierdSection = [
     icon: LockClosedIcon,
   },
   {
-    name: "If your top producers are asking &quot;what’s next?&quot;...",
+    name: "If your top producers are asking what’s next?...",
     // description:
     //   "Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.",
     icon: ArrowPathIcon,
@@ -144,78 +149,26 @@ export default function Brokers() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="flex flex-col md:flex-row z-10 gap-[70px] items-center relative"
+          className="flex flex-col h-full my-auto md:flex-row z-10 gap-[70px] items-center relative"
         >
-          <svg
-            aria-hidden="true"
-            className="
-            absolute
-            inset-0
-            -z-10
-            w-full
-            h-[64rem]
-            stroke-[oklab(100%_0_0_/_1)]
-            mask-[radial-gradient(32rem_32rem,#000,#0000)]
-          "
-          >
-            <defs>
-              <pattern
-                id="1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84"
-                width="200"
-                height="200"
-                x="50%"
-                y="-1"
-                patternUnits="userSpaceOnUse"
-              >
-                <path d="M.5 200V.5H200" fill="none"></path>
-              </pattern>
-            </defs>
-            <svg x="50%" y="-1" className="akjc akjs">
-              <path
-                d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
-                strokeWidth="0"
-              ></path>
-            </svg>
-            <rect
-              width="100%"
-              height="100%"
-              fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)"
-              strokeWidth="0"
-            ></rect>
-          </svg>
           {/* TEXT CONTENT */}
           <div className="text-left w-full md:max-w-[60%]">
-            {/* <motion.div variants={item} className="pb-4 lg:pb-8 mt-10">
-              <div className="w-max mx-auto rounded-full border border-white/30 bg-white/10 backdrop-blur-lg shadow-[0_1px_4px_0_rgba(0,0,0,1)]]">
-                <h5 className="px-6 py-4 max-[360px]:text-[14px] text-[16px] md:text-[20px] tracking-[0.8px] font-semibold  max-[360px]:leading-5 max-[500px]:leading-6 lg:leading-5 text-white">
-                  <TypeAnimation
-                    sequence={[`Real Estate Is Changing.`, 2000, "", 500]}
-                    wrapper="span"
-                    speed={50}
-                    deletionSpeed={40}
-                    repeat={Infinity}
-                    cursor={true}
-                    className="max-[500px]:whitespace-pre-line whitespace-normal"
-                  />
-                </h5>
-              </div>
-            </motion.div> */}
             {/* h1 */}
             <motion.h1
               variants={item}
-              className="  text-[32px] sm:text-[54px]  text-left mx-auto font-bold leading-tight text-white"
+              className="text-[32px] sm:text-[54px]  text-left mx-auto font-bold leading-tight text-white"
             >
-              Elevate Your Agents. <br /> Elevate Your Brokerage.
+              Elevate Your Agents. <br /> Elevate Your Brokerage
             </motion.h1>
 
             {/* text */}
             <motion.p
               variants={item}
-              className="text-[20px] leading-[28px] text-balance mx-auto font-bold text-[#ECE7FA] pt-6 md:pt-9 pb-5 md:pb-12"
+              className="text-[20px] leading-[28px] text-balance mx-auto font-bold text-[#ECE7FA] pt-6 md:pt-7 pb-5 md:pb-8"
             >
-              The Brokerages That Thrive Are the Ones That Teach Their Agents to
-              Lead. <br /> <br />
-              You&#39;ve built your business on experience, service, and
+              The Brokerages That Thrive Are the
+              <br /> Ones That Teach Their Agents to Lead. <br /> <br />
+              {/* You&#39;ve built your business on experience, service, and
               performance. But the rules of real estate are evolving. Margins
               are tighter. Clients are more informed. And top agents are asking
               bigger questions—about sustainability, strategy, and financial
@@ -223,14 +176,14 @@ export default function Brokers() {
               The Real Estate Investment Specialist™ (REIS) designation helps
               your agents become more than just dealmakers. It helps them become
               trusted advisors to their clients—and future-ready professionals
-              who stay and grow with your brand. There’s a better way to grow.
+              who stay and grow with your brand. There’s a better way to grow. */}
             </motion.p>
             <motion.div variants={item} className="mx- w-max ">
               <Button
                 label={`${
                   isMobile <= 768
-                    ? "Become an REI Investor ™"
-                    : "Become A Real Estate Investment Specialist ™"
+                    ? "Book to find out more"
+                    : "Book an appointment to find out more"
                 }`}
               />
             </motion.div>
@@ -359,10 +312,10 @@ export default function Brokers() {
               </motion.div>
 
               <motion.p variants={item} className="p-default">
-                “Before REIS, I was working twice as hard for half the return.
+                “Before REIS™, I was working twice as hard for half the return.
                 Now I attract investor clients who buy 3–4 homes a year. My
                 income grew 27% and I finally feel like I’m building something
-                that lasts.” <br /> — Marilyn S., REIS Graduate | Royal LePage
+                that lasts.” <br /> — Marilyn S., REIS™ Graduate | Royal LePage
               </motion.p>
 
               {/* 3. Подзаголовок списка */}
@@ -457,7 +410,7 @@ export default function Brokers() {
                     <GlowIcon text={benefit.gif} video={true} />
                   </div>
                   <div className="space-y-[12px]">
-                    <h5 className="font-semibold text-balance">
+                    <h5 className={`${benefit.color} font-bold text-balance`}>
                       {benefit.title}
                     </h5>
                     <p>{benefit.description}</p>
@@ -480,7 +433,7 @@ export default function Brokers() {
         <div className="space-y-6  text-center">
           <motion.h2 variants={item} className="h2-large max-w-[900px] mx-auto">
             What You{" "}
-            <span className="gradient-text">Get With REIS Licensing</span>
+            <span className="gradient-text">Get With REIS™ Licensing</span>
           </motion.h2>
           <motion.h4 variants={item} className="max-w-[600px] mx-auto">
             We’ve made it easy to bring this to your{" "}
@@ -504,7 +457,7 @@ export default function Brokers() {
         >
           <div className="lg:text-center">
             <motion.h2 variants={item} className="h2-default mt-2 text-balance">
-              Message from the <span className="gradient-text"> REII Team</span>
+              Message from the <span className="gradient-text"> REI Team</span>
             </motion.h2>
             <motion.h4 variants={item} className="text-balance mt-6 ">
               We’re not here to replace your coaching or compete with your
@@ -512,7 +465,7 @@ export default function Brokers() {
             </motion.h4>
             <motion.h4 variants={item} className="text-balance mt-6 ">
               We’re here to{" "}
-              <span className="gradient-text"> add omething news</span>—a way to
+              <span className="gradient-text"> add something news</span>—a way to
               help your agents serve a{" "}
               <span className="gradient-text"> growing investor market</span>,
               build lasting{" "}
@@ -564,7 +517,7 @@ export default function Brokers() {
             {" "}
             <h4 className="font-bold gradient-text">Book a Discovery Call</h4>
             <h5 className="p-default font-medium">
-              Let us walk you through the REIS program and how licensing can
+              Let us walk you through the REIS™ program and how licensing can
               benefit your office.
             </h5>
           </div>

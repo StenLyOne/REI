@@ -7,13 +7,13 @@ import { motion } from "framer-motion";
 const testimonials = [
   {
     name: "Marilyn S",
-    role: "REIS Graduate (Royal LePage)",
-    text: "“Before REIS, I was working twice as hard for half the return. Now I attract clients who buy 3–4 homes a year. GCI up 27% and I’m finally building something that lasts.”",
+    role: "REIS™ Graduate (Royal LePage)",
+    text: "“Before REIS™, I was working twice as hard for half the return. Now I attract clients who buy 3–4 homes a year. GCI up 27% and I’m finally building something that lasts.”",
     avatar: "/icons/realtors.png",
   },
   {
     name: "GTA Agent",
-    role: "REIS Graduate",
+    role: "REIS™ Graduate",
     text: "“First Investor Night with your kit: 38 attendees → 11 consults → 3 offers in 14 days.”",
     avatar: "/icons/realtors1.png",
   },

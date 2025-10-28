@@ -7,36 +7,48 @@ export default function Serve() {
     {
       gif: "/icons/profit.mp4",
       title: "REALTORS®",
+      color: "text-soft-violet",
+      // url: "/realtors",
       description:
-        "Help everyday clients become multi‑deal investors, build your own portfolio, and create a repeatable business (and a real retirement plan).",
+        "Help everyday clients become multi-deal investors, build your own portfolio, and create a repeatable business (and a real retirement plan).",
     },
     {
       gif: "/icons/handshake.mp4",
       title: "Brokerages",
+      color: "text-soft-blue",
+      url: "/brokers",
       description:
         "Increase GCI through smarter, repeatable investor transactions. Equip agents with prospecting tools that attract loyal, empowered clients. Use REIS™ for recruiting, retention, and brand lift.",
     },
     {
       gif: "/icons/database.mp4",
       title: "Boards & Associations",
+      color: "text-soft-indigo",
+      url: "/boards",
       description:
         "Raise competency with investment literacy that strengthens member value and consumer outcomes.",
     },
     {
       gif: "/icons/allocation.mp4",
       title: "Affiliates & Partners",
+      color: "text-soft-teal",
+      url: "/affiliates",
       description:
-        "Add value to your network with trusted training and a marketing‑ready partnership model.",
+        "Add value to your network with trusted training and a marketing-ready partnership model.",
     },
     {
       gif: "/icons/choosing-custome.mp4",
       title: "Investors",
+      color: "text-soft-fuchsia",
+      url: "/investors",
       description:
         "Connect with certified REALTORS® who speak your language, reduce risk, and help you scale.",
     },
     {
       gif: "/icons/choosing-custome.mp4",
       title: "Home Owners",
+      color: "text-primary",
+      // url: "/home-owners",
       description:
         "Learn the language of real estate investing and create your own retirement plan.",
     },
@@ -85,7 +97,11 @@ export default function Serve() {
                   <GlowIcon text={benefit.gif} video={true} />
                 </div>
                 <div className="space-y-[12px]">
-                  <h5 className="font-semibold">{benefit.title}</h5>
+                  <a href={benefit.url}>
+                    <h5 className={`${benefit.color} font-bold`}>
+                      {benefit.title}
+                    </h5>
+                  </a>
                   <p>{benefit.description}</p>
                 </div>
               </motion.article>

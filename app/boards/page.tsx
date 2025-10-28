@@ -3,7 +3,6 @@
 import Button from "@/components/ui/Button";
 import CardImage from "@/components/ui/CardImage";
 import GlowIcon from "@/components/ui/GlowIcon";
-import { useProportions } from "@/hooks/useProportions";
 import { container, imgItem, item } from "@/lib/variantsAnimation";
 import Quote from "@/sections/Quote/Quote";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -50,7 +49,7 @@ const dataThirdSection = [
     gif: "/icons/handshake.mp4",
     title: "Strengthen Public Protection",
     description:
-      "REIS training includes clear guidelines, legal disclaimers, and a structured designation process to ensure consumers are treated ethically and responsibly.",
+      "REIS™ training includes clear guidelines, legal disclaimers, and a structured designation process to ensure consumers are treated ethically and responsibly.",
   },
   {
     gif: "/icons/database.mp4",
@@ -102,11 +101,6 @@ const features2 = [
 ];
 
 export default function Boards() {
-  const isMobile =
-    useProportions().width <= 768
-      ? "Become an REI Investor ™"
-      : "Become A Real Estate Investment Specialist ™";
-
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -163,19 +157,19 @@ export default function Boards() {
               variants={item}
               className="max-w-[1020px] text-[20px] leading-[28px] text-balance mx-auto font-bold text-[#ECE7FA] pt-6 md:pt-12 pb-5 md:pb-9"
             >
-              It Requires Investment Literacy. Real estate is no longer just
+              {/* It Requires Investment Literacy. Real estate is no longer just
               about helping clients buy and sell. Today’s consumers are looking
               for guidance on how to build long-term wealth. Unfortunately, most
-              REALTORS® are not trained to provide it. <br /> <br />
+              REALTORS® are not trained to provide it. <br /> <br /> */}
               That’s where we come in. The Real Estate Investment Specialist™
-              (REIS) designation equips REALTORS® with the tools, language, and
+              (REIS™) designation equips REALTORS® with the tools, language, and
               strategy to serve the modern consumer—while upholding the highest
               standard of professionalism.
             </motion.p>
 
             {/* Button */}
             <motion.div variants={item} className="mx-auto w-max">
-              <Button label={isMobile} />
+              <Button label={"Schedule a call"} />
             </motion.div>
           </div>
 
@@ -252,7 +246,7 @@ export default function Boards() {
             </motion.p>
           </div>
           <Quote
-            name="~ Harry Ramadeen, REIS Graduate | Oakville, ON"
+            name="~ Harry Ramadeen, REIS™ Graduate | Oakville, ON"
             quote=" I didn’t realize how little I knew until I took the course. Now I understand what investors really
 need—and how to protect them from making poor decisions. "
           />
@@ -272,10 +266,10 @@ need—and how to protect them from making poor decisions. "
             <span className="gradient-text"> What’s at Stake:</span>
           </motion.h2>
           <motion.h4 variants={item} className="max-w-[800px] mx-auto">
-            The <span className="gradient-text">REIS training </span> fills this
-            gap—and aligns with RECO’s core competencies and the professional
-            obligations agents already hold. brokerage—without adding to your
-            plate.{" "}
+            The <span className="gradient-text">REIS™ training </span> fills
+            this gap—and aligns with RECO’s core competencies and the
+            professional obligations agents already hold. brokerage—without
+            adding to your plate.{" "}
           </motion.h4>
         </div>
 
@@ -310,9 +304,9 @@ need—and how to protect them from making poor decisions. "
         >
           <div className="flex flex-col items-center text-center space-y-[48px]">
             <div>
-              <motion.h2 variants={item} className="h2-large">
+              <motion.h2 variants={item} className="h2-default">
                 Why Real Estate Boards Choose to{" "}
-                <span className="gradient-text"> Partner with REIS</span>
+                <span className="gradient-text"> Partner with REIS™</span>
               </motion.h2>
             </div>
 
@@ -377,7 +371,7 @@ need—and how to protect them from making poor decisions. "
 
               {/* 3. Подзаголовок списка */}
               <motion.h5 variants={item} className="font-semibold">
-                Real Estate Boards who offered REIS to their members see
+                Real Estate Boards who offered REIS™ to their members see
                 stronger broker participation, and positive feedback from
                 consumers.
               </motion.h5>
@@ -411,7 +405,7 @@ need—and how to protect them from making poor decisions. "
 
               {/* 8. Кнопка */}
               <motion.div variants={item}>
-                <Button label="Learn How" />
+                <Button label={"Schedule a call"} />
               </motion.div>
             </div>
 
@@ -488,18 +482,22 @@ need—and how to protect them from making poor decisions. "
               variants={item}
               className="p-default mt-5 md:mt-6 mb-5 md:mb-10"
             >
-              We partner with boards across Canada to make the REIS training
-              accessible, impactful, and fully aligned with board-level goals.
-              Whether you’re looking to offer this as part of professional{" "}
-              <br /> <br />
+              We partner with{" "}
+              <span className="gradient-text">boards across Canada</span> to
+              make the
+              <span className="gradient-text"> REIS™ training</span> accessible,
+              impactful, and fully aligned with board-level goals. <br /> <br />{" "}
+              Whether you’re looking to offer this as part of professional
               development, add a designation to your member benefits, or simply
-              explore the value of investment literacy—we’re here to help.
+              explore the value of
+              <span className="gradient-text"> investment literacy</span> —
+              we’re here to help.
             </motion.p>
             <motion.div
               variants={container}
               className="flex flex-col md:flex-row gap-4"
             >
-              <Button label="Find a REIS-Certified Agent"></Button>
+              <Button label={"Schedule a call"} />
             </motion.div>
           </div>
         </motion.div>
@@ -522,7 +520,7 @@ need—and how to protect them from making poor decisions. "
                 What the{" "}
                 <span className="gradient-text">
                   {" "}
-                  REIS Designation Teaches Members
+                  REIS™ Designation Teaches Members
                 </span>
               </motion.h2>
 
@@ -619,11 +617,11 @@ need—and how to protect them from making poor decisions. "
               Book a Meeting with Our Team
             </h4>
             <h5 className="p-default font-medium">
-              Let’s explore how REIS could benefit your board and your members.
+              Let’s explore how REIS™ could benefit your board and your members.
             </h5>
           </div>
 
-          <Button label="Schedule a Call" />
+          <Button label={"Schedule a call"} />
         </motion.div>
         <motion.div
           variants={item}

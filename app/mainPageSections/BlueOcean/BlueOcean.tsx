@@ -134,7 +134,7 @@ export default function BlueOcean() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-6 justify-between">
             {data98Homes.map((homes, i) => (
               <motion.div variants={item} key={i}>
-                <CardSimple {...homes} colorText="text-white" />
+                <CardSimple {...homes} colorText="text-white"    titleClass="text-white leading-[40px] text-[32px] font-semibold"/>
               </motion.div>
             ))}
           </div>
@@ -155,7 +155,11 @@ export default function BlueOcean() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-6 justify-between pb-1">
             {blueOcean.map((homes, i) => (
               <motion.div variants={item} key={i}>
-                <CardSimple {...homes} colorText="text-white" />
+                <CardSimple
+                  {...homes}
+                  colorText="text-white"
+                  titleClass="text-white leading-[40px] text-[32px] font-semibold"
+                />
               </motion.div>
             ))}
           </div>

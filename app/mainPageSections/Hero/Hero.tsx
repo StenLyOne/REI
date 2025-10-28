@@ -1,11 +1,16 @@
+"use client";
+
 import Button from "@/components/ui/Button";
 import { useProportions } from "@/hooks/useProportions";
 import { container, item } from "@/lib/variantsAnimation";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Volume2, VolumeX } from "lucide-react";
 
 export default function HeroSection() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [muted, setMuted] = useState(true);
   const isMobile =
     useProportions().width <= 768
       ? "Become an REI Investor ™"
@@ -16,6 +21,16 @@ export default function HeroSection() {
     target: ref,
     offset: ["start center", "end end"],
   });
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = muted;
+
+    video.play().catch((err) => {
+      console.warn("Autoplay blocked:", err);
+    });
+  }, [muted]);
 
   // const videoWidth = useTransform(scrollYProgress, [0.21, 1], ["40%", "85%"]);
 
@@ -86,13 +101,9 @@ export default function HeroSection() {
           id="video"
           className="block md:hidden aspect-video rounded-2xl overflow-hidden mx-auto w-full"
         >
-          <iframe
-            src="https://player.vimeo.com/video/288344114?h=63fff44243&autoplay=1&muted=1&background=1"
-            className="w-full h-full"
-            frameBorder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+          <video className="w-full h-full" controls autoPlay>
+            <source src="/videos/hero-video-2025.mp4" />
+          </video>
         </motion.div>
 
         {/* DESKTOP VIDEO */}
@@ -109,13 +120,26 @@ export default function HeroSection() {
                 scale: useTransform(scrollYProgress, [0.2, 1], [0.7, 1.15]),
               }}
             >
-              <iframe
-                src="https://player.vimeo.com/video/288344114?h=63fff44243&autoplay=1&muted=1&background=1"
-                className="w-full h-full"
-                frameBorder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowFullScreen
-              />
+              <div className="relative w-full h-full">
+                <video
+                  ref={videoRef}
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  playsInline
+                  muted={muted}
+                >
+                  <source src="/videos/hero-video-2025.mp4" type="video/mp4" />
+                </video>
+
+                {/* Кнопка mute/unmute */}
+                <button
+                  onClick={() => setMuted((m) => !m)}
+                  className="absolute bottom-6 right-6 bg-black/40 hover:bg-black/60 text-white p-2 rounded-full transition"
+                >
+                  {muted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+                </button>
+              </div>
             </motion.div>
           </div>
         </motion.div>

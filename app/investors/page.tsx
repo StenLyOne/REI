@@ -4,7 +4,6 @@ import BackgroundGradients from "@/components/ui/BackgroundGradients";
 import Button from "@/components/ui/Button";
 import CardSimple from "@/components/ui/CardSimple";
 import GlowIcon from "@/components/ui/GlowIcon";
-import { useProportions } from "@/hooks/useProportions";
 import { container, imgItem, item } from "@/lib/variantsAnimation";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -63,7 +62,7 @@ const dataThirdSection = [
     gif: "/icons/database.mp4",
     title: "Power Team Connections",
     description:
-      "REIS agents are taught to build networks of investor-savvy mortgage brokers, lawyers, contractors, and property managers.",
+      "REIS™ agents are taught to build networks of investor-savvy mortgage brokers, lawyers, contractors, and property managers.",
   },
   {
     gif: "/icons/allocation.mp4",
@@ -105,7 +104,6 @@ const dataSevenSection = [
 ];
 
 export default function Investors() {
-  const isMobile = useProportions().width;
   return (
     <div className="relative">
       {/* HERO SECTION */}
@@ -119,47 +117,10 @@ export default function Investors() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="flex flex-col md:flex-row z-10 gap-[70px] items-center relative"
+          className="flex flex-col h-[50vh]  md:flex-row z-10 gap-[70px] items-center relative"
         >
-          <svg
-            aria-hidden="true"
-            className="
-            absolute
-            inset-0
-            -z-10
-            w-full
-            h-[64rem]
-            stroke-[oklab(100%_0_0_/_1)]
-            mask-[radial-gradient(32rem_32rem,#000,#0000)]
-          "
-          >
-            <defs>
-              <pattern
-                id="1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84"
-                width="200"
-                height="200"
-                x="50%"
-                y="-1"
-                patternUnits="userSpaceOnUse"
-              >
-                <path d="M.5 200V.5H200" fill="none"></path>
-              </pattern>
-            </defs>
-            <svg x="50%" y="-1" className="akjc akjs">
-              <path
-                d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
-                strokeWidth="0"
-              ></path>
-            </svg>
-            <rect
-              width="100%"
-              height="100%"
-              fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)"
-              strokeWidth="0"
-            ></rect>
-          </svg>
           {/* TEXT CONTENT */}
-          <div className="text-left w-full md:max-w-[60%]">
+          <div className="text-left  w-full md:max-w-[60%]">
             {/* h1 */}
             <motion.h1
               variants={item}
@@ -174,24 +135,19 @@ export default function Investors() {
               variants={item}
               className="text-[20px] leading-[28px] text-balance mx-auto font-bold text-[#ECE7FA] pt-6 md:pt-12 pb-5 md:pb-9"
             >
-              We Train REALTORS® to Think Like Investors. <br /> <br />
+              {/* We Train REALTORS® to Think Like Investors. <br /> <br /> */}
               Too many investors waste time educating their agents—when it
-              should be the other way around. <br /> <br /> That’s why we
-              created the Real Estate Investment Specialist™ (REIS) designation.
+              should be the other way around. <br /> <br />
+              {/* That’s why we
+              created the Real Estate Investment Specialist (REIS™) designation.
               Our training helps licensed real estate professionals speak your
               language, analyze deals properly, and bring you opportunities that
               align with your goals. <br /> <br />
               Whether you&#39;re flipping, buying and holding, BRRRRing, or
-              scaling a rental portfolio—REIS-trained agents are ready to help.
+              scaling a rental portfolio—REIS™ trained agents are ready to help. */}
             </motion.p>
             <motion.div variants={item} className="mx- w-max ">
-              <Button
-                label={`${
-                  isMobile <= 768
-                    ? "Become an REI Investor ™"
-                    : "Become A Real Estate Investment Specialist ™"
-                }`}
-              />
+              <Button label={`Find an REIS™ agent near you`} />
             </motion.div>
           </div>
 
@@ -265,7 +221,7 @@ export default function Investors() {
               <motion.p variants={item} className="p-default">
                 ❝ I called 101 agents before I found two that actually
                 understood what I was trying to do. ❞ <br />— July Ono,
-                Multi-Million Dollar Investor &amp; REIS Supporter
+                Multi-Million Dollar Investor &amp; REIS™ Supporter
               </motion.p>
 
               {/* 3. Подзаголовок списка */}
@@ -345,7 +301,8 @@ export default function Investors() {
           <div className="flex flex-col items-center text-center space-y-[48px]">
             <div>
               <motion.h2 variants={item} className="h2-large">
-                What Sets <span className="gradient-text">REIS-Certified </span>
+                What Sets{" "}
+                <span className="gradient-text">REIS™ Certified </span>
                 Agents Apart
               </motion.h2>
             </div>
@@ -426,7 +383,7 @@ export default function Investors() {
               variants={container}
               className="flex flex-col md:flex-row gap-4"
             >
-              <Button label="Find a REIS-Certified Agent"></Button>
+              <Button label="Find a REIS™ Certified Agent"></Button>
             </motion.div>
           </div>
         </motion.div>
@@ -468,7 +425,7 @@ export default function Investors() {
 
               {/* 3. Подзаголовок списка */}
               <motion.h5 variants={item} className="font-semibold">
-                One REIS-certified agent can help you:
+                One REIS™ certified agent can help you:
               </motion.h5>
 
               {/* 4–6. Список */}
@@ -499,7 +456,7 @@ export default function Investors() {
               </motion.div>
 
               <motion.p variants={item} className="p-default">
-                REIS-trained agents help clients build 6–12 unit portfolios in
+                REIS™ trained agents help clients build 6–12 unit portfolios in
                 as little as 5–8 years using strategic acquisition plans.
               </motion.p>
             </div>

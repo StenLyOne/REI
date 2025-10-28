@@ -62,7 +62,7 @@ export default function LeftImage() {
             <span className="gradient-text font-semibold">
               North American Referral Directory
             </span>{" "}
-            of REIS™‑certified professionals. Refer clients across regions with
+            of REIS™ certified professionals. Refer clients across regions with
             confidence—or get inbound referrals because{" "}
             <span className="gradient-text font-semibold">
               you’re certified.

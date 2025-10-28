@@ -44,7 +44,7 @@ const dataSecondSection = [
     gif: "/icons/handshake.mp4",
     title: "Backed by Industry Experts",
     description:
-      "From OREA and TRREB to high-level coaches like July Ono and Julie Hoffman, REIS is earning national support.",
+      "From OREA and TRREB to high-level coaches like July Ono and Julie Hoffman, REIS™ is earning national support.",
   },
   {
     gif: "/icons/database.mp4",
@@ -311,7 +311,7 @@ export default function About() {
                     That’s why I created the{" "}
                     <span className="gradient-text">
                       {" "}
-                      Real Estate Investment Specialist™ (REIS)
+                      Real Estate Investment Specialist™ (REIS™)
                     </span>{" "}
                     designation: To turn frustrated, one-and-done REALTORS® into
                     long-term wealth advisors investors can trust.
@@ -442,47 +442,32 @@ export default function About() {
         </motion.div>
       </section>
       {/* SECTION 4 */}
-      <motion.section
-        variants={container}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-50px" }}
-        className="section-default flex flex-col md:flex-row gap-10"
-      >
+    
+      <section>
         <motion.div
-          variants={item}
-          className="p-15 space-y-10 bg-white rounded-2xl flex flex-col justify-between shadow-classic"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          aria-label="Call to Action Section"
+          className="mx-auto max-w-[1380px] px-4 sm:px-6 lg:px-12 mb-[100px] sm:mb-[200px] "
         >
-          <div className="space-y-5">
-            {" "}
-            <h4 className="font-bold gradient-text">
-              Book a Meeting with Our Team
-            </h4>
-            <h5 className="p-default font-medium">
-              Let’s explore how REIS could benefit your board and your members.
-            </h5>
-          </div>
-
-          <Button label="Schedule a Call" />
+          <motion.div className="px-[20px] py-[48px] sm:p-[48px] bg-[url('/img-optimized/ctaBg.webp')] bg-cover bg-center rounded-[20px] shadow-classic">
+            <div className="max-w-[900px] text-balance">
+              <motion.h2 className="h2-large">
+                <span className="text-white "> Book a Meeting with </span>
+                <span className="gradient-text"> Our Team</span>
+              </motion.h2>
+              <motion.h4 className="pb-10 pt-5 text-white">
+                Let’s explore how REIS™ could benefit your board and your
+                members.
+              </motion.h4>
+              <motion.div>
+                <Button />
+              </motion.div>
+            </div>
+          </motion.div>
         </motion.div>
-        <motion.div
-          variants={item}
-          className="p-15 space-y-10 bg-white rounded-2xl flex flex-col justify-between shadow-classic"
-        >
-          <div className="space-y-5">
-            {" "}
-            <h4 className="font-bold gradient-text">
-              Download the Board Info Kit
-            </h4>
-            <h5 className="p-default font-medium">
-              Includes course outline, partnership options, legal safeguards,
-              and member outcomes.
-            </h5>
-          </div>
-
-          <Button label="Get the Info Kit" />
-        </motion.div>
-      </motion.section>
+      </section>
     </>
   );
 }

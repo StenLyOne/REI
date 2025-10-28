@@ -4,7 +4,6 @@ import { container, imgItem, item } from "@/lib/variantsAnimation";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
-import { useProportions } from "@/hooks/useProportions";
 import GlowIcon from "@/components/ui/GlowIcon";
 import CardHorizontal from "@/mainPageSections/Trends/CardHorizontal";
 import { useRef } from "react";
@@ -40,7 +39,7 @@ const dataThirdSection = [
   },
   {
     gif: "/icons/database.mp4",
-    title: "Grow Your Influence &amp; Brand Value",
+    title: "Grow Your Influence Brand Value",
     description:
       "Be seen as a leader who’s bringing real opportunity to your audience—not just another product.",
   },
@@ -77,8 +76,8 @@ const dataFourthSection = [
   {
     text: (
       <>
-        Want to offer more than “motivation”—{" "}
-        <span className="gradient-text"> you want to offer a path</span>
+        Want to offer more than “motivation”— ou want to offer a path to a {" "}
+        <span className="gradient-text"> better business</span>
       </>
     ),
     color: "bg-[#F5F4FC]",
@@ -100,18 +99,17 @@ const dataFourthSection = [
 const testimonials = [
   {
     name: "— Affiliate Partner, Ontario",
-    text: "“Sharing REIS with my audience was easy. Agents are craving real solutions. And the commissions? Let’s just say I wish every partnership ran this smoothly.”",
+    text: "“Sharing REIS™ with my audience was easy. Agents are craving real solutions. And the commissions? Let’s just say I wish every partnership ran this smoothly.”",
     avatar: "/icons/realtors.png",
   },
   {
     name: "— Team Leader, BC",
-    text: "“My brokerage audience lit up when I introduced REIS. I’ve never had so many meaningful conversations about agent value and repeat deals.”",
+    text: "“My brokerage audience lit up when I introduced REIS™. I’ve never had so many meaningful conversations about agent value and repeat deals.”",
     avatar: "/icons/realtors1.png",
   },
 ];
 
 export default function Affiliates() {
-  const isMobile = useProportions().width;
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = (dir: "left" | "right") => {
@@ -145,10 +143,10 @@ export default function Affiliates() {
             {/* h1 */}
             <motion.h1
               variants={item}
-              className=" max-w-[1220px] text-[32px] sm:text-[54px] lg:text-[60px] text-center mx-auto font-bold leading-tight text-white"
+              className=" max-w-[1220px] text-[32px] sm:text-[54px] text-center mx-auto font-bold leading-tight text-white"
             >
-              Partner With Purpose: Become a REIS Affiliate Help REALTORS® Work
-              Smarter-and Get Paid to Do It
+              Partner With Purpose: Become a REIS™ Affiliate and Help REALTORS®
+              Work Smarter-and Get Paid to Do It
             </motion.h1>
 
             {/* h4 */}
@@ -158,20 +156,14 @@ export default function Affiliates() {
             >
               Are you a coach, content creator, consultant, or entrepreneur with
               an audience of real estate agents or investors? We want to partner
-              with you. The Real Estate Investment Specialist™ (REIS)
+              with you. The Real Estate Investment Specialist (REIS™)
               designation is transforming how agents think about income,
               clients, and long-term wealth. And we’re inviting aligned
               affiliates to help us spread the word—while earning generous
               commissions and making a real impact.
             </motion.h4>
             <motion.div variants={item} className="mx-auto w-max ">
-              <Button
-                label={`${
-                  isMobile <= 768
-                    ? "Become an REI Investor ™"
-                    : "Become A Real Estate Investment Specialist ™"
-                }`}
-              />
+              <Button label={`${"Become Affiliate"}`} />
             </motion.div>
           </div>
           {/* Button */}
@@ -213,7 +205,7 @@ export default function Affiliates() {
             <div className="lg:max-w-[530px] space-y-[24px]">
               {/* 1. Заголовок */}
               <motion.h2 variants={item} className="h2-default">
-                The Future ofReal Estate Why Partner With{" "}
+                The Future of Real Estate Why Partner With{" "}
                 <span className="gradient-text">REIS™?</span>
               </motion.h2>
 
@@ -264,14 +256,14 @@ export default function Affiliates() {
               </motion.div>
 
               <motion.p variants={item} className="p-default">
-                The REIS designation shows agents how to serve investors and
+                The REIS™ designation shows agents how to serve investors and
                 become investors themselves. It’s not just another training.
-                It’s a mindset shift
+                It’s a mindset shift.
               </motion.p>
 
               {/* 8. Кнопка */}
               <motion.div variants={item}>
-                <Button label="Learn How" />
+                <Button label="Become Affiliate" />
               </motion.div>
             </div>
 
