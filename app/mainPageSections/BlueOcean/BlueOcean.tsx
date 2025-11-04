@@ -21,7 +21,7 @@ const data98Homes = [
   {
     title: "Create a monthly cadence",
     color: "text-blue",
-    text: "OInvestor Nights, Wealth Workshops, and quarterly portfolio check‑ins that generate repeatable deal flow.",
+    text: "Investor Nights, Wealth Workshops, and quarterly portfolio check‑ins that generate repeatable deal flow.",
     imageUrl: "/img/monthlyCadence.png",
   },
 ];

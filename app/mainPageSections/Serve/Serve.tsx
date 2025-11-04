@@ -70,7 +70,7 @@ export default function Serve() {
               <motion.h2 variants={item} className="h2-large">
                 Who We Serve And How Each Group Wins
               </motion.h2>
-
+              {/* 
               <motion.h4
                 variants={item}
                 className="max-w-[900px] mx-auto text-center "
@@ -81,7 +81,7 @@ export default function Serve() {
                 <span className="gradient-text font-bold"> confidence</span> to
                 grow your real estate business, secure investor deals, and build
                 long-term income.
-              </motion.h4>
+              </motion.h4> */}
             </div>
           </div>
 
@@ -97,7 +97,7 @@ export default function Serve() {
                   <GlowIcon text={benefit.gif} video={true} />
                 </div>
                 <div className="space-y-[12px]">
-                  <a href={benefit.url}>
+                  <a href={benefit.url} className="cursor-pointer">
                     <h5 className={`${benefit.color} font-bold`}>
                       {benefit.title}
                     </h5>

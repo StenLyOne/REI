@@ -102,7 +102,7 @@ const dataThirdSection = [
       },
       {
         title:
-          " Brokerage Volume Discounts to make this a ‘no brainer’ for your agents",
+          "Brokerage Volume Discounts to make this a ‘no brainer’ for your agents",
         imageUrl: "/img/task_01k8az515cfhkvw223jd07eawg_1761304918_img_0.webp",
       },
       {

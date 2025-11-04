@@ -56,7 +56,7 @@ const dataThirdSection = [
     gif: "/icons/handshake.mp4",
     title: "Strategy-First Approach",
     description:
-      "They understand short-term cash flow vs. long-term wealth building. They&#39;re trained on BRRRR, flips, lease options, JV structures, and more.",
+      "They understand short-term cash flow vs. long-term wealth building. They are trained on BRRRR, flips, lease options, JV structures, and more.",
   },
   {
     gif: "/icons/database.mp4",
@@ -124,27 +124,20 @@ export default function Investors() {
             {/* h1 */}
             <motion.h1
               variants={item}
-              className="  text-[32px] sm:text-[40px]  text-left mx-auto font-bold leading-tight text-white"
+              className="  text-[32px] sm:text-[60px]  text-left mx-auto font-bold leading-tight text-white"
             >
-              For Real Estate Investors: Work With Agents Who Understand You.
-              Tired of Explaining the Numbers to Your Agent?
+              For Real Estate Investors:
             </motion.h1>
 
             {/* text */}
             <motion.p
               variants={item}
-              className="text-[20px] leading-[28px] text-balance mx-auto font-bold text-[#ECE7FA] pt-6 md:pt-12 pb-5 md:pb-9"
+              className="text-[20px] max-w-[600px] mr-auto leading-[28px] text-balance font-bold text-[#ECE7FA] pt-6 md:pt-12 pb-5 md:pb-9"
             >
-              {/* We Train REALTORS® to Think Like Investors. <br /> <br /> */}
+              Work With Agents Who Understand You. Tired of Explaining the
+              Numbers to Your Agent? <br /> <br />
               Too many investors waste time educating their agents—when it
               should be the other way around. <br /> <br />
-              {/* That’s why we
-              created the Real Estate Investment Specialist (REIS™) designation.
-              Our training helps licensed real estate professionals speak your
-              language, analyze deals properly, and bring you opportunities that
-              align with your goals. <br /> <br />
-              Whether you&#39;re flipping, buying and holding, BRRRRing, or
-              scaling a rental portfolio—REIS™ trained agents are ready to help. */}
             </motion.p>
             <motion.div variants={item} className="mx- w-max ">
               <Button label={`Find an REIS™ agent near you`} />
@@ -569,7 +562,7 @@ export default function Investors() {
           <motion.h2 variants={item} className="h2-default text-center ">
             We teach investors{" "}
             <span className="gradient-text">how to evaluate properties</span>{" "}
-            like a pro—before ever calling an agent.
+            like a pro
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-6 justify-between pb-1">
             {dataSevenSection.map((homes, i) => (

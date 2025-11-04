@@ -213,7 +213,7 @@ export default function About() {
           <motion.h4 variants={item} className="max-w-[800px] mx-auto">
             To make{" "}
             <span className="gradient-text">
-              investor literacy a core skill.
+              investor literacy a core competency skill.
             </span>{" "}
             <br />
             We don’t just teach real estate. We teach transformation.

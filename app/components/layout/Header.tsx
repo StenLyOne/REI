@@ -12,6 +12,7 @@ export default function Header() {
   const [isClient, setIsClient] = useState(false);
 
   const navigation = [
+    { label: "Agents", href: "/" },
     { label: "Affiliates", href: "/affiliates" },
     { label: "Investors", href: "/investors" },
     { label: "Brokers", href: "/brokers" },
@@ -53,7 +54,12 @@ export default function Header() {
                 href="/"
                 className="text-2xl font-bold text-primary z-[100]"
               >
-                <Image width={200} height={60} alt="rei logo" src={"/logo.svg"}/>
+                <Image
+                  width={200}
+                  height={60}
+                  alt="rei logo"
+                  src={"/logo.svg"}
+                />
               </motion.a>
             )}
 
