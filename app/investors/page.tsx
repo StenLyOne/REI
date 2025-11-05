@@ -124,7 +124,7 @@ export default function Investors() {
             {/* h1 */}
             <motion.h1
               variants={item}
-              className="  text-[32px] sm:text-[60px]  text-left mx-auto font-bold leading-tight text-white"
+              className="  text-[32px] sm:text-[0px]  text-left mx-auto font-bold leading-tight text-white"
             >
               For Real Estate Investors:
             </motion.h1>

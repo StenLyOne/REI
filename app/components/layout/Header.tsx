@@ -4,8 +4,11 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+  const pathname = usePathname();
+  console.log(pathname);
   const [isOpen, setIsOpen] = useState(false);
   const [isTop, setIsTop] = useState(true);
 
@@ -71,7 +74,9 @@ export default function Header() {
                     key={link.href}
                     href={link.href}
                     className={`text-[16px] font-semibold transition-colors ${
-                      isTop
+                      isTop &&
+                      pathname != "/earnings-disclaimer" &&
+                      pathname != "/privacy-policy"
                         ? "text-white hover:text-primary"
                         : "text-foreground hover:text-primary"
                     }`}

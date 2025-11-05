@@ -15,7 +15,7 @@ export default function Quote({}) {
   useMotionValueEvent(scrollYProgress, "change", (v) => setP(v));
 
   const text =
-    "Realtors weren’t the enemy—they are simply under‑trained for investor deals. Once agents lead with numbers and a plan, investors become your most loyal, repeat clients";
+    "Realtors aren’t the enemy—they are simply under‑trained for investor deals. Once agents lead with numbers and a plan, investors become your most loyal, repeat clients";
   const words = text.split(" ");
 
   return (

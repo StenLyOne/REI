@@ -4,7 +4,7 @@ import Button from "@/components/ui/Button";
 import { useProportions } from "@/hooks/useProportions";
 import { container, item } from "@/lib/variantsAnimation";
 import { motion, useScroll, useTransform } from "framer-motion";
-
+// import { TypeAnimation } from "react-type-animation";
 import { useEffect, useRef, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 
@@ -52,7 +52,21 @@ export default function HeroSection() {
           <motion.div variants={item} className="pb-4 lg:pb-8 mt-10">
             <div className="w-max mx-auto rounded-full border border-white/30 bg-white/10 backdrop-blur-lg shadow-[0_1px_4px_0_rgba(0,0,0,1)]]">
               <h5 className="px-6 py-4 max-[360px]:text-[14px] text-[16px] md:text-[20px] tracking-[0.8px] font-semibold  max-[360px]:leading-5 max-[500px]:leading-6 lg:leading-5 text-white">
-                Be the Professional Investors\n & Homebuyers Trust.
+                {/* <TypeAnimation
+                  sequence={[
+                    `Be the Professional Investors\n & Homebuyers Trust.`,
+                    2000,
+                    "",
+                    500,
+                  ]}
+                  wrapper="span"
+                  speed={50}
+                  deletionSpeed={40}
+                  repeat={Infinity}
+                  cursor={true}
+                  className="max-[500px]:whitespace-pre-line whitespace-normal"
+                /> */}
+                Be the Professional Investors & Homebuyers Trust.
               </h5>
             </div>
           </motion.div>

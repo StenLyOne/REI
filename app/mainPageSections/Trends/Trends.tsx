@@ -7,7 +7,7 @@ const data = [
     stat: "20.1%",
     text: "Of all MLS transactions are investor driven",
     color: "bg-[#F7F7F9]",
-    imageUrl: "/img/trend.20.png",
+    imageUrl: "/img/image12.png",
   },
   {
     stat: "1 in 4",

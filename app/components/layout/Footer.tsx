@@ -1,17 +1,16 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 const navigation = [
-  { label: "Home", href: "#Home" },
-  { label: "Directory", href: "#Directory" },
-  { label: "Serve", href: "#Serve" },
-  { label: "Stats", href: "#Stats" },
-  { label: "Certification", href: "#Certification" },
-  { label: "Formula", href: "#Formula" },
-  { label: "Founders", href: "#Founders" },
+  { label: "Agents", href: "/" },
+  { label: "Affiliates", href: "/affiliates" },
+  { label: "Investors", href: "/investors" },
+  { label: "Brokers", href: "/brokers" },
+  { label: "Boards", href: "/boards" },
+  { label: "About", href: "/about" },
 ];
 
 export default function Footer() {
@@ -116,9 +115,18 @@ export default function Footer() {
           <p className="font-semibold">
             © 2025 Real Estate Investment Institute. All rights reserved.
           </p>
-          <a href="/privacy-policy" className="hover:underline font-semibold">
-            Privacy Policy
-          </a>
+          <div className="space-x-10">
+            {" "}
+            <a href="/privacy-policy" className="hover:underline font-semibold">
+              Privacy Policy
+            </a>
+            <a
+              href="/earnings-disclaimer"
+              className="hover:underline font-semibold"
+            >
+              Earnings Disclaimer
+            </a>
+          </div>
         </motion.div>
       </motion.div>
     </footer>
