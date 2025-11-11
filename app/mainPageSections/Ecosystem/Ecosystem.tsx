@@ -44,7 +44,7 @@ export default function Ecosystem() {
               <span className="text-[35px] align-bottom">®</span>
             </motion.h2>
             <motion.div variants={item} className="">
-              <Button label="Get Certified" />
+              <Button label="Get Certified" link="https://buy.stripe.com/9AQeXW9p67cueGscMR"/>
             </motion.div>
           </div>
           <div>

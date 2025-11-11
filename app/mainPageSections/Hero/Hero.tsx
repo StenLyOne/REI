@@ -92,7 +92,7 @@ export default function HeroSection() {
 
           {/* Button */}
           <motion.div variants={item} className="mx-auto w-max">
-            <Button label={isMobile} />
+            <Button label={isMobile} link="https://buy.stripe.com/9AQeXW9p67cueGscMR" />
           </motion.div>
         </div>
 
