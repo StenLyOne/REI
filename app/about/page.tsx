@@ -284,7 +284,7 @@ export default function About() {
                       {" "}
                       “Do you work with real estate investors?”
                     </span>{" "}
-                    And every single time, the answer was “Yes.” pure
+                    And every single time, the answer was Yes... Pure
                     frustration.
                   </motion.p>
                   <motion.p variants={item} className="font-semibold">

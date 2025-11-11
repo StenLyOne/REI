@@ -9,7 +9,7 @@ const data = [
     cards: [
       {
         title:
-          "Speak the investor language (cash flow, cap rate, CoC, NOI, DSCR) without confusing clients.",
+          "Speak the investor language (Cash Flow, Cap Rate, CoC, NOI, DSCR) without confusing clients.",
         imageUrl: "/img/investorLanguage.png",
       },
       {

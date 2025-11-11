@@ -57,17 +57,17 @@ const data = [
     cards: [
       {
         title: "Agents talk features, not numbers.",
-        text: "Cash flow, cap rate, CoC, NOI, DSCR—clear and client‑friendly.",
+        text: "Cash Flow, Cap Rate, CoC, NOI, DSCR—clear and client‑friendly.",
         imageUrl: "/img/features.png",
       },
       {
         title: "Strategy‑matched curation",
-        text: "Every property maps to the client’s defined play (BRRRR, flip, buy‑and‑hold, SFR portfolio, small multi’s).",
+        text: "Every property maps to the client’s defined play (BRRRR, Flip, Buy‑and‑Hold, SFR Portfolio, Small Multi’s).",
         imageUrl: "/img/strategy.png",
       },
       {
-        title: "Deal Analyzer snapshots",
-        text: "a 60‑second read tha	t investors love.",
+        title: "Deal Analyzer snapshots", 
+        text: "a 60‑second read investors love.",
         imageUrl: "/img/60‑second.png",
       },
       {
@@ -102,12 +102,7 @@ export default function Gap() {
         <motion.h2 variants={item} className="h2-default">
           The <span className="gradient-text">Gap</span> Investors Feel And How
           You Win By Closing It
-        </motion.h2>
-        <motion.h4 variants={item} className="max-w-[842px] mx-auto">
-          After training <span className="gradient-text">25,000+ </span>
-          investors and buying across North America, Gord heard the same pain
-          points again and again:
-        </motion.h4>
+          </motion.h2>
       </div>
       <TabbedContent data={data} cardComponent={CardIllustration} />
     </motion.section>

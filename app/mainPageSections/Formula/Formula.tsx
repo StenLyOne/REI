@@ -26,7 +26,7 @@ const data = [
   {
     title: "Execute",
     color: "gradient-text",
-    text: "Power Team aliances (mortgage, legal, PM, construction, lenders) to move quickly and cleanly.",
+    text: "Power Team Alliances (mortgage, legal, PM, construction, lenders) to move quickly and cleanly.",
     imageUrl: "/img/execute.png",
   },
   {
@@ -64,14 +64,14 @@ export function Formula() {
               variants={item}
               className="p-default max-w-[390px] !font-medium"
             >
-              Stop competing in the same crowded silo. The Agent Freedom Formula
-              turns education into a repeatable deal machine:
+              Stop competing in the same crowded silo. The Agent Freedom Formula™ 
+              turns education into a repeatable deal machine
             </motion.p>
           </div>
-          <motion.div variants={item}>
+          {/* <motion.div variants={item}>
             {" "}
             <Button label={isMobile} />
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
       <div className="space-y-15">

@@ -99,7 +99,7 @@ export default function RightImage() {
 
             {/* 8. Кнопка */}
             <motion.div variants={item}>
-              <Button label="Learn How" />
+              <Button label="Book a call" />
             </motion.div>
           </div>
 

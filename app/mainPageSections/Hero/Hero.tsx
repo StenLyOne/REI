@@ -86,7 +86,7 @@ export default function HeroSection() {
           >
             First-of-its-kind REALTOR
             <span className="text-[20px] align-super">®</span> investment
-            certification in North America* - built by educators who have
+            certification in North America - built by educators who have
             trained over 25,000 investors and Realtors.
           </motion.h4>
 

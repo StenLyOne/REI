@@ -32,8 +32,8 @@ const features = [
   </>,
   <>
     Gain confidence discussing{" "}
-    <span className="gradient-text">cash flow, ROI, Cap rates</span> and
-    financing options
+    <span className="gradient-text"> Cash Flow, ROI, Cap Rates</span> and
+    Financing Options
   </>,
   <>
     Position themselves as{" "}
@@ -465,14 +465,14 @@ export default function Brokers() {
             </motion.h4>
             <motion.h4 variants={item} className="text-balance mt-6 ">
               We’re here to{" "}
-              <span className="gradient-text"> add something news</span>—a way to
+              <span className="gradient-text"> add something new</span>—a way to
               help your agents serve a{" "}
               <span className="gradient-text"> growing investor market</span>,
               build lasting{" "}
               <span className="gradient-text">client relationships</span>, and
               create{" "}
               <span className="gradient-text">real financial momentum</span> in
-              their careers. Then now is the right time to explore this.
+              their careers. Now is the right time to explore this.
             </motion.h4>
           </div>
           <div className="mx-auto mt-16  sm:mt-20 lg:mt-24">
@@ -539,7 +539,7 @@ export default function Brokers() {
             </h5>
           </div>
 
-          <Button label="Get the Info Kit" />
+          <Button label="Get the Info Kit" link="/docs/Why Brokerages Are Investing in the REIS™ Designation.pdf" />
         </motion.div>
       </motion.section>
       <BackgroundGradients />

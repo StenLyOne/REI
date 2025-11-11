@@ -46,7 +46,7 @@ const data = [
     ],
     title: "Leverage",
     description:
-      "Using borrowed capital to increase the potential return of an investment.s",
+      "Using borrowed capital to increase the potential return of an investment.",
   },
   {
     id: 3,

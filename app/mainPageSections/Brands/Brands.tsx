@@ -8,6 +8,8 @@ const data = [
   "/img/orea.png",
   "/img/exp.png",
   "/img/royal.png",
+  "/img/kw.png",
+  "/img/exit.png",
 ];
 
 export default function Brands() {

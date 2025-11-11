@@ -81,7 +81,7 @@ const dataSevenSection = [
   {
     imageUrl: "/img/task_01k8b3h3j5fwyaadtytm3pd02m_1761309488_img_1.webp",
     title: "From first deal to full portfolio—we show you the path.",
-    text: "Whether you&#39;re house hacking your first duplex or assembling a 12-unit portfolio, we give you a step-by-step blueprint to scale wisely (without overleveraging or guessing).",
+    text: "Whether you're house hacking your first duplex or assembling a 12-unit portfolio, we give you a step-by-step blueprint to scale wisely (without overleveraging or guessing).",
   },
   {
     imageUrl: "/img/task_01k8b3n9w8e81a15fy9k3d3vnq_1761309575_img_0.webp",
@@ -124,23 +124,23 @@ export default function Investors() {
             {/* h1 */}
             <motion.h1
               variants={item}
-              className="  text-[32px] sm:text-[0px]  text-left mx-auto font-bold leading-tight text-white"
+              className="  text-[32px] sm:text-[50px]  text-left mx-auto font-bold  text-white"
             >
-              For Real Estate Investors:
+              For Real Estate Investors
             </motion.h1>
 
             {/* text */}
             <motion.p
               variants={item}
-              className="text-[20px] max-w-[600px] mr-auto leading-[28px] text-balance font-bold text-[#ECE7FA] pt-6 md:pt-12 pb-5 md:pb-9"
+              className="text-[20px] max-w-[600px] mr-auto leading-[28px] text-balance font-bold text-[#ECE7FA] pt-6 md:pt-8 pb-5 md:pb-9"
             >
-              Work With Agents Who Understand You. Tired of Explaining the
-              Numbers to Your Agent? <br /> <br />
+              Work With Agents Who Understand You. <br /> Tired of Explaining
+              the Numbers to Your Agent? <br /> <br />
               Too many investors waste time educating their agents—when it
               should be the other way around. <br /> <br />
             </motion.p>
             <motion.div variants={item} className="mx- w-max ">
-              <Button label={`Find an REIS™ agent near you`} />
+              <Button label={`Find an REIS™ Agent near you`} />
             </motion.div>
           </div>
 
@@ -212,9 +212,10 @@ export default function Investors() {
               </motion.div>
 
               <motion.p variants={item} className="p-default">
-                ❝ I called 101 agents before I found two that actually
-                understood what I was trying to do. ❞ <br />— July Ono,
-                Multi-Million Dollar Investor &amp; REIS™ Supporter
+                &quot; I called 101 agents before I found two that actually
+                understood what I was trying to do. &quot;
+                <br /> ~ July Ono; Multi-Million Dollar Investor &amp; REIS™
+                Supporter
               </motion.p>
 
               {/* 3. Подзаголовок списка */}
@@ -599,7 +600,7 @@ export default function Investors() {
                 business, not a transaction.
               </motion.h4>
               <motion.div>
-                <Button label="Join Our Investor Info Session" />
+                <Button label="Book, a discovery, Call" />
               </motion.div>
             </div>
           </motion.div>

@@ -76,7 +76,7 @@ const dataFourthSection = [
   {
     text: (
       <>
-        Want to offer more than “motivation”— ou want to offer a path to a {" "}
+        Want to offer more than “motivation”— you want to offer a path to a{" "}
         <span className="gradient-text"> better business</span>
       </>
     ),
@@ -98,14 +98,16 @@ const dataFourthSection = [
 
 const testimonials = [
   {
-    name: "— Affiliate Partner, Ontario",
+    name: "Erin T",
+    role: "Affiliate Partner, (KW)",
     text: "“Sharing REIS™ with my audience was easy. Agents are craving real solutions. And the commissions? Let’s just say I wish every partnership ran this smoothly.”",
-    avatar: "/icons/realtors.png",
+    avatar: "/icons/erin.png",
   },
   {
-    name: "— Team Leader, BC",
+    name: "David R",
+    role: "Team Leader, (EXIT)",
     text: "“My brokerage audience lit up when I introduced REIS™. I’ve never had so many meaningful conversations about agent value and repeat deals.”",
-    avatar: "/icons/realtors1.png",
+    avatar: "/icons/david.png",
   },
 ];
 
@@ -263,7 +265,7 @@ export default function Affiliates() {
 
               {/* 8. Кнопка */}
               <motion.div variants={item}>
-                <Button label="Become Affiliate" />
+                <Button label="Affiliate discovery call" />
               </motion.div>
             </div>
 
@@ -453,6 +455,9 @@ export default function Affiliates() {
                   />
                   <div>
                     <h5 className="font-semibold">{t.name}</h5>
+                    <p className="text-sm text-gray-500 font-medium">
+                      {t.role}
+                    </p>
                   </div>
                 </div>
               </motion.div>

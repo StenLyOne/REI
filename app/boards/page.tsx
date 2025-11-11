@@ -638,7 +638,10 @@ need—and how to protect them from making poor decisions. "
             </h5>
           </div>
 
-          <Button label="Get the Info Kit" />
+          <Button
+            label="Get the Info Kit"
+            link="/docs/Why Brokerages Are Investing in the REIS™ Designation.pdf"
+          />
         </motion.div>
       </motion.section>
     </>
