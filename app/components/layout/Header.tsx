@@ -16,10 +16,10 @@ export default function Header() {
 
   const navigation = [
     { label: "Agents", href: "/" },
-    { label: "Affiliates", href: "/affiliates" },
-    { label: "Investors", href: "/investors" },
     { label: "Brokers", href: "/brokers" },
     { label: "Boards", href: "/boards" },
+    { label: "Affiliates", href: "/affiliates" },
+    { label: "Investors", href: "/investors" },
     { label: "About", href: "/about" },
   ];
 
@@ -76,7 +76,8 @@ export default function Header() {
                     className={`text-[16px] font-semibold transition-colors ${
                       isTop &&
                       pathname != "/earnings-disclaimer" &&
-                      pathname != "/privacy-policy"
+                      pathname != "/privacy-policy" &&
+                      pathname != "/terms-of-service"
                         ? "text-white hover:text-primary"
                         : "text-foreground hover:text-primary"
                     }`}

@@ -130,7 +130,7 @@ export default function Affiliates() {
       {/* HERO SECTION */}
       <main
         id="Home"
-        className="relative mx-auto px-4 sm:px-6 lg:px-12 pt-[200px] pb-20 lg:pb-[100px]  h-screen z-10"
+        className="relative mx-auto px-4 sm:px-6 lg:px-12 pt-[200px] pb-20 lg:pb-[100px]  z-10"
       >
         {/* Контейнер с variants */}
         <motion.div
@@ -166,6 +166,17 @@ export default function Affiliates() {
             </motion.h4>
             <motion.div variants={item} className="mx-auto w-max ">
               <Button label={`${"Become Affiliate"}`} />
+            </motion.div>
+            <motion.div
+              variants={item}
+              id="video"
+              className=" aspect-video rounded-2xl overflow-hidden mx-auto w-full lg:w-[60%] mt-20"
+            >
+              <iframe
+                src="https://player.vimeo.com/video/1135777611?h=292c90d742&autoplay=1&muted=0"
+                className="w-full h-full"
+                allow="autoplay; fullscreen"
+              ></iframe>
             </motion.div>
           </div>
           {/* Button */}

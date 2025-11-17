@@ -17,7 +17,7 @@ const data = [
   },
   {
     stat: "87%",
-    text: "Of north americans prefer real estate over stock investing",
+    text: "Of North Americans prefer real estate over stock investing",
     color: "bg-[#F5F4FC]",
     imageUrl: "/img/trend.87.png",
   },

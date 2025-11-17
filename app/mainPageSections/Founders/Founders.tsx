@@ -10,7 +10,8 @@ const data = [
   },
   {
     name: "Gord Lemon",
-    job: "Co‑Founder, REI Institute; Head of Education & Program Delivery",
+    job: "Co‑Founder, REI Institute; Gord Lemon is a real estate investor and trainer with 30+ years of experience and co-founder of the Real Estate Investment Institute.",
+    description: "",
     img: "/img-optimized/man.webp",
   },
 ];
@@ -44,12 +45,12 @@ export default function Founders() {
               across North America.
             </motion.h4>
           </div>
-          <div className="flex gap-[24px] flex-col sm:flex-row items-center justify-center">
+          <div className="flex gap-[24px] flex-col sm:flex-row items-center justify-center h-full">
             {data.map((founder, i) => (
               <motion.article
                 key={i}
                 variants={item}
-                className="space-y-[24px] bg-secondary w-full sm:max-w-[400] rounded-[20px] text-left border-1 border-border shadow-classic"
+                className="space-y-[24px] bg-secondary w-full h-full sm:max-w-[400] rounded-[20px] text-left border-1 border-border shadow-classic"
                 style={{ background: "var(--secondary)" }}
               >
                 <Image
@@ -70,11 +71,6 @@ export default function Founders() {
             ))}
           </div>
         </div>
-        <p className="sr-only">
-          Meet the founders of REI Institute, experienced real estate investors
-          and educators committed to empowering the next generation of real
-          estate professionals.
-        </p>
       </motion.div>
     </section>
   );

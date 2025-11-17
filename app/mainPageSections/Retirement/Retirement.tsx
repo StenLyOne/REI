@@ -12,7 +12,7 @@ const data = [
     cards: [
       {
         title: "Define your Buy Box",
-        text: "Price, cash-flow target, risk guardrails, financing path",
+        text: "Price, cash-flow target, risk guard rails, financing path",
       },
       {
         title: "Run the Numbers",

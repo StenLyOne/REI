@@ -5,12 +5,10 @@ import { useProportions } from "@/hooks/useProportions";
 import { container, item } from "@/lib/variantsAnimation";
 import { motion, useScroll, useTransform } from "framer-motion";
 // import { TypeAnimation } from "react-type-animation";
-import { useEffect, useRef, useState } from "react";
-import { Volume2, VolumeX } from "lucide-react";
+import { useRef } from "react";
 
 export default function HeroSection() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [muted, setMuted] = useState(true);
+  const videoRef = useRef<HTMLDivElement>(null);
   const isMobile =
     useProportions().width <= 768
       ? "Become an REI Investor ™"
@@ -21,16 +19,6 @@ export default function HeroSection() {
     target: ref,
     offset: ["start center", "end end"],
   });
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    video.muted = muted;
-
-    video.play().catch((err) => {
-      console.warn("Autoplay blocked:", err);
-    });
-  }, [muted]);
 
   // const videoWidth = useTransform(scrollYProgress, [0.21, 1], ["40%", "85%"]);
 
@@ -49,7 +37,7 @@ export default function HeroSection() {
       >
         {/* TEXT CONTENT */}
         <div className="text-center ">
-          <motion.div variants={item} className="pb-4 lg:pb-8 mt-10">
+          <motion.div variants={item} className="hidden md:block pb-4 lg:pb-8 mt-10">
             <div className="w-max mx-auto rounded-full border border-white/30 bg-white/10 backdrop-blur-lg shadow-[0_1px_4px_0_rgba(0,0,0,1)]]">
               <h5 className="px-6 py-4 max-[360px]:text-[14px] text-[16px] md:text-[20px] tracking-[0.8px] font-semibold  max-[360px]:leading-5 max-[500px]:leading-6 lg:leading-5 text-white">
                 {/* <TypeAnimation
@@ -86,13 +74,16 @@ export default function HeroSection() {
           >
             First-of-its-kind REALTOR
             <span className="text-[20px] align-super">®</span> investment
-            certification in North America - built by educators who have
-            trained over 25,000 investors and Realtors.
+            certification in North America - built by educators who have trained
+            over 25,000 investors and Realtors.
           </motion.h4>
 
           {/* Button */}
           <motion.div variants={item} className="mx-auto w-max">
-            <Button label={isMobile} link="https://buy.stripe.com/9AQeXW9p67cueGscMR" />
+            <Button
+              label={isMobile}
+              link="https://buy.stripe.com/9AQeXW9p67cueGscMR"
+            />
           </motion.div>
         </div>
 
@@ -102,9 +93,11 @@ export default function HeroSection() {
           id="video"
           className="block md:hidden aspect-video rounded-2xl overflow-hidden mx-auto w-full"
         >
-          <video className="w-full h-full" autoPlay muted playsInline loop>
-            <source src="/videos/hero-video-2025.mp4" />
-          </video>
+          <iframe
+            src="https://player.vimeo.com/video/1135771792?autoplay=1&muted=0"  
+            className="w-full h-full"
+            allow="autoplay; fullscreen"   
+          ></iframe>
         </motion.div>
 
         {/* DESKTOP VIDEO */}
@@ -121,25 +114,12 @@ export default function HeroSection() {
                 scale: useTransform(scrollYProgress, [0.2, 1], [0.7, 1.15]),
               }}
             >
-              <div className="relative w-full h-full">
-                <video
-                  ref={videoRef}
-                  className="w-full h-full object-cover"
-                  autoPlay
-                  loop
-                  playsInline
-                  muted={muted}
-                >
-                  <source src="/videos/hero-video-2025.mp4" type="video/mp4" />
-                </video>
-
-                {/* Кнопка mute/unmute */}
-                <button
-                  onClick={() => setMuted((m) => !m)}
-                  className="absolute bottom-6 right-6 bg-black/40 hover:bg-black/60 text-white p-2 rounded-full transition"
-                >
-                  {muted ? <VolumeX size={20} /> : <Volume2 size={20} />}
-                </button>
+              <div ref={videoRef} className="relative w-full h-full">
+                <iframe
+                  src="https://player.vimeo.com/video/1135771792?autoplay=1&muted=0"
+                  className="absolute inset-0 w-full h-full"
+                  allow="autoplay; fullscreen"
+                ></iframe>
               </div>
             </motion.div>
           </div>

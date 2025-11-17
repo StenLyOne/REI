@@ -6,10 +6,10 @@ import Link from "next/link";
 
 const navigation = [
   { label: "Agents", href: "/" },
-  { label: "Affiliates", href: "/affiliates" },
-  { label: "Investors", href: "/investors" },
   { label: "Brokers", href: "/brokers" },
   { label: "Boards", href: "/boards" },
+  { label: "Affiliates", href: "/affiliates" },
+  { label: "Investors", href: "/investors" },
   { label: "About", href: "/about" },
 ];
 
@@ -125,6 +125,12 @@ export default function Footer() {
               className="hover:underline font-semibold"
             >
               Earnings Disclaimer
+            </a>
+            <a
+              href="/terms-of-service"
+              className="hover:underline font-semibold"
+            >
+              Terms Of Service
             </a>
           </div>
         </motion.div>
