@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import HomeContent from "./components/HomeContent";
+import LandingPage from "./components/LandingPage";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -25,7 +25,7 @@ export default function Home() {
 
   return (
     <div className="relative">
-      <HomeContent />
+      <LandingPage />
       {isLoading && (
         <motion.div
           className="absolute inset-0 flex items-center justify-center bg-black text-white z-50 pointer-events-none"
